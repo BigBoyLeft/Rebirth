@@ -1,0 +1,71 @@
+{
+  "name": "rebirth",
+  "author": "left#2118",
+  "version": "1.0.0",
+  "description": "Rebirth Framework",
+  "main": "src/",
+  "license": "MIT",
+  "private": true,
+  "scripts": {},
+  "keywords": [],
+  "dependencies": {
+    "@citizenfx/client": "^2.0.5414-1",
+    "@citizenfx/server": "^2.0.5414-1",
+    "@ptkdev/logger": "^1.8.0",
+    "esbuild": "^0.14.27",
+    "mysql2": "^2.3.3",
+    "node-fetch": "^3.2.3",
+    "tiny-glob": "^0.2.9",
+    "typedoc": "^0.22.13"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "@types/node-fetch": "^2.6.1",
+    "@typescript-eslint/eslint-plugin": "^5.15.0",
+    "@typescript-eslint/parser": "^5.15.0",
+    "eslint": "^8.11.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.6.0"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "endOfLine": "auto",
+    "htmlWhitespaceSensitivity": "css",
+    "bracketSameLine": true,
+    "jsxSingleQuote": false,
+    "printWidth": 200,
+    "semi": true,
+    "tabWidth": 4
+  },
+  "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint",
+      "prettier"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "prettier",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "parserOptions": {
+      "sourceType": "module",
+      "ecmaVersion": 2020
+    },
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "rules": {
+      "no-case-declarations": "off",
+      "no-empty-function": "off",
+      "prefer-const": "off",
+      "prettier/prettier": "error",
+      "react/no-unescaped-entities": "off",
+      "@typescript-eslint/no-explicit-any": "off"
+    }
+  }
+}

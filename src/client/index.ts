@@ -1,0 +1,1 @@
+console.log('[Rebirth] Client loaded');
