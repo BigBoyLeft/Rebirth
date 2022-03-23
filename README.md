@@ -12,12 +12,13 @@ This framework was built in hopes of becoming `superior` to other frameworks lik
 2. Javascript/Typescript
 3. Understanding module bunders such as `Webpack` `ESBuild`
 4. Node.JS Package Managers such as [NPM](https://www.npmjs.com/) | [YARN](https://yarnpkg.com/)
+5. Experience in Database Programs such as [MongoDB](https://www.mongodb.com)
 
 ## Framework Features
 | Feature     | Description |
 | :----       | :-----      |
 | Single Handler System | All Ticks, and Events are handled within the framework |
-| Database Wrapper   | Easy to use None `SQL` Database Wrapper, You can write database statements using `JSON` |
+| Database Wrapper   | Easy to use Database Wrapper based around MongoDB |
 | Command Wrapper | Ease to use Command Wrapper which replaces the old & boring native `RegisterCommand` |
 | NUI | Fast and Responsive `UI` build using `ReactJS` |
 | NUI Wrapper | Easy to use NUI Wrapper which makes it easy to talk between the `UI` and the `Client` |
