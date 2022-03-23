@@ -13,10 +13,10 @@
     "@citizenfx/server": "^2.0.5414-1",
     "@ptkdev/logger": "^1.8.0",
     "esbuild": "^0.14.27",
+    "mongoose": "^6.2.7",
     "mysql2": "^2.3.3",
     "node-fetch": "^3.2.3",
-    "tiny-glob": "^0.2.9",
-    "typedoc": "^0.22.13"
+    "tiny-glob": "^0.2.9"
   },
   "devDependencies": {
     "@types/node": "^17.0.21",
@@ -27,6 +27,16 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "prettier": "^2.6.0"
+  },
+  "optionalDependencies": {
+    "@natunaorg/typedoc-plugin": "^1.0.1",
+    "typedoc": "^0.22.12",
+    "typedoc-plugin-mdn-links": "^1.0.5",
+    "typedoc-plugin-merge-modules": "^3.1.0",
+    "typedoc-plugin-reference-excluder": "^1.0.0"
+  },
+  "peerDependencies": {
+    "typedoc": "^0.22.12"
   },
   "prettier": {
     "trailingComma": "es5",

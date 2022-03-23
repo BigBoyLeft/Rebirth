@@ -1,24 +1,57 @@
 {
-  "include": ["src/**/*", "plugins"],
-  "exclude": ["**/node_modules", "**/__tests__/"],
+  "include": [
+    "src/**/*",
+    "plugins"
+  ],
+  "exclude": [
+    "**/node_modules",
+    "**/__tests__/"
+  ],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "*": ["types/*"],
-      "@server": ["src/server/index.ts"],
-      "@server/*": ["src/server/*"],
-      "@client": ["src/client/index.ts"],
-      "@client/*": ["src/client/*"],
-      "@shared": ["src/shared/index.ts"],
-      "@shared/*": ["src/shared/*"],
-      "@/": ["./*"],
+      "*": [
+        "types/*"
+      ],
+      "@server": [
+        "./src/code/server/"
+      ],
+      "@server/*": [
+        "./src/code/server/*"
+      ],
+      "@client": [
+        "./src/code/client/"
+      ],
+      "@client/*": [
+        "./src/code/client/*"
+      ],
+      "@shared": [
+        "./src/code/shared/"
+      ],
+      "@shared/*": [
+        "./src/code/shared/*"
+      ],
+      "@database": [
+        "./src/code/database/"
+      ],
+      "@database/*": [
+        "./src/code/database/*"
+      ],
+      "@schemas/*": [
+        "./src/code/schemas/*"
+      ],
+      "@/*": [
+        "./*"
+      ],
     },
     "outDir": "build",
     "noImplicitAny": true,
     "module": "commonjs",
     "target": "es6",
     "allowJs": true,
-    "lib": ["es2017"],
+    "lib": [
+      "es2017"
+    ],
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "esModuleInterop": true,
@@ -27,4 +60,52 @@
     "removeComments": true,
     "pretty": true,
   },
+  "typedocOptions": {
+    "name": "Rebirth Framework",
+    "theme": "default",
+    "out": "docs",
+    "entryPoints": [
+      "src/code/client",
+      "src/code/server",
+      "src/code/shared",
+      "src/code/database",
+      "src/code/schemas/player"
+    ],
+    "entryPointStrategy": "expand",
+    "includeVersion": true,
+    "mergeModulesRenameDefaults": true,
+    "mergeModulesMergeMode": "module",
+    "excludeConstructors": true,
+    "excludePrivate": true,
+    "excludeProtected": true,
+    "removePrimaryNavigation": true,
+    "removeSecondaryNavigation": false,
+    "customNavigations": [
+      {
+        "title": "🔗 Navigations",
+        "links": [
+          {
+            "label": "🏠 Home",
+            "href": "/index.html"
+          },
+          {
+            "label": "🤝 Discord Server",
+            "href": "https://discord.gg/kGPHBvXzGM"
+          },
+          {
+            "label": "⛺ Server Functions",
+            "href": "/classes/server.ServerMain.html"
+          },
+          {
+            "label": "💻 Plugin Functions",
+            "href": "/classes/server_plugins_plugin.Plugin.html"
+          },
+          {
+            "label": "📦 All Module List",
+            "href": "/modules.html"
+          }
+        ]
+      },
+    ]
+  }
 }

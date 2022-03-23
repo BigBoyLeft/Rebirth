@@ -1,0 +1,3812 @@
+{
+  "logs": [
+    {
+      "level": 3,
+      "time": 1647968917401,
+      "date": "2022-03-22T17:08:37.401Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647968917430,
+      "date": "2022-03-22T17:08:37.430Z",
+      "msg": "[Rebirth]: Database connected.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647968923598,
+      "date": "2022-03-22T17:08:43.598Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647968923626,
+      "date": "2022-03-22T17:08:43.626Z",
+      "msg": "[Rebirth]: Database connected.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647968925453,
+      "date": "2022-03-22T17:08:45.453Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647968925482,
+      "date": "2022-03-22T17:08:45.482Z",
+      "msg": "[Rebirth]: Database connected.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647968929529,
+      "date": "2022-03-22T17:08:49.529Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647968929557,
+      "date": "2022-03-22T17:08:49.557Z",
+      "msg": "[Rebirth]: Database connected.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647968932088,
+      "date": "2022-03-22T17:08:52.088Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647968932118,
+      "date": "2022-03-22T17:08:52.118Z",
+      "msg": "[Rebirth]: Database connected.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647968956609,
+      "date": "2022-03-22T17:09:16.609Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647968956639,
+      "date": "2022-03-22T17:09:16.639Z",
+      "msg": "[Rebirth]: Database connected.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647968964229,
+      "date": "2022-03-22T17:09:24.229Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647968964260,
+      "date": "2022-03-22T17:09:24.260Z",
+      "msg": "[Rebirth]: Database connected.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647968979682,
+      "date": "2022-03-22T17:09:39.682Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647968979702,
+      "date": "2022-03-22T17:09:39.702Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647968979758,
+      "date": "2022-03-22T17:09:39.758Z",
+      "msg": "[Rebirth]: Database connected.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647968983255,
+      "date": "2022-03-22T17:09:43.255Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647968983274,
+      "date": "2022-03-22T17:09:43.274Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647968983303,
+      "date": "2022-03-22T17:09:43.303Z",
+      "msg": "[Rebirth]: Database connected.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647968986275,
+      "date": "2022-03-22T17:09:46.275Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647968986296,
+      "date": "2022-03-22T17:09:46.296Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647968986325,
+      "date": "2022-03-22T17:09:46.325Z",
+      "msg": "[Rebirth]: Database connected.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647969227888,
+      "date": "2022-03-22T17:13:47.888Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647969227908,
+      "date": "2022-03-22T17:13:47.908Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647969227949,
+      "date": "2022-03-22T17:13:47.949Z",
+      "msg": "[Rebirth]: Database connected.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647969231057,
+      "date": "2022-03-22T17:13:51.057Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647969231081,
+      "date": "2022-03-22T17:13:51.081Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647969231131,
+      "date": "2022-03-22T17:13:51.131Z",
+      "msg": "[Rebirth]: Database connected.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647969234770,
+      "date": "2022-03-22T17:13:54.770Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647969234800,
+      "date": "2022-03-22T17:13:54.800Z",
+      "msg": "[Rebirth]: Database connected.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647969236220,
+      "date": "2022-03-22T17:13:56.220Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647969236249,
+      "date": "2022-03-22T17:13:56.249Z",
+      "msg": "[Rebirth]: Database connected.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647969251073,
+      "date": "2022-03-22T17:14:11.073Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647969251105,
+      "date": "2022-03-22T17:14:11.105Z",
+      "msg": "[Rebirth]: Database connected.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647969252600,
+      "date": "2022-03-22T17:14:12.600Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647969252653,
+      "date": "2022-03-22T17:14:12.653Z",
+      "msg": "[Rebirth]: Database connected.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647969255202,
+      "date": "2022-03-22T17:14:15.202Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647969255234,
+      "date": "2022-03-22T17:14:15.234Z",
+      "msg": "[Rebirth]: Database connected.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647969591059,
+      "date": "2022-03-22T17:19:51.059Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647969591555,
+      "date": "2022-03-22T17:19:51.555Z",
+      "msg": "[Rebirth]: Database connected.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647969595544,
+      "date": "2022-03-22T17:19:55.544Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647969596094,
+      "date": "2022-03-22T17:19:56.094Z",
+      "msg": "[Rebirth]: Database connected.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647970212706,
+      "date": "2022-03-22T17:30:12.706Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647970213481,
+      "date": "2022-03-22T17:30:13.481Z",
+      "msg": "[Rebirth]: Database connected.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647970258149,
+      "date": "2022-03-22T17:30:58.149Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647970259056,
+      "date": "2022-03-22T17:30:59.056Z",
+      "msg": "[Rebirth]: Database connected.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647970302839,
+      "date": "2022-03-22T17:31:42.839Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647970303387,
+      "date": "2022-03-22T17:31:43.387Z",
+      "msg": "[Rebirth]: Database connected.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647970329521,
+      "date": "2022-03-22T17:32:09.521Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647970330069,
+      "date": "2022-03-22T17:32:10.069Z",
+      "msg": "[Rebirth]: Database connected.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647970339717,
+      "date": "2022-03-22T17:32:19.717Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647970340224,
+      "date": "2022-03-22T17:32:20.224Z",
+      "msg": "[Rebirth]: Database connected.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647970472309,
+      "date": "2022-03-22T17:34:32.309Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647970500221,
+      "date": "2022-03-22T17:35:00.221Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647970500784,
+      "date": "2022-03-22T17:35:00.784Z",
+      "msg": "[Rebirth]: Database connected.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647970505140,
+      "date": "2022-03-22T17:35:05.140Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647970505635,
+      "date": "2022-03-22T17:35:05.635Z",
+      "msg": "[Rebirth]: Database connected.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647970527447,
+      "date": "2022-03-22T17:35:27.447Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647970528542,
+      "date": "2022-03-22T17:35:28.542Z",
+      "msg": "[Rebirth]: Database connected.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647970532109,
+      "date": "2022-03-22T17:35:32.109Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647970533125,
+      "date": "2022-03-22T17:35:33.125Z",
+      "msg": "[Rebirth]: Database connected.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647970537015,
+      "date": "2022-03-22T17:35:37.015Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647970538080,
+      "date": "2022-03-22T17:35:38.080Z",
+      "msg": "[Rebirth]: Database connected.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647970588108,
+      "date": "2022-03-22T17:36:28.108Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647970589164,
+      "date": "2022-03-22T17:36:29.164Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647970593392,
+      "date": "2022-03-22T17:36:33.392Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647970594472,
+      "date": "2022-03-22T17:36:34.472Z",
+      "msg": "Database connected.",
+      "tag": "[fghRebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647971437424,
+      "date": "2022-03-22T17:50:37.424Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647971438485,
+      "date": "2022-03-22T17:50:38.485Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972222271,
+      "date": "2022-03-22T18:03:42.271Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972222911,
+      "date": "2022-03-22T18:03:42.911Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972223976,
+      "date": "2022-03-22T18:03:43.976Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972226371,
+      "date": "2022-03-22T18:03:46.371Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972227412,
+      "date": "2022-03-22T18:03:47.412Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972244705,
+      "date": "2022-03-22T18:04:04.705Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972245763,
+      "date": "2022-03-22T18:04:05.763Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972267339,
+      "date": "2022-03-22T18:04:27.339Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972268405,
+      "date": "2022-03-22T18:04:28.405Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972269762,
+      "date": "2022-03-22T18:04:29.762Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972270803,
+      "date": "2022-03-22T18:04:30.803Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972285020,
+      "date": "2022-03-22T18:04:45.020Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972286078,
+      "date": "2022-03-22T18:04:46.078Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972286882,
+      "date": "2022-03-22T18:04:46.882Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972287951,
+      "date": "2022-03-22T18:04:47.951Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972293905,
+      "date": "2022-03-22T18:04:53.905Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972294923,
+      "date": "2022-03-22T18:04:54.923Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972321933,
+      "date": "2022-03-22T18:05:21.933Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972323043,
+      "date": "2022-03-22T18:05:23.043Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972328244,
+      "date": "2022-03-22T18:05:28.244Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972329301,
+      "date": "2022-03-22T18:05:29.301Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972358666,
+      "date": "2022-03-22T18:05:58.666Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972359733,
+      "date": "2022-03-22T18:05:59.733Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972375030,
+      "date": "2022-03-22T18:06:15.030Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972376141,
+      "date": "2022-03-22T18:06:16.141Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972414867,
+      "date": "2022-03-22T18:06:54.867Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972415954,
+      "date": "2022-03-22T18:06:55.954Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972441075,
+      "date": "2022-03-22T18:07:21.075Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972442150,
+      "date": "2022-03-22T18:07:22.150Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972459512,
+      "date": "2022-03-22T18:07:39.512Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972461062,
+      "date": "2022-03-22T18:07:41.062Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972462136,
+      "date": "2022-03-22T18:07:42.136Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972515601,
+      "date": "2022-03-22T18:08:35.601Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972516711,
+      "date": "2022-03-22T18:08:36.711Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972520470,
+      "date": "2022-03-22T18:08:40.470Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972521534,
+      "date": "2022-03-22T18:08:41.534Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972528454,
+      "date": "2022-03-22T18:08:48.454Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972529502,
+      "date": "2022-03-22T18:08:49.502Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972533127,
+      "date": "2022-03-22T18:08:53.127Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972534190,
+      "date": "2022-03-22T18:08:54.190Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972545299,
+      "date": "2022-03-22T18:09:05.299Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972546471,
+      "date": "2022-03-22T18:09:06.471Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972547536,
+      "date": "2022-03-22T18:09:07.536Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972588123,
+      "date": "2022-03-22T18:09:48.123Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972589686,
+      "date": "2022-03-22T18:09:49.686Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972590724,
+      "date": "2022-03-22T18:09:50.724Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972592864,
+      "date": "2022-03-22T18:09:52.864Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972594112,
+      "date": "2022-03-22T18:09:54.112Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972595164,
+      "date": "2022-03-22T18:09:55.164Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972600110,
+      "date": "2022-03-22T18:10:00.110Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972601377,
+      "date": "2022-03-22T18:10:01.377Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972602436,
+      "date": "2022-03-22T18:10:02.436Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972605895,
+      "date": "2022-03-22T18:10:05.895Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972606997,
+      "date": "2022-03-22T18:10:06.997Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972614014,
+      "date": "2022-03-22T18:10:14.014Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972615075,
+      "date": "2022-03-22T18:10:15.075Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972615725,
+      "date": "2022-03-22T18:10:15.725Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972616779,
+      "date": "2022-03-22T18:10:16.779Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972619395,
+      "date": "2022-03-22T18:10:19.395Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972620451,
+      "date": "2022-03-22T18:10:20.451Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972637361,
+      "date": "2022-03-22T18:10:37.361Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972638412,
+      "date": "2022-03-22T18:10:38.412Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972641792,
+      "date": "2022-03-22T18:10:41.792Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972642858,
+      "date": "2022-03-22T18:10:42.858Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972681632,
+      "date": "2022-03-22T18:11:21.632Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972682696,
+      "date": "2022-03-22T18:11:22.696Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972694831,
+      "date": "2022-03-22T18:11:34.831Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972695934,
+      "date": "2022-03-22T18:11:35.934Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972698318,
+      "date": "2022-03-22T18:11:38.318Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972699381,
+      "date": "2022-03-22T18:11:39.381Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972714122,
+      "date": "2022-03-22T18:11:54.122Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972715226,
+      "date": "2022-03-22T18:11:55.226Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972721201,
+      "date": "2022-03-22T18:12:01.201Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972722323,
+      "date": "2022-03-22T18:12:02.323Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972728331,
+      "date": "2022-03-22T18:12:08.331Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972729396,
+      "date": "2022-03-22T18:12:09.396Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972736629,
+      "date": "2022-03-22T18:12:16.629Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972737694,
+      "date": "2022-03-22T18:12:17.694Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972744418,
+      "date": "2022-03-22T18:12:24.418Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972745525,
+      "date": "2022-03-22T18:12:25.525Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972757118,
+      "date": "2022-03-22T18:12:37.118Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972758179,
+      "date": "2022-03-22T18:12:38.179Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972761216,
+      "date": "2022-03-22T18:12:41.216Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972762266,
+      "date": "2022-03-22T18:12:42.266Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972767653,
+      "date": "2022-03-22T18:12:47.653Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972768725,
+      "date": "2022-03-22T18:12:48.725Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972772192,
+      "date": "2022-03-22T18:12:52.192Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972773298,
+      "date": "2022-03-22T18:12:53.298Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972789890,
+      "date": "2022-03-22T18:13:09.890Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972790962,
+      "date": "2022-03-22T18:13:10.962Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972831682,
+      "date": "2022-03-22T18:13:51.682Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972832788,
+      "date": "2022-03-22T18:13:52.788Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972842059,
+      "date": "2022-03-22T18:14:02.059Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972843161,
+      "date": "2022-03-22T18:14:03.161Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972850491,
+      "date": "2022-03-22T18:14:10.491Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972851543,
+      "date": "2022-03-22T18:14:11.543Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972862562,
+      "date": "2022-03-22T18:14:22.562Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972863625,
+      "date": "2022-03-22T18:14:23.625Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972968097,
+      "date": "2022-03-22T18:16:08.097Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972969162,
+      "date": "2022-03-22T18:16:09.162Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972976458,
+      "date": "2022-03-22T18:16:16.458Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972977496,
+      "date": "2022-03-22T18:16:17.496Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972988395,
+      "date": "2022-03-22T18:16:28.395Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647972989446,
+      "date": "2022-03-22T18:16:29.446Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647973009200,
+      "date": "2022-03-22T18:16:49.200Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647973010245,
+      "date": "2022-03-22T18:16:50.245Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647973845549,
+      "date": "2022-03-22T18:30:45.549Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647973845575,
+      "date": "2022-03-22T18:30:45.575Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647973846587,
+      "date": "2022-03-22T18:30:46.587Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647973846657,
+      "date": "2022-03-22T18:30:46.657Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647973919304,
+      "date": "2022-03-22T18:31:59.304Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647973919336,
+      "date": "2022-03-22T18:31:59.336Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647973920351,
+      "date": "2022-03-22T18:32:00.351Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647973920420,
+      "date": "2022-03-22T18:32:00.420Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647973921065,
+      "date": "2022-03-22T18:32:01.065Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647973921107,
+      "date": "2022-03-22T18:32:01.107Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647973922122,
+      "date": "2022-03-22T18:32:02.122Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647973922186,
+      "date": "2022-03-22T18:32:02.186Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974009194,
+      "date": "2022-03-22T18:33:29.194Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974009230,
+      "date": "2022-03-22T18:33:29.230Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974010284,
+      "date": "2022-03-22T18:33:30.284Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974010326,
+      "date": "2022-03-22T18:33:30.326Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974042684,
+      "date": "2022-03-22T18:34:02.684Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974042726,
+      "date": "2022-03-22T18:34:02.726Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974043739,
+      "date": "2022-03-22T18:34:03.739Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974043810,
+      "date": "2022-03-22T18:34:03.810Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974049379,
+      "date": "2022-03-22T18:34:09.379Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974049404,
+      "date": "2022-03-22T18:34:09.404Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974050460,
+      "date": "2022-03-22T18:34:10.460Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974050502,
+      "date": "2022-03-22T18:34:10.502Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974053004,
+      "date": "2022-03-22T18:34:13.004Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974053029,
+      "date": "2022-03-22T18:34:13.029Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974054040,
+      "date": "2022-03-22T18:34:14.040Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974054102,
+      "date": "2022-03-22T18:34:14.102Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974093302,
+      "date": "2022-03-22T18:34:53.302Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974093327,
+      "date": "2022-03-22T18:34:53.327Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974094345,
+      "date": "2022-03-22T18:34:54.345Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974094416,
+      "date": "2022-03-22T18:34:54.416Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974108227,
+      "date": "2022-03-22T18:35:08.227Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974108262,
+      "date": "2022-03-22T18:35:08.262Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974109278,
+      "date": "2022-03-22T18:35:09.278Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974109346,
+      "date": "2022-03-22T18:35:09.346Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974120955,
+      "date": "2022-03-22T18:35:20.955Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974120979,
+      "date": "2022-03-22T18:35:20.979Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974121998,
+      "date": "2022-03-22T18:35:21.998Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974122039,
+      "date": "2022-03-22T18:35:22.039Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974154729,
+      "date": "2022-03-22T18:35:54.729Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974154772,
+      "date": "2022-03-22T18:35:54.772Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974155777,
+      "date": "2022-03-22T18:35:55.777Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974155834,
+      "date": "2022-03-22T18:35:55.834Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974163138,
+      "date": "2022-03-22T18:36:03.138Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974164166,
+      "date": "2022-03-22T18:36:04.166Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974172153,
+      "date": "2022-03-22T18:36:12.153Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974172177,
+      "date": "2022-03-22T18:36:12.177Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974173179,
+      "date": "2022-03-22T18:36:13.179Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647974173234,
+      "date": "2022-03-22T18:36:13.234Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647975259982,
+      "date": "2022-03-22T18:54:19.982Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647975260960,
+      "date": "2022-03-22T18:54:20.960Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647975981868,
+      "date": "2022-03-22T19:06:21.868Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647975982980,
+      "date": "2022-03-22T19:06:22.980Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647976005148,
+      "date": "2022-03-22T19:06:45.148Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647976006217,
+      "date": "2022-03-22T19:06:46.217Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647976165075,
+      "date": "2022-03-22T19:09:25.075Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647976166128,
+      "date": "2022-03-22T19:09:26.128Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647976170515,
+      "date": "2022-03-22T19:09:30.515Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647976171629,
+      "date": "2022-03-22T19:09:31.629Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978160752,
+      "date": "2022-03-22T19:42:40.752Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978161863,
+      "date": "2022-03-22T19:42:41.863Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978232618,
+      "date": "2022-03-22T19:43:52.618Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978233671,
+      "date": "2022-03-22T19:43:53.671Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978239869,
+      "date": "2022-03-22T19:43:59.869Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978240980,
+      "date": "2022-03-22T19:44:00.980Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978266582,
+      "date": "2022-03-22T19:44:26.582Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978267728,
+      "date": "2022-03-22T19:44:27.729Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978272104,
+      "date": "2022-03-22T19:44:32.104Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978273218,
+      "date": "2022-03-22T19:44:33.218Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978301284,
+      "date": "2022-03-22T19:45:01.284Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978302302,
+      "date": "2022-03-22T19:45:02.302Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978304366,
+      "date": "2022-03-22T19:45:04.366Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978305478,
+      "date": "2022-03-22T19:45:05.478Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978364719,
+      "date": "2022-03-22T19:46:04.719Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978365824,
+      "date": "2022-03-22T19:46:05.824Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978381783,
+      "date": "2022-03-22T19:46:21.783Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978382900,
+      "date": "2022-03-22T19:46:22.900Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978417617,
+      "date": "2022-03-22T19:46:57.617Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978418684,
+      "date": "2022-03-22T19:46:58.684Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978419428,
+      "date": "2022-03-22T19:46:59.428Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978420450,
+      "date": "2022-03-22T19:47:00.450Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978500711,
+      "date": "2022-03-22T19:48:20.711Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978501824,
+      "date": "2022-03-22T19:48:21.824Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978503416,
+      "date": "2022-03-22T19:48:23.416Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978504524,
+      "date": "2022-03-22T19:48:24.524Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978508251,
+      "date": "2022-03-22T19:48:28.251Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978509316,
+      "date": "2022-03-22T19:48:29.316Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978509973,
+      "date": "2022-03-22T19:48:29.973Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978511040,
+      "date": "2022-03-22T19:48:31.040Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978524622,
+      "date": "2022-03-22T19:48:44.622Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978525690,
+      "date": "2022-03-22T19:48:45.690Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978551629,
+      "date": "2022-03-22T19:49:11.629Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978552940,
+      "date": "2022-03-22T19:49:12.940Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978554001,
+      "date": "2022-03-22T19:49:14.001Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978560210,
+      "date": "2022-03-22T19:49:20.210Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978561780,
+      "date": "2022-03-22T19:49:21.780Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978562838,
+      "date": "2022-03-22T19:49:22.838Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978566875,
+      "date": "2022-03-22T19:49:26.875Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978567984,
+      "date": "2022-03-22T19:49:27.984Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978611666,
+      "date": "2022-03-22T19:50:11.666Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978612729,
+      "date": "2022-03-22T19:50:12.729Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978617577,
+      "date": "2022-03-22T19:50:17.577Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978618631,
+      "date": "2022-03-22T19:50:18.631Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978664718,
+      "date": "2022-03-22T19:51:04.718Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978665782,
+      "date": "2022-03-22T19:51:05.782Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978668744,
+      "date": "2022-03-22T19:51:08.744Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978669456,
+      "date": "2022-03-22T19:51:09.456Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978670532,
+      "date": "2022-03-22T19:51:10.532Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978672317,
+      "date": "2022-03-22T19:51:12.317Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978673420,
+      "date": "2022-03-22T19:51:13.420Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978901943,
+      "date": "2022-03-22T19:55:01.943Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978902996,
+      "date": "2022-03-22T19:55:02.996Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978905186,
+      "date": "2022-03-22T19:55:05.186Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978906295,
+      "date": "2022-03-22T19:55:06.295Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978921670,
+      "date": "2022-03-22T19:55:21.670Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978922750,
+      "date": "2022-03-22T19:55:22.750Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978942220,
+      "date": "2022-03-22T19:55:42.220Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647978943290,
+      "date": "2022-03-22T19:55:43.290Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979157402,
+      "date": "2022-03-22T19:59:17.402Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979158427,
+      "date": "2022-03-22T19:59:18.427Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979367342,
+      "date": "2022-03-22T20:02:47.342Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979368461,
+      "date": "2022-03-22T20:02:48.461Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979372453,
+      "date": "2022-03-22T20:02:52.453Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979373508,
+      "date": "2022-03-22T20:02:53.508Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979380859,
+      "date": "2022-03-22T20:03:00.859Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979381928,
+      "date": "2022-03-22T20:03:01.928Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979458757,
+      "date": "2022-03-22T20:04:18.757Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979460300,
+      "date": "2022-03-22T20:04:20.300Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979461367,
+      "date": "2022-03-22T20:04:21.367Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979635728,
+      "date": "2022-03-22T20:07:15.728Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979636782,
+      "date": "2022-03-22T20:07:16.782Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979644793,
+      "date": "2022-03-22T20:07:24.793Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979645860,
+      "date": "2022-03-22T20:07:25.860Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979651664,
+      "date": "2022-03-22T20:07:31.664Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979652719,
+      "date": "2022-03-22T20:07:32.719Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979682586,
+      "date": "2022-03-22T20:08:02.586Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979683704,
+      "date": "2022-03-22T20:08:03.704Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979762604,
+      "date": "2022-03-22T20:09:22.604Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979763636,
+      "date": "2022-03-22T20:09:23.636Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979788632,
+      "date": "2022-03-22T20:09:48.632Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979788706,
+      "date": "2022-03-22T20:09:48.706Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979799847,
+      "date": "2022-03-22T20:09:59.847Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979799922,
+      "date": "2022-03-22T20:09:59.922Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979801949,
+      "date": "2022-03-22T20:10:01.949Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979802045,
+      "date": "2022-03-22T20:10:02.045Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979810393,
+      "date": "2022-03-22T20:10:10.393Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979810486,
+      "date": "2022-03-22T20:10:10.486Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979848138,
+      "date": "2022-03-22T20:10:48.138Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979848200,
+      "date": "2022-03-22T20:10:48.200Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979903726,
+      "date": "2022-03-22T20:11:43.726Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979903830,
+      "date": "2022-03-22T20:11:43.830Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979912506,
+      "date": "2022-03-22T20:11:52.506Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979912599,
+      "date": "2022-03-22T20:11:52.599Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979920848,
+      "date": "2022-03-22T20:12:00.848Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979920941,
+      "date": "2022-03-22T20:12:00.941Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979930599,
+      "date": "2022-03-22T20:12:10.599Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647979930713,
+      "date": "2022-03-22T20:12:10.713Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980119432,
+      "date": "2022-03-22T20:15:19.432Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980119521,
+      "date": "2022-03-22T20:15:19.522Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980123470,
+      "date": "2022-03-22T20:15:23.470Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980123587,
+      "date": "2022-03-22T20:15:23.587Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980146980,
+      "date": "2022-03-22T20:15:46.980Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980147101,
+      "date": "2022-03-22T20:15:47.101Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980149121,
+      "date": "2022-03-22T20:15:49.121Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980149213,
+      "date": "2022-03-22T20:15:49.213Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980157670,
+      "date": "2022-03-22T20:15:57.670Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980157763,
+      "date": "2022-03-22T20:15:57.763Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980178116,
+      "date": "2022-03-22T20:16:18.116Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980178213,
+      "date": "2022-03-22T20:16:18.213Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980233534,
+      "date": "2022-03-22T20:17:13.534Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980233626,
+      "date": "2022-03-22T20:17:13.626Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980241831,
+      "date": "2022-03-22T20:17:21.831Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980241945,
+      "date": "2022-03-22T20:17:21.945Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980260960,
+      "date": "2022-03-22T20:17:40.960Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980261053,
+      "date": "2022-03-22T20:17:41.053Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980291854,
+      "date": "2022-03-22T20:18:11.854Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980291937,
+      "date": "2022-03-22T20:18:11.937Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980294456,
+      "date": "2022-03-22T20:18:14.456Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980294571,
+      "date": "2022-03-22T20:18:14.571Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980302231,
+      "date": "2022-03-22T20:18:22.231Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980302325,
+      "date": "2022-03-22T20:18:22.325Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980305618,
+      "date": "2022-03-22T20:18:25.618Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980305740,
+      "date": "2022-03-22T20:18:25.740Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980333605,
+      "date": "2022-03-22T20:18:53.605Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980333698,
+      "date": "2022-03-22T20:18:53.698Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980336211,
+      "date": "2022-03-22T20:18:56.211Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980336289,
+      "date": "2022-03-22T20:18:56.289Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980343016,
+      "date": "2022-03-22T20:19:03.016Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980343135,
+      "date": "2022-03-22T20:19:03.135Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980353098,
+      "date": "2022-03-22T20:19:13.098Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980353186,
+      "date": "2022-03-22T20:19:13.186Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980414603,
+      "date": "2022-03-22T20:20:14.603Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980414695,
+      "date": "2022-03-22T20:20:14.695Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980423822,
+      "date": "2022-03-22T20:20:23.822Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980423914,
+      "date": "2022-03-22T20:20:23.914Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980501323,
+      "date": "2022-03-22T20:21:41.323Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980501410,
+      "date": "2022-03-22T20:21:41.410Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980526241,
+      "date": "2022-03-22T20:22:06.241Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980526326,
+      "date": "2022-03-22T20:22:06.326Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980546565,
+      "date": "2022-03-22T20:22:26.565Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980546657,
+      "date": "2022-03-22T20:22:26.657Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980556222,
+      "date": "2022-03-22T20:22:36.222Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980556314,
+      "date": "2022-03-22T20:22:36.314Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980575913,
+      "date": "2022-03-22T20:22:55.913Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980575984,
+      "date": "2022-03-22T20:22:55.984Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980596781,
+      "date": "2022-03-22T20:23:16.781Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980596862,
+      "date": "2022-03-22T20:23:16.862Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980608607,
+      "date": "2022-03-22T20:23:28.607Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980608698,
+      "date": "2022-03-22T20:23:28.698Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980616971,
+      "date": "2022-03-22T20:23:36.971Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980617063,
+      "date": "2022-03-22T20:23:37.063Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980623479,
+      "date": "2022-03-22T20:23:43.479Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980623571,
+      "date": "2022-03-22T20:23:43.571Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980629817,
+      "date": "2022-03-22T20:23:49.817Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980629940,
+      "date": "2022-03-22T20:23:49.940Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980638109,
+      "date": "2022-03-22T20:23:58.109Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980638202,
+      "date": "2022-03-22T20:23:58.202Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980718544,
+      "date": "2022-03-22T20:25:18.544Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980718595,
+      "date": "2022-03-22T20:25:18.595Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980721845,
+      "date": "2022-03-22T20:25:21.845Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980721945,
+      "date": "2022-03-22T20:25:21.945Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980728418,
+      "date": "2022-03-22T20:25:28.418Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980728557,
+      "date": "2022-03-22T20:25:28.557Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980742112,
+      "date": "2022-03-22T20:25:42.112Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980742207,
+      "date": "2022-03-22T20:25:42.207Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980756018,
+      "date": "2022-03-22T20:25:56.018Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647980756100,
+      "date": "2022-03-22T20:25:56.100Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983299614,
+      "date": "2022-03-22T21:08:19.614Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983299706,
+      "date": "2022-03-22T21:08:19.706Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983328020,
+      "date": "2022-03-22T21:08:48.020Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983328124,
+      "date": "2022-03-22T21:08:48.124Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983346806,
+      "date": "2022-03-22T21:09:06.806Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983346920,
+      "date": "2022-03-22T21:09:06.920Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983352308,
+      "date": "2022-03-22T21:09:12.308Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983352400,
+      "date": "2022-03-22T21:09:12.400Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983371108,
+      "date": "2022-03-22T21:09:31.108Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983371207,
+      "date": "2022-03-22T21:09:31.207Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983402047,
+      "date": "2022-03-22T21:10:02.047Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983402164,
+      "date": "2022-03-22T21:10:02.164Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983549839,
+      "date": "2022-03-22T21:12:29.839Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983549957,
+      "date": "2022-03-22T21:12:29.957Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983556660,
+      "date": "2022-03-22T21:12:36.660Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983556752,
+      "date": "2022-03-22T21:12:36.752Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983565128,
+      "date": "2022-03-22T21:12:45.128Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983565186,
+      "date": "2022-03-22T21:12:45.186Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983579268,
+      "date": "2022-03-22T21:12:59.268Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983579361,
+      "date": "2022-03-22T21:12:59.361Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983583141,
+      "date": "2022-03-22T21:13:03.141Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983583233,
+      "date": "2022-03-22T21:13:03.233Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983641819,
+      "date": "2022-03-22T21:14:01.819Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983641928,
+      "date": "2022-03-22T21:14:01.928Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983743458,
+      "date": "2022-03-22T21:15:43.458Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983743591,
+      "date": "2022-03-22T21:15:43.591Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983761923,
+      "date": "2022-03-22T21:16:01.923Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983762053,
+      "date": "2022-03-22T21:16:02.053Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983778630,
+      "date": "2022-03-22T21:16:18.630Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983778748,
+      "date": "2022-03-22T21:16:18.748Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983833966,
+      "date": "2022-03-22T21:17:13.966Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983834086,
+      "date": "2022-03-22T21:17:14.086Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983843674,
+      "date": "2022-03-22T21:17:23.674Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983843766,
+      "date": "2022-03-22T21:17:23.766Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983846927,
+      "date": "2022-03-22T21:17:26.927Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983847020,
+      "date": "2022-03-22T21:17:27.020Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983856118,
+      "date": "2022-03-22T21:17:36.118Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983856227,
+      "date": "2022-03-22T21:17:36.227Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983889414,
+      "date": "2022-03-22T21:18:09.414Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983889535,
+      "date": "2022-03-22T21:18:09.535Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983900089,
+      "date": "2022-03-22T21:18:20.089Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983900176,
+      "date": "2022-03-22T21:18:20.176Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983908910,
+      "date": "2022-03-22T21:18:28.910Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983909026,
+      "date": "2022-03-22T21:18:29.026Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983916411,
+      "date": "2022-03-22T21:18:36.411Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983916503,
+      "date": "2022-03-22T21:18:36.503Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983929717,
+      "date": "2022-03-22T21:18:49.717Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983929806,
+      "date": "2022-03-22T21:18:49.806Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983953553,
+      "date": "2022-03-22T21:19:13.553Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983953644,
+      "date": "2022-03-22T21:19:13.644Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983997715,
+      "date": "2022-03-22T21:19:57.715Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647983997835,
+      "date": "2022-03-22T21:19:57.835Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647984008738,
+      "date": "2022-03-22T21:20:08.738Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647984008831,
+      "date": "2022-03-22T21:20:08.831Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647984034501,
+      "date": "2022-03-22T21:20:34.501Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647984034655,
+      "date": "2022-03-22T21:20:34.655Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647984059424,
+      "date": "2022-03-22T21:20:59.424Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647984059553,
+      "date": "2022-03-22T21:20:59.553Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647984071356,
+      "date": "2022-03-22T21:21:11.356Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647984071449,
+      "date": "2022-03-22T21:21:11.449Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647984102371,
+      "date": "2022-03-22T21:21:42.371Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647984102464,
+      "date": "2022-03-22T21:21:42.464Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647984110865,
+      "date": "2022-03-22T21:21:50.865Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647984110956,
+      "date": "2022-03-22T21:21:50.956Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647984127146,
+      "date": "2022-03-22T21:22:07.146Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647984127236,
+      "date": "2022-03-22T21:22:07.236Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647984540929,
+      "date": "2022-03-22T21:29:00.929Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647984541018,
+      "date": "2022-03-22T21:29:01.018Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647984635676,
+      "date": "2022-03-22T21:30:35.676Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647984635782,
+      "date": "2022-03-22T21:30:35.782Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647985152820,
+      "date": "2022-03-22T21:39:12.820Z",
+      "msg": "[Rebirth]: Framework initializing.",
+      "tag": "",
+      "v": 1
+    },
+    {
+      "level": 3,
+      "time": 1647985152937,
+      "date": "2022-03-22T21:39:12.937Z",
+      "msg": "Database connected.",
+      "tag": "[Rebirth]",
+      "v": 1
+    }
+  ]
+}

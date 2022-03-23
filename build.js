@@ -8,70 +8,60 @@ const isProduction = process.argv.findIndex(Item => Item === "--mode=production"
 const isWatch = process.argv.findIndex(Item => Item === "--watch") >= 0;
 
 (async () => {
-    let clplugins = [];
-    let svplugins = [];
-    const pluginList = await glob("./plugins/**/manifest.js", {
+    let plugins = [];
+    const pluginList = await glob("./src/plugins/**/manifest.js", {
         absolute: true,
     });
     for (const plugin of pluginList) {
         const pluginManifest = require(plugin);
         if (pluginManifest.active) {
-            const pluginPath = path.dirname(plugin)
+            const pluginData = {
+                name: pluginManifest.name,
+                path: path.dirname(plugin)
+            }
             if (pluginManifest.server) {
-                svplugins.push(pluginPath + '\\' + pluginManifest.server.modules[0])
+                pluginData.server = pluginData.path + '\\' + pluginManifest.server
             }
             if (pluginManifest.client) {
-                clplugins.push(pluginPath + '\\' + pluginManifest.client.modules[0])
-
+                pluginData.client = pluginData.path + '\\' + pluginManifest.client
             }
+            plugins.push(pluginData);
         }
     }
-
-    console.log(clplugins)
-    console.log(svplugins)
 
     const contexts = [
         {
             label: "client",
             platform: "browser",
-            inject: clplugins,
-            entryPoints: ['./src/client/index.ts'],
+            entryPoints: ['./src/code/client/index.ts'],
+            outdir: `build/client`,
             target: ["chrome93"],
             format: "iife",
         },
         {
             label: "server",
             platform: "node",
-            inject: svplugins,
-            entryPoints: ['./src/server/index.ts'],
+            entryPoints: ['./src/code/server/index.ts'],
+            outdir: `build/server`,
             target: ["node16"],
-            format: "cjs",
-            define: {
-                require: "requireTo"
-            },
+            format: "iife",
             plugins: [
                 {
                     name: "ts-paths",
                     setup: (build) => {
                         build.onResolve({ filter: /@citizenfx/ }, (args) => {
-                            return { namespace: "ignore", paths: "." }
+                            return { namespace: "ignore", path: "." };
                         });
 
                         build.onResolve({ filter: /.*/ }, (args) => {
-                            if (!args.path.match(/^@(server|client|shared)/) && args.kind === "import-statement") {
+                            if (!args.path.match(/^@(database|schemas|server|client|shared)/) && args.kind === "import-statement") {
                                 let modulePath;
 
-                                // @/ means the root of the project
                                 if (args.path.startsWith("@/")) {
                                     modulePath = path.join(...process.cwd().split(path.sep), args.path.replace(/^@\//, ""));
                                 } else {
                                     modulePath = require.resolve(args.path);
 
-                                    // require.resolve return the index.js file, while i'm here
-                                    // just trying to add the root path to the node_modules path
-
-                                    // [require.resolve] => D:\Servers\NatunaIndonesia\txData\CFX\resources\[local]\natuna\node_modules\mysql2\index.js
-                                    // [code below] => D:\Servers\NatunaIndonesia\txData\CFX\resources\[local]\natuna\node_modules\mysql2
                                     if (path.isAbsolute(modulePath)) {
                                         modulePath = path.join(...process.cwd().split(path.sep), "node_modules", args.path);
                                     }
@@ -87,13 +77,75 @@ const isWatch = process.argv.findIndex(Item => Item === "--watch") >= 0;
                         build.onLoad({ filter: /.*/, namespace: "ignore" }, (args) => {
                             return {
                                 contents: "",
-                            }
-                        })
-                    }
-                }
-            ]
+                            };
+                        });
+                    },
+                },
+            ],
         }
     ]
+
+    // for (const index in plugins) {
+    //     const plugin = plugins[index]
+
+    //     if (plugin.client) {
+    //         contexts.push({
+    //             label: plugin.name,
+    //             platform: "browser",
+    //             entryPoints: [plugin.client],
+    //             outdir: `build/plugins/${plugin.name}/client`,
+    //             target: ["chrome93"],
+    //             format: "iife",
+    //         })
+    //     }
+    //     if (plugin.server) {
+    //         contexts.push({
+    //             label: plugin.name,
+    //             platform: "node",
+    //             entryPoints: [plugin.server],
+    //             outdir: `build/plugins/${plugin.name}/server`,
+    //             target: ["node16"],
+    //             format: "iife",
+    //             plugins: [
+    //                 {
+    //                     name: "ts-paths",
+    //                     setup: (build) => {
+    //                         build.onResolve({ filter: /@citizenfx/ }, (args) => {
+    //                             return { namespace: "ignore", path: "." };
+    //                         });
+
+    //                         build.onResolve({ filter: /.*/ }, (args) => {
+    //                             if (!args.path.match(/^@(database|server|client|shared)/) && args.kind === "import-statement") {
+    //                                 let modulePath;
+
+    //                                 if (args.path.startsWith("@/")) {
+    //                                     modulePath = path.join(...process.cwd().split(path.sep), args.path.replace(/^@\//, ""));
+    //                                 } else {
+    //                                     modulePath = require.resolve(args.path);
+
+    //                                     if (path.isAbsolute(modulePath)) {
+    //                                         modulePath = path.join(...process.cwd().split(path.sep), "node_modules", args.path);
+    //                                     }
+    //                                 }
+
+    //                                 return {
+    //                                     path: modulePath,
+    //                                     external: true,
+    //                                 };
+    //                             }
+    //                         });
+
+    //                         build.onLoad({ filter: /.*/, namespace: "ignore" }, (args) => {
+    //                             return {
+    //                                 contents: "",
+    //                             };
+    //                         });
+    //                     },
+    //                 },
+    //             ],
+    //         })
+    //     }
+    // }
 
     for (const context of contexts) {
         const label = context.label;
@@ -103,7 +155,6 @@ const isWatch = process.argv.findIndex(Item => Item === "--watch") >= 0;
             const result = await esbuild.build({
                 bundle: true,
                 assetNames: `[name].[ext]`,
-                outdir: `build/${label}`,
                 minify: isProduction,
                 sourcemap: false,
                 metafile: true,
@@ -119,7 +170,7 @@ const isWatch = process.argv.findIndex(Item => Item === "--watch") >= 0;
                 ...context,
             })
 
-            const analize = await esbuild.analyzeMetafileSync(result.metafile, {
+            const analize = esbuild.analyzeMetafileSync(result.metafile, {
                 color: true,
                 verbose: true,
             });
