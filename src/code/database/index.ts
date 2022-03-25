@@ -6,6 +6,8 @@ import { connect } from "mongoose"
  * @Description Finds One Player with the name "Left"
  * @returns Object
  * 
+ * import Players from "@schemas/player"
+ * 
  * ```typescript
  * const player = await Players.findOne().where('name').equals("Left");
  * console.log(player)

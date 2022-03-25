@@ -16,6 +16,7 @@
     "mongoose": "^6.2.7",
     "mysql2": "^2.3.3",
     "node-fetch": "^3.2.3",
+    "ssn": "^1.0.3",
     "tiny-glob": "^0.2.9"
   },
   "devDependencies": {

@@ -2,18 +2,20 @@ import { Schema, model, Document } from 'mongoose';
 
 export interface IPlayer {
     cid: string,
+    name: string,
     identifiers: string[],
     tokens: string[],
-    name: string,
+    data: any,
     joined: Date, 
 }
 
-export const Player = new Schema({
+export const PlayerSchema = new Schema({
     cid: String,
+    name: String,
     identifiers: [String],
     tokens: [String],
-    name: String,
+    data: Array,
     joined: Date,
 });
 
-export default model<IPlayer>("players", Player);
+export default model<IPlayer>("players", PlayerSchema);

@@ -3,6 +3,27 @@ const esbuild = require("esbuild");
 const glob = require("tiny-glob");
 const path = require("path");
 const fs = require("fs");
+const Logger =  require("@ptkdev/logger");
+
+const logger = new Logger({
+    language: "en",
+    colors: true,
+    debug: true,
+    info: true,
+    warning: true,
+    error: true,
+    sponsor: true,
+    write: true,
+    type: "json",
+    rotate: {
+        size: "10M",
+        encoding: "utf8",
+    },
+    path: {
+        debug_log: "./build/.logs/debug.log",
+        error_log: "./build/.logs/error.log",
+    },
+});
 
 const isProduction = process.argv.findIndex(Item => Item === "--mode=production") >= 0;
 const isWatch = process.argv.findIndex(Item => Item === "--watch") >= 0;
@@ -162,9 +183,9 @@ const isWatch = process.argv.findIndex(Item => Item === "--watch") >= 0;
                     ? {
                         onRebuild: (err, res) => {
                             if (err) {
-                                return console.error(`[${label}] rebuild error: ${err}`);
+                                return logger.error(`[${label}] rebuild error: ${err}`);
                             }
-                            console.log(`[${label}] rebuild success with ${res.warnings.length} warnings | ${res.warnings}`);
+                            logger.info(`Rebuilt Module [${label}] Successfully with ${res.warnings.length} warnings ${res.warnings}`);
                         },
                     } : false,
                 ...context,
@@ -175,9 +196,9 @@ const isWatch = process.argv.findIndex(Item => Item === "--watch") >= 0;
                 verbose: true,
             });
 
-            console.log(analize);
+            logger.info(analize);
         } catch (error) {
-            console.error(`[${label}] Build Failed: ${error}`);
+            logger.error(`[${label}] Build Failed: ${error}`);
         }
     }
 })();

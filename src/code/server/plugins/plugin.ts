@@ -9,13 +9,14 @@ interface IPlugins {
     [key: string]: any;
 }
 
-let plugins: IPlugins = {};
+let plugins = new Map<string, Plugin>();;
 
 export class Plugin {
     constructor(name: string, modules: { start: () => void, stop: () => void }) {
         this.name = name;
         this.modules = modules;
         this.start();
+        plugins.set(name, this);
     }
 
     public name: string;
@@ -37,11 +38,11 @@ export class Plugin {
 }
 
 global.exports("restartPlugin", (plugin: string) => {
-    plugins[plugin].restart();
+    plugins.get(plugin).restart();
 })
 global.exports("start", (plugin: string) => {
-    plugins[plugin].start();
+    plugins.get(plugin).start();
 })
 global.exports("stop", (plugin: string) => {
-    plugins[plugin].stop();
+    plugins.get(plugin).stop();
 })
