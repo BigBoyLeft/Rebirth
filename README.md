@@ -1,6 +1,6 @@
 # Rebirth Framework
 
-<img src="./src/assets/rebirth.png" style="right:0" align="right" width="250px">
+<img src="./src/code/assets/rebirth.png" style="right:0" align="right" width="250px">
 
 ## A Typescript Framework that runs on the Javascript & NodeJS runtime
 
