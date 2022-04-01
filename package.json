@@ -6,7 +6,12 @@
   "main": "src/",
   "license": "MIT",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "R:BuildP": "node ./build.js --mode=production",
+    "R:BuildPW": "node ./build.js --mode=production --watch",
+    "R:BuildD": "node ./build.js --mode=development",
+    "R:BuildDW": "node ./build.js --mode=development --watch"
+  },
   "keywords": [],
   "dependencies": {
     "@citizenfx/client": "^2.0.5414-1",

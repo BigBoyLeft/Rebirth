@@ -1,12 +1,16 @@
 import '@citizenfx/client'
 import TickService from "@shared/tick.service";
 
+// export const tick = new TickService();
+
 export class ClientClass {
     constructor() {
         on("onClientResourceStart", this.onClientResourceStart);
     }
 
     onClientResourceStart = async (resourceName: string) => {
+        require("@client/modules/player");
+        require("@client/modules/ui");
         if (resourceName === GetCurrentResourceName()) {
             console.log(
                 [`
@@ -21,7 +25,7 @@ export class ClientClass {
                 ].join("\n")
             )
             console.log("[Rebirth]: Framework initializing.");
-
+            
             emitNet("Rebirth:Client:Init");
         }
     }

@@ -15,17 +15,19 @@ interface IDeferrals {
     done: (reason?: string) => void;
 }
 
-on("playerConnect", async (name: string, setKickReason: (msg: string) => void, deferrals: IDeferrals) => {
+AddEventHandler("playerConnecting", async (name: string, setKickReason: (msg: string) => void, deferrals: IDeferrals) => {
     const src = global.source;
     deferrals.defer();
     deferrals.update("Running Flight Checks");
-    logger.info(`[${GetPlayerName(src.toString())}] is connecting the server.`)
+    logger.info(`[${GetPlayerName(src.toString())}] is connecting the server.`);
 
     const identifier = await getIdentifier(src, "steam");
     if (!identifier) return deferrals.done("Coundn't Detect your STEAM Identifier | Please make sure STEAM is running then try again.");
+
+    deferrals.done();
 })
 
-on("playerDropped", async () => {
+AddEventHandler("playerDropped", async () => {
     const src = global.source;
     const Player = await playerService.getPlayer(src);
 
@@ -60,6 +62,6 @@ RegisterCommand("deleteCharacter", async function(source: any, args: any, raw: a
 RegisterCommand("loadCharacter", async function(source: any, args: any, raw: any) {
     const player = await playerService.getPlayer(source)
     new characterService(player).loadCharacter(args[0]).then(character => {
-        logger.debug(character)
+        logger.debug(JSON.stringify(character))
     })
 }, false)

@@ -29,27 +29,6 @@ const isProduction = process.argv.findIndex(Item => Item === "--mode=production"
 const isWatch = process.argv.findIndex(Item => Item === "--watch") >= 0;
 
 (async () => {
-    let plugins = [];
-    const pluginList = await glob("./src/plugins/**/manifest.js", {
-        absolute: true,
-    });
-    for (const plugin of pluginList) {
-        const pluginManifest = require(plugin);
-        if (pluginManifest.active) {
-            const pluginData = {
-                name: pluginManifest.name,
-                path: path.dirname(plugin)
-            }
-            if (pluginManifest.server) {
-                pluginData.server = pluginData.path + '\\' + pluginManifest.server
-            }
-            if (pluginManifest.client) {
-                pluginData.client = pluginData.path + '\\' + pluginManifest.client
-            }
-            plugins.push(pluginData);
-        }
-    }
-
     const contexts = [
         {
             label: "client",
@@ -105,68 +84,6 @@ const isWatch = process.argv.findIndex(Item => Item === "--watch") >= 0;
             ],
         }
     ]
-
-    // for (const index in plugins) {
-    //     const plugin = plugins[index]
-
-    //     if (plugin.client) {
-    //         contexts.push({
-    //             label: plugin.name,
-    //             platform: "browser",
-    //             entryPoints: [plugin.client],
-    //             outdir: `build/plugins/${plugin.name}/client`,
-    //             target: ["chrome93"],
-    //             format: "iife",
-    //         })
-    //     }
-    //     if (plugin.server) {
-    //         contexts.push({
-    //             label: plugin.name,
-    //             platform: "node",
-    //             entryPoints: [plugin.server],
-    //             outdir: `build/plugins/${plugin.name}/server`,
-    //             target: ["node16"],
-    //             format: "iife",
-    //             plugins: [
-    //                 {
-    //                     name: "ts-paths",
-    //                     setup: (build) => {
-    //                         build.onResolve({ filter: /@citizenfx/ }, (args) => {
-    //                             return { namespace: "ignore", path: "." };
-    //                         });
-
-    //                         build.onResolve({ filter: /.*/ }, (args) => {
-    //                             if (!args.path.match(/^@(database|server|client|shared)/) && args.kind === "import-statement") {
-    //                                 let modulePath;
-
-    //                                 if (args.path.startsWith("@/")) {
-    //                                     modulePath = path.join(...process.cwd().split(path.sep), args.path.replace(/^@\//, ""));
-    //                                 } else {
-    //                                     modulePath = require.resolve(args.path);
-
-    //                                     if (path.isAbsolute(modulePath)) {
-    //                                         modulePath = path.join(...process.cwd().split(path.sep), "node_modules", args.path);
-    //                                     }
-    //                                 }
-
-    //                                 return {
-    //                                     path: modulePath,
-    //                                     external: true,
-    //                                 };
-    //                             }
-    //                         });
-
-    //                         build.onLoad({ filter: /.*/, namespace: "ignore" }, (args) => {
-    //                             return {
-    //                                 contents: "",
-    //                             };
-    //                         });
-    //                     },
-    //                 },
-    //             ],
-    //         })
-    //     }
-    // }
 
     for (const context of contexts) {
         const label = context.label;

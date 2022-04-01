@@ -1,0 +1,36 @@
+.UI_HUD {
+    transition: all 0.5s ease-in-out;
+
+    &.UI_Hud__vehicle {
+        transform: translateX(170%) !important;
+    }
+}
+
+.UI_Hud_ProgressBar {
+    height: 20%;
+    display: flex;
+    place-items: center;
+    column-gap: 5%;
+
+    .progressbar {
+        width: 100%;
+        height: 10px !important;
+        &:first-child {
+            margin-top: 0;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.UI_SPEEDOMETER {
+    position: absolute;
+    bottom: 21%;
+    left: 4%;
+    
+    .segment-value {
+        // fill: white !important;
+        font-size: 12px !important;
+    }
+}

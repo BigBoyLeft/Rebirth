@@ -27,7 +27,12 @@ class playerService {
     }
 
     removePlayer(source: number): void {
-        this.players.delete(source)
+        this.players.delete(source);
+        PlayerSchema.findOneAndUpdate({ name: GetPlayerName(source) }, { $set: { last_seen: new Date().toISOString() } })
+    }
+
+    async updatePlayerCoords(source: number, coords: Vector3) {
+        this.players.get(source)
     }
 
     async newPlayer(source: number): Promise<Player | undefined> {

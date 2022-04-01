@@ -3,9 +3,7 @@ export type Handler = () => void;
 export default class TickService {
     constructor() {
         setTick(() => {
-            for (const tick of this.ticks) {
-                tick.handler();
-            }
+            this.ticks.forEach((handler: Handler) => handler());
         })
     }
     count: number = 0
