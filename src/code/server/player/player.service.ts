@@ -5,7 +5,7 @@ import { getIdentifier, getIdentifiers, generateuuid } from "@server/utils";
 import { frameworkInitialized } from "@server";
 
 class playerService {
-    private players: Map<number, Player>;
+    private players: Map<number, Player> | any;
 
     constructor() {
         const tick = setInterval(() => {
@@ -17,7 +17,7 @@ class playerService {
         }, 100)
     }
 
-    createPlayer(source: number, player: Player): void {
+    createPlayer(source: number, player: Player | any): void {
         logger.info(`[Player Service] Loaded Player [${player.name}]`);
         this.players.set(source, player)
     }
@@ -33,6 +33,12 @@ class playerService {
 
     async updatePlayerCoords(source: number, coords: Vector3) {
         this.players.get(source)
+    }
+
+    async updatePlayerVar(source: number, variable: string, data: any): Promise<Player | undefined> {
+        const player: any = await this.getPlayer(source);
+        if (!player) return;
+        return this.players.set(source, {...player, [variable]: data})
     }
 
     async newPlayer(source: number): Promise<Player | undefined> {
@@ -57,10 +63,22 @@ class playerService {
             newPlayer.save(function (err, player) {
                 if (err) return logger.error(err);
                 logger.info(`Creating User for [${player.name}]`);
-                this.createPlayer(source, player)
+                // this.createPlayer(source, player)
                 return player
             })
         }
+    }
+
+    async loadCharacter(source: number, character: any): Promise<Player | undefined> {
+        const player = await this.getPlayer(source)
+        if (!player) return;
+        return await this.updatePlayerVar(source, "cCharacter", character)
+    }
+
+    async getCCharacter(source: number): Promise<Player | undefined> {
+        const player: any = await this.getPlayer(source)
+        if (!player) return;
+        return await player.cCharacter
     }
 }
 

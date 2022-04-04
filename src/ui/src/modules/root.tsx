@@ -4,6 +4,7 @@ import {
   Hud,
   Inventory,
   Phone,
+  Character,
 } from './apps'
 import {
   useApplication
@@ -13,6 +14,7 @@ const Root = () => {
   return (
     <div className="UI_Root">
         <Hud />
+        <Character />
         <Inventory />
         <Phone />
     </div>

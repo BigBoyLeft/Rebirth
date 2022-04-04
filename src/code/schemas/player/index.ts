@@ -5,7 +5,7 @@ export interface IPlayer {
     name: string,
     identifiers: string[],
     tokens: string[],
-    data: any,
+    data: JSON,
     joined: Date, 
 }
 
@@ -14,7 +14,7 @@ export const PlayerSchema = new Schema({
     name: String,
     identifiers: [String],
     tokens: [String],
-    data: Array,
+    data: JSON,
     joined: Date,
 });
 

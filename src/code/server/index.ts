@@ -43,7 +43,9 @@ export class ServerClass {
                 `].join("\n")
             )
             logger.info("[Rebirth] Framework initializing.");
-            this.loadDatabase();
+            await this.loadDatabase();
+            await require('@server/modules/Discord')
+            await require('@server/modules/S3')
             frameworkInitialized = true;
         }
     };

@@ -1,0 +1,4 @@
+{
+    "DISCORD_TOKEN": "",
+    "DATABASE_CONNECTION": "mongodb://localhost:27017/YOURDATABASENAME"
+}

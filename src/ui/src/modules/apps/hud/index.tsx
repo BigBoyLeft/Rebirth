@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./index.scss";
 import { connect } from "react-redux";
 
-import { useAppEvent } from "../../../services/useEvent";
+import { useAppEvent } from "@services/useEvent";
 
 import Box from "@mui/material/Box";
 import LinearProgress from "@mui/material/LinearProgress";
@@ -30,8 +30,10 @@ const Hud = ({ visible, vehicle, data, setVisible, setVehicle, setData }) => {
         setIdk(!idk);
     });
 
-    useAppEvent("hud", "speedoMeter", (speed: number) => setSpeed(speed));
-    useAppEvent("hud", "speedoMeterFuel", (fuel: number) => setSpeed(fuel));
+    useAppEvent("hud", "speedoMeter", (data: any) => {
+        setSpeed(data.speed)
+        setFuel(data.fuel)
+    });
 
     return (
         visible && (

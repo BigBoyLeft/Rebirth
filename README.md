@@ -23,4 +23,30 @@ This framework was built in hopes of becoming `superior` to other frameworks lik
 | NUI | Fast and Responsive `UI` build using `ReactJS` |
 | NUI Wrapper | Easy to use NUI Wrapper which makes it easy to talk between the `UI` and the `Client` |
 
+## Framework Setup
+
+1. Clone Repository.
+2. cd into the Repository via `cd Rebirth` and run `npm install` to install all packages.
+2. Rename `Config.json.example` to `Config.json` and fill in the config values.
+3. add `start Rebirth` to your `server.cfg`.
+4. start the server.
+
+## Framework Contrubution
+
+| Command | Description |
+| :------ | :- |
+| `npm run R:BuildP` | Compiles the Framework into a Production build |
+| `npm run R:BuildPW` | Compiles the Framework into a Production build and Rebuilds on code Change |
+| `npm run R:BuildD` | Compiles the Framework into a Development build |
+| `npm run R:BuildDW` | Compiles the Framework into a Development build and Rebuilds on code Change |
+
+## Framework NUI Contrubution
+#### `cd src/ui`
+
+| Command | Description |
+| :------ | :- |
+| `npm run UI:Build` | Compiles the UI into a Production Build |
+| `npm run UI:Watch` | Starts the Development server which you can access in your browser via `http://localhost:3000` |
+| `npm run UI:Preview` | Serves the Production build which you can access in your browser via `http://localhost:4173` |
+
 ###### Copyright &copy; 2022 Rebirth Networks owned by [Left](https://github.com/BigBoyLeft). Rebirth Networks and its associates are not affiliated with or endorsed by Rockstar North, Take-Two Interactive or other rightsholders. Any trademarks used belong to their respective owners.

@@ -45,39 +45,44 @@ let hud: any = {
     lastValues: {},
 };
 
-RegisterCommand('test', (source: any, args: any[]) => {
-    hud.values.thirst = args[0]
-}, false)
+RegisterCommand(
+    "test",
+    (source: any, args: any[]) => {
+        hud.values.thirst = args[0];
+    },
+    false
+);
 
-let sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+let sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
-setImmediate(() => {
-    let changed = false;
+let changed = false;
+hud.values["health"] = GetEntityHealth(PlayerPedId()) / 2;
+hud.values["armour"] = GetPedArmour(PlayerPedId()) / 2;
+hud.values["hunger"] = 11;
+hud.values["thirst"] = 61;
+hud.values["stress"] = 39;
+
+const tick = setInterval(() => {
     hud.values["health"] = GetEntityHealth(PlayerPedId()) / 2;
     hud.values["armour"] = GetPedArmour(PlayerPedId()) / 2;
-    hud.values["hunger"] = 11
-    hud.values["thirst"] = 61
-    hud.values["stress"] = 39
+    if (hud.values["health"] < 0) hud.values["health"] = 0;
+    if (hud.values["armour"] < 0) hud.values["armour"] = 0;
 
-    const tick = setInterval(() => {
-        hud.values["health"] = GetEntityHealth(PlayerPedId()) / 2;
-        hud.values["armour"] = GetPedArmour(PlayerPedId()) / 2;
-        if (hud.values["health"] < 0) hud.values["health"] = 0;
-        if (hud.values["armour"] < 0) hud.values["armour"] = 0;
-
-        if (IsPedInAnyVehicle(PlayerPedId(), false)) {
-            globalThis.exports["Rebirth"].appEvent("hud", "speedoMeter", Math.round(GetEntitySpeed(GetVehiclePedIsIn(PlayerPedId(), false)) * 3.6));
-            // Doesnt work
-            // globalThis.exports["Rebirth"].appEvent("hud", "speedoMeterFuel", Math.round(GetVehicleFuelLevel(GetVehiclePedIsIn(PlayerPedId(), false))));
-        }
-
-        Object.keys(hud.values).forEach((key) => {
-            if (hud.lastValues[key] == null || hud.lastValues[key] !== hud.values[key]) {
-                changed = true;
-                hud.lastValues[key] = hud.values[key];
-                updateHudValue(key, hud.values[key]);
-                updateHudValue(key, hud.values[key]);
-            }
+    if (IsPedInAnyVehicle(PlayerPedId(), false)) {
+        globalThis.exports["Rebirth"].appEvent("hud", "speedoMeter", {
+            speed: Math.round(GetEntitySpeed(GetVehiclePedIsIn(PlayerPedId(), false)) * 2.236936),
+            fuel: Math.round(GetVehicleFuelLevel(GetVehiclePedIsIn(PlayerPedId(), false))),
         });
-    }, 0);
-});
+        // Doesnt work
+        // globalThis.exports["Rebirth"].appEvent("hud", "speedoMeterFuel", Math.round());
+    }
+
+    Object.keys(hud.values).forEach((key) => {
+        if (hud.lastValues[key] == null || hud.lastValues[key] !== hud.values[key]) {
+            changed = true;
+            hud.lastValues[key] = hud.values[key];
+            updateHudValue(key, hud.values[key]);
+            updateHudValue(key, hud.values[key]);
+        }
+    });
+}, 100);

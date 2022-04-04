@@ -4,6 +4,8 @@
 /build
 
 # misc
+Config.json
+.csv
 .env
 .DS_Store
 .yarn.installed

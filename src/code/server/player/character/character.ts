@@ -6,11 +6,12 @@ export class Character {
     phoneNumber: string;
     email: string;
     address: string;
+    accounts: any;
     inventory: any;
     clothing: any;
     cHistory: any;
 
-    constructor({ssn, fn, ln, dob, phoneNumber, email, address, inventory, clothing, cHistory}: {ssn: string, fn: string, ln: string, dob: string, phoneNumber: string, email: string, address: string, inventory: any, clothing: any, cHistory: any}) {
+    constructor({ssn, fn, ln, dob, phoneNumber, email, address, accounts, inventory, clothing, cHistory}: {ssn: string, fn: string, ln: string, dob: string, phoneNumber: string, email: string, address: string, accounts: any, inventory: any, clothing: any, cHistory: any}) {
         this.ssn = ssn;
         this.fn = fn;
         this.ln = ln;
@@ -18,6 +19,7 @@ export class Character {
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.address = address;
+        this.accounts = accounts;
         this.inventory = inventory;
         this.clothing = clothing;
         this.cHistory = cHistory;

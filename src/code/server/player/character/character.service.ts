@@ -46,7 +46,7 @@ export class characterService {
         }, {
             "data.characters.$": 1
         }).then((Fcharacter: any) => {
-            let character = Fcharacter[0].data[0].characters[0]
+            let character = Fcharacter[0].data.characters[0]
             if (character.ssn !== ssn) return logger.error(`[Character Service] Attempted to load character with SSN: ${ssn} | but recieved ${character.snn}`)
             return character
         })

@@ -1,0 +1,158 @@
+.UI_CHARACTER_CONTAINER {
+    position: absolute;
+    display: inline-block;
+    background: #1b1b1b;
+    overflow: hidden;
+    user-select: none;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: -200px;
+        top: -200px;
+        width: 450px;
+        height: 450px;
+        border-radius: 50%;
+        background: black;
+        background: linear-gradient(to bottom right, #e53935 10%, #1b1b1b 70%);
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        left: 87vw;
+        bottom: -20%;
+        width: 450px;
+        height: 450px;
+        border-radius: 50%;
+        background: black;
+        background: linear-gradient(to top left, #e53935 10%, #1b1b1b 70%);
+    }
+
+    .UI_CHARACTER_IMG {
+        position: absolute;
+        top: 15%;
+        left: 51%;
+        transform: translate(-50%, -50%) skew(-10deg);
+        filter: drop-shadow(25px 20px 10px rgba(0, 0, 0, 0.8));
+    }
+
+    .UI_CHARACTER_TITLE {
+        position: absolute;
+        padding-left: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 15px;
+        z-index: 1000;
+        color: white;
+        font-size: 4rem;
+        letter-spacing: 5px;
+        font-weight: 600;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%) skew(-10deg);
+        background-color: #2b2929;
+        filter: drop-shadow(25px 20px 10px rgba(0, 0, 0, 0.8));
+
+        .BLOCK {
+            display: grid;
+            place-content: center;
+            margin-left: 5px;
+            padding: 15px;
+            font-size: 3.5rem;
+            background-color: #e53935;
+        }
+    }
+
+    .UI_CHARACTER_BUTTON {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 20%;
+    }
+
+    .UI_CHARACTER_BUTTONS {
+        position: absolute;
+        display: flex;
+        place-content: center;
+        width: 100%;
+        top: 90%;
+        transform: translateY(-50%);
+        z-index: 1000;
+        filter: drop-shadow(15px 15px 10px rgba(0, 0, 0, 0.8));
+    }
+
+    .UI_CHARACTER_CHARACTERS {
+        position: absolute;
+        z-index: 1000;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        column-gap: 50px;
+        justify-content: center;
+        align-items: center;
+        top: 10%;
+
+        .CHARACTER {
+            background: #242424;
+            border-radius: 5px;
+            width: 15%;
+            transition: all 0.15s ease;
+            transform: translateZ(0);
+            box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.5);
+
+            display: grid;
+            grid-template-rows: 20% 10% 50% 20%;
+
+            &:hover {
+                transform: scale(1.05) translateZ(0);
+            }
+
+            .CHARACTER_MUGSHOT {
+                position: relative;
+                border: 20px solid #242424;
+                left: 50%;
+                top: 0%;
+                transform: translate(-50%, -50%);
+                border-radius: 50%;
+                width: 50%;
+            }
+
+            .CHARACTER_NAME {
+                position: relative;
+                display: grid;
+                place-content: center;
+                font-size: 24px;
+                letter-spacing: 2.5px;
+            }
+
+            .CHARACTER_INFO {
+                table-layout: fixed;
+                width: 100%;
+                position: relative;
+                padding: 15px;
+                letter-spacing: 1px;
+                max-height: 100%;
+                td {
+                    word-wrap: break-word;
+                    overflow-wrap: break-word;
+                }
+            }
+
+            .CHARACTER_BUTTONS {
+                position: relative;
+                display: flex;
+                place-content: center;
+                column-gap: 25px;
+                padding: 15px;
+            }
+        }
+    }
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
