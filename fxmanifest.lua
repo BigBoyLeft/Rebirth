@@ -6,7 +6,7 @@ description 'Rebirths Core'
 version '1.0.0'
 
 files {
-    -- 'build/ui/**/*', 
+    'build/ui/**/*', 
     'build/ui/index.html'
 }
 ui_page 'build/ui/index.html'

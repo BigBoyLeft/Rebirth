@@ -53,7 +53,7 @@ const Character = ({ visible, characters, setVisible, setCharacters }) => {
                     ssn: selectedChar.ssn,
                 }),
             });
-            const respFormatted = resp.json()
+            const respFormatted: any = resp.json()
             console.log(respFormatted.ssn)
         } else {
         }
@@ -120,7 +120,7 @@ const Character = ({ visible, characters, setVisible, setCharacters }) => {
             <Box sx={{ width: "100vw", height: "100vh" }} className="UI_CHARACTER_CONTAINER">
                 <img className="UI_CHARACTER_IMG" src={Rebirth} loading="lazy" alt="" />
                 <Slide in={state === "start"} direction="right">
-                    <Box sx={{ width: "100%", height: "100%" }}>
+                    <Box sx={{ width: "100%", height: "100%" }}>A
                         <div className="UI_CHARACTER_TITLE">
                             Rebirth <div className="BLOCK">Networks</div>
                         </div>

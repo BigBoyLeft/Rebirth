@@ -18,26 +18,37 @@ This framework was built in hopes of becoming `superior` to other frameworks lik
 | Feature     | Description |
 | :----       | :-----      |
 | Single Handler System | All Ticks, and Events are handled within the framework |
-| MongoDB Integration | Easy to use Database Wrapper based around MongoDB, Framework `AUTO` creates all needed `Collections` needed to operate  |
+| Database Wrapper   | Easy to use Database Wrapper based around MongoDB |
 | Command Wrapper | Ease to use Command Wrapper which replaces the old & boring native `RegisterCommand` |
 | NUI | Fast and Responsive `UI` build using `ReactJS` |
 | NUI Wrapper | Easy to use NUI Wrapper which makes it easy to talk between the `UI` and the `Client` |
+
+## Framework NUI Features Checklist
+
+- [x] hud
+- [] Character Selector
+- [] Phone
+- [] Character Selector
+- [] Character Selector
+- [] Character Selector
+- [] Character Selector
 
 ## Framework Setup
 
 1. Clone Repository.
 2. cd into the Repository via `cd Rebirth` and run `npm install` to install all packages.
-3. Run `npm run R:BuildP` to compile the Framework into a game ready Production Build
-2. Rename `Config.json.example` to `Config.json` and fill in the config values.
-3. add `start Rebirth` to your `server.cfg`.
-4. start the server.
+3. Next build the framework by using the `npm run R:BuildP` command
+4. Rename `Config.json.example` to `Config.json` and fill in the config values.
+5. Add `start Rebirth` to your `server.cfg`.
+6. And last start your server.
 
 ## Framework Contrubution
 
 | Command | Description |
 | :------ | :- |
-| `npm run R:BuildP` | Compiles the the Framework into a game ready Production Build |
-| `npm run R:BuildPW` | Compiles the the Framework into a game ready Production Build and Rebuilds on code Change |
+| `npm run R:BuildP` | Compiles the Framework into a Production build |
+| `npm run R:BuildUI` | Compiles the Frameworks UI into a Production Build |
+| `npm run R:BuildPW` | Compiles the Framework into a Production build and Rebuilds on code Change |
 | `npm run R:BuildD` | Compiles the Framework into a Development build |
 | `npm run R:BuildDW` | Compiles the Framework into a Development build and Rebuilds on code Change |
 

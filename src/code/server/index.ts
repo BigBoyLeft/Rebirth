@@ -5,7 +5,6 @@ import Database from "@database"
 
 import logger from "@shared/logger.service";
 import playerService from "@server/player/player.service";
-const Config = require("@/Config");
 
 export var frameworkInitialized = false
 
@@ -54,7 +53,7 @@ export class ServerClass {
     loadDatabase = async () => {
         this.database = new Database()
         await this.database.connect().then(() => {
-            logger.info(`[Rebirth] Database connected with string: ${Config.DATABASE_CONNECTION}`);
+            logger.info("[Rebirth] Database connected.");
         })
     }
 }

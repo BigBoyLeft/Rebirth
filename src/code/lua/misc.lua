@@ -20,6 +20,7 @@ Citizen.CreateThread(function()
                 TriggerEvent('Rebirth:Hud:Client:vehicle', true)
                 vehicle = true
             end
+            Wait(500)
             DisplayRadar(true)
             SetRadarZoom(1100)
         end

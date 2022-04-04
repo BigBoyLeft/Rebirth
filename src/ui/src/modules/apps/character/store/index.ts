@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-    visible: true,
+    visible: false,
     characters: [
         {
             ssn: "617155906",

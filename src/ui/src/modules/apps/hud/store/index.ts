@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-    visible: false,
+    visible: true,
     vehicle: false,
     data: {
         health: {
