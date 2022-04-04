@@ -26,12 +26,12 @@ This framework was built in hopes of becoming `superior` to other frameworks lik
 ## Framework NUI Features Checklist
 
 - [x] hud
-- [] Character Selector
-- [] Phone
-- [] Character Selector
-- [] Character Selector
-- [] Character Selector
-- [] Character Selector
+- [ ] Character Selector
+- [ ] Phone
+- [ ] Character Selector
+- [ ] Character Selector
+- [ ] Character Selector
+- [ ] Character Selector
 
 ## Framework Setup
 
