@@ -65,3 +65,30 @@ RegisterCommand('reload-map', function(src, args)
 end, false)
 
 UpdateMinimapLocation()
+
+RegisterNetEvent('qb-burgershot:vehicle', function()
+    local vehicle = Config.Delivery.Vehicle
+    local coords = Config.Delivery.VehicleSpawn
+    local ST = PlayerPedId()
+    RequestModel(vehicle)
+    while not HasModelLoaded(vehicle) do
+        Wait(0)
+    end
+    if not IsAnyVehicleNearPoint(coords.x, coords.y, coords.z, 5.0) then
+        local JobVehicle = CreateVehicle(vehicle, coords, 45.0, true, false)
+        SetVehicleHasBeenOwnedByPlayer(JobVehicle, true)
+        SetEntityAsMissionEntity(JobVehicle, true, true)
+        SetVehicleNumberPlateText(JobVehicle, "BURG" .. tostring(math.random(000, 9999)))
+        if Config.ljfuel then
+            exports['lj-fuel']:SetFuel(JobVehicle, 100.0)
+        else
+            exports['LegacyFuel']:SetFuel(JobVehicle, 100.0)
+        end
+        local id = NetworkGetNetworkIdFromEntity(JobVehicle)
+        SetNetworkIdCanMigrate(id, true)
+        TaskWarpPedIntoVehicle(ST, JobVehicle, -1)
+        TriggerEvent("vehiclekeys:client:SetOwner", QBCore.Functions.GetPlate(JobVehicle))
+    else
+        QBCore.Functions.Notify("Vehicle Blocking Space...", "error")
+    end
+end)

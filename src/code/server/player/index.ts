@@ -5,6 +5,7 @@ import playerService from "@server/player/player.service";
 import { characterService } from "@server/player/character/character.service";
 import { Character } from "@server/player/character/character";
 
+import PlayerSchema from "@schemas/player";
 import logger from "@shared/logger.service";
 import { RandomSSN } from "ssn";
 
@@ -77,9 +78,10 @@ RegisterCommand(
                     fn: args[0],
                     ln: args[1],
                     dob: args[2],
-                    phoneNumber: args[3],
-                    email: args[4],
-                    address: args[5],
+                    gender: args[3],
+                    phoneNumber: args[4],
+                    email: args[5],
+                    address: "NONE",
                     accounts: [],
                     inventory: [],
                     clothing: {},
@@ -120,3 +122,40 @@ RegisterCommand(
     },
     false
 );
+
+onNet("Rebirth:server:Character:Create", async (data: any) => {
+    let src = global.source;
+    const player = await playerService.getPlayer(src);
+    PlayerSchema.find(
+        {
+            "data.characters.ln": data.ln,
+        },
+        {
+            "data.characters.$": 1,
+        }
+    ).then((Fcharacter: any) => {
+        if (Fcharacter.length <= 0) {
+            new characterService(player).newCharacter(
+                new Character({
+                    ssn: new RandomSSN("CA").value().toString(),
+                    fn: data.fn,
+                    ln: data.ln,
+                    dob: data.dob,
+                    gender: data.gender,
+                    phoneNumber: Math.floor(1000000000 + Math.random() * 9000000000).toString(),
+                    email: `${data.fn.toLowerCase()}${data.ln.toLowerCase()}@rebirth.net`,
+                    address: "NONE",
+                    accounts: [],
+                    inventory: [],
+                    clothing: {},
+                    cHistory: [],
+                })
+            ).then((character) => {
+                console.log(JSON.stringify(character));
+                emitNet("Rebirth:server:Character:Create:Success", src, character);
+            });
+        } else {
+            emitNet("Rebirth:server:Character:Create:Error", src, "EXIST");
+        }
+    });
+});

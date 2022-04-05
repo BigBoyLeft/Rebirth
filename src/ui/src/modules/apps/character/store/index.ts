@@ -37,60 +37,6 @@ const INITIAL_STATE = {
                 },
             ],
         },
-        {
-            ssn: "834375906",
-            fn: "Carter",
-            ln: "Zamgato",
-            gender: "Male",
-            dob: "03/06/1990",
-            phoneNumber: "7072075995",
-            email: "carterzamgato@rebirth.net",
-            accounts: [
-                {
-                    Number: "499890915",
-                    Routing: "46252566",
-                    Type: "SAVINGS",
-                    Balance: 1138499.23,
-                    Status: "ACTIVE",
-                },
-            ],
-        },
-        {
-            ssn: "614913906",
-            fn: "Carter",
-            ln: "Zamgato",
-            gender: "Male",
-            dob: "03/06/1990",
-            phoneNumber: "7072075995",
-            email: "carterzamgato@rebirth.net",
-            accounts: [
-                {
-                    Number: "936654591",
-                    Routing: "31784439",
-                    Type: "CHECKING",
-                    Balance: 194832.23,
-                    Status: "ACTIVE",
-                },
-            ],
-        },
-        {
-            ssn: "614019506",
-            fn: "Carter",
-            ln: "Zamgato",
-            gender: "Male",
-            dob: "03/06/1990",
-            phoneNumber: "7072075995",
-            email: "carterzamgato@rebirth.net",
-            accounts: [
-                {
-                    Number: "384530377",
-                    Routing: "47284953",
-                    Type: "CD",
-                    Balance: 91832.92,
-                    Status: "ACTIVE",
-                },
-            ],
-        },
     ],
 };
 

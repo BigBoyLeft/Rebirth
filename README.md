@@ -28,10 +28,11 @@ This framework was built in hopes of becoming `superior` to other frameworks lik
 - [x] hud
 - [] Character Selector
 - [] Phone
-- [] Character Selector
-- [] Character Selector
-- [] Character Selector
-- [] Character Selector
+- [] MDT
+- [] Banking
+- [] Interaction Menu
+- [] Dialogs
+- [] Notifications
 
 ## Framework Setup
 

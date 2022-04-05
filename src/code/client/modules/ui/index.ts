@@ -20,7 +20,7 @@ function appEvent(app: string, event: string, data: Object) {
             type: "appEvent",
             app,
             event,
-            data,
+            data: data || {},
         })
     );
 }

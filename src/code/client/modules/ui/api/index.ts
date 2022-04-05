@@ -4,13 +4,6 @@ class API {
     constructor() {
         // SetNuiFocus(true, true);
         this.resources = new Map<string, any>()
-        this.registerAPI('character');
-        this.registerUICallback('character', 'delete', function(data: any, cb: any) {
-            console.log(data)
-            cb({
-                ssn: data.ssn,
-            })
-        })
     }
 
     async registerAPI(resource: string) {
@@ -26,8 +19,7 @@ class API {
         console.log(`[Rebirth] Registering UI Callback: ${resource}/${callback}`)
         RegisterNuiCallbackType(`${resource}/${callback}`)
         on(`__cfx_nui:${resource}/${callback}`, async (data: any, cb: any) => {
-            console.log(data)
-            cb('test')
+            callbackFunc(data, cb)
         })
     }
 }

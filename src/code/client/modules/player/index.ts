@@ -1,4 +1,5 @@
 import { Player } from "@client/modules/player/player";
+import API from '@client/modules/ui/api'
 
 // import { tick } from "@client";
 
@@ -44,6 +45,35 @@ class playerService {
                 }
             }, 500);
         }, false);
+
+        API.registerAPI('character');
+        API.registerUICallback('character', 'delete', async (data: any, cb: any) => {
+            console.log(data)
+            cb({
+                ssn: data.ssn,
+            })
+        })
+        API.registerUICallback('character', 'create', async (data: any, cb: any) => {
+            console.log(data)
+            TriggerServerEvent('Rebirth:server:Character:Create', data);
+            cb(true)
+        })
+
+        RegisterCommand("character", (source: any, args: any, row: any) => {
+            exports['Rebirth'].application('character', {}, true);
+        }, false);
+
+        onNet('Rebirth:server:Character:Create:Error', (status: string) => {
+            console.log(status)
+            if (status === 'EXIST') {
+                exports['Rebirth'].appEvent('character', "ERROR", {})
+            }
+        })
+
+        onNet('Rebirth:server:Character:Create:Success', (character: any) => {
+            console.log("idk ")
+            exports['Rebirth'].appEvent('character', "SUCCESS", character)
+        })
 
         setInterval(() => {
             console.log("update");

@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./index.scss";
 
 import Button from "@Components/Button";
-import { useAppEvent } from "@services/useEvent";
+import { useAppEvent, useApplication } from "@services/useEvent";
 import Rebirth from "@assets/rebirth.png";
 import mugshot from "@assets/mugshot.jpg";
 import { connect } from "react-redux";
@@ -22,6 +22,8 @@ import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import DatePicker from "@mui/lab/DatePicker";
 import { copyFile } from "fs";
+
+import axios from "axios";
 
 const Character = ({ visible, characters, setVisible, setCharacters }) => {
     const [state, setState] = useState("start");
@@ -44,20 +46,24 @@ const Character = ({ visible, characters, setVisible, setCharacters }) => {
                 if (character.ssn !== selectedChar.ssn) arr.push(character);
             });
             setCharacters(arr);
-            const resp = await fetch("https://Rebirth/character/delete", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    ssn: selectedChar.ssn,
-                }),
-            });
-            const respFormatted: any = resp.json()
-            console.log(respFormatted.ssn)
-        } else {
+            axios.post("https://Rebirth/character/delete", {
+                ssn: selectedChar.ssn,
+            }).then((res) => {
+                console.log(res.data);
+            })
         }
     };
+
+    function createCharacter() {
+        axios.post("https://Rebirth/character/create", {
+            fn: newCharData.fn,
+            ln: newCharData.ln,
+            dob: newCharData.dob,
+            gender: newCharData.gender,
+        }).then((res) => {
+            console.log(JSON.stringify(res))
+        })
+    }
 
     const [selectedChar, setSelectedChar] = useState(null);
 
@@ -72,9 +78,9 @@ const Character = ({ visible, characters, setVisible, setCharacters }) => {
         fn: "",
         ln: "",
         dob: new Date(),
-        gender: "0",
+        gender: "1",
     });
-    const [errors, setErrors] = useState({} as any);
+    const [errors, setErrors] = useState({});
 
     const handleInputValue = (e: any) => {
         const { name, value } = e.target;
@@ -111,8 +117,18 @@ const Character = ({ visible, characters, setVisible, setCharacters }) => {
         return isValid;
     };
 
+    useApplication("character", (status: boolean) => setVisible(status));
     useAppEvent("character", "setCharacters", (characters: any) => {
         setCharacters(characters);
+    });
+    useAppEvent("character", "ERROR", () => {
+        setErrors({
+            ...errors,
+            ln: "Last name is Taken",
+        })
+    });
+    useAppEvent("character", "SUCCESS", (character: any) => {
+        setCharacters([...characters, character]);
     });
 
     return (
@@ -120,7 +136,8 @@ const Character = ({ visible, characters, setVisible, setCharacters }) => {
             <Box sx={{ width: "100vw", height: "100vh" }} className="UI_CHARACTER_CONTAINER">
                 <img className="UI_CHARACTER_IMG" src={Rebirth} loading="lazy" alt="" />
                 <Slide in={state === "start"} direction="right">
-                    <Box sx={{ width: "100%", height: "100%" }}>A
+                    <Box sx={{ width: "100%", height: "100%" }}>
+                        A
                         <div className="UI_CHARACTER_TITLE">
                             Rebirth <div className="BLOCK">Networks</div>
                         </div>
@@ -189,7 +206,7 @@ const Character = ({ visible, characters, setVisible, setCharacters }) => {
                         <Button onClick={() => handleClose(false)} sx={{ fontSize: "16px", padding: "12px 26px", transform: "skew(0deg)" }}>
                             Cancel
                         </Button>
-                        <Button onClick={() => handleClose(true)} autoFocus sx={{ fontSize: "16px", padding: "12px 26px", transform: "skew(0deg)" }}>
+                        <Button autoFocus onClick={() => handleClose(true)} sx={{ fontSize: "16px", padding: "12px 26px", transform: "skew(0deg)" }}>
                             Delete
                         </Button>
                     </DialogActions>
@@ -213,14 +230,13 @@ const Character = ({ visible, characters, setVisible, setCharacters }) => {
                                     variant="standard"
                                 />
                                 <TextField
-                                    autoFocus
                                     margin="dense"
                                     name="ln"
                                     label="Last Name"
                                     type="text"
-                                    autoComplete="none"
                                     onBlur={handleInputValue}
                                     onChange={handleInputValue}
+                                    autoComplete="none"
                                     {...(errors["ln"] && { error: true, helperText: errors["ln"] })}
                                     fullWidth
                                     variant="standard"
@@ -257,7 +273,7 @@ const Character = ({ visible, characters, setVisible, setCharacters }) => {
                         <Button onClick={() => setOpen2(false)} sx={{ fontSize: "16px", padding: "12px 26px", transform: "skew(0deg)" }}>
                             Cancel
                         </Button>
-                        <Button onClick={() => setOpen2(false)} disabled={!formIsValid()} autoFocus sx={{ fontSize: "16px", padding: "12px 26px", transform: "skew(0deg)" }}>
+                        <Button onClick={() => createCharacter()} disabled={!formIsValid()} sx={{ fontSize: "16px", padding: "12px 26px", transform: "skew(0deg)" }}>
                             Create
                         </Button>
                     </DialogActions>

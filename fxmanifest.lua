@@ -4,6 +4,7 @@ game {'gta5'}
 author 'left#2118'
 description 'Rebirths Core'
 version '1.0.0'
+lua54 'yes'
 
 files {
     'build/ui/**/*', 
