@@ -123,6 +123,13 @@ RegisterCommand(
     false
 );
 
+RegisterCommand("character", async (source: any, args: any, row: any) => {
+    let src = source;
+    const player = await playerService.getPlayer(src);
+    let characters = await new characterService(player).getCharacters();
+    TriggerClientEvent('Rebirth:server:Character:Init', src, characters)
+}, false);
+
 onNet("Rebirth:server:Character:Create", async (data: any) => {
     let src = global.source;
     const player = await playerService.getPlayer(src);
@@ -133,9 +140,9 @@ onNet("Rebirth:server:Character:Create", async (data: any) => {
         {
             "data.characters.$": 1,
         }
-    ).then((Fcharacter: any) => {
+    ).then(async (Fcharacter: any) => {
         if (Fcharacter.length <= 0) {
-            new characterService(player).newCharacter(
+            const newChar = await new characterService(player).newCharacter(
                 new Character({
                     ssn: new RandomSSN("CA").value().toString(),
                     fn: data.fn,
@@ -150,12 +157,19 @@ onNet("Rebirth:server:Character:Create", async (data: any) => {
                     clothing: {},
                     cHistory: [],
                 })
-            ).then((character) => {
-                console.log(JSON.stringify(character));
-                emitNet("Rebirth:server:Character:Create:Success", src, character);
-            });
+            )
+                
+            console.log(JSON.stringify(newChar));
+            emitNet("Rebirth:server:Character:Create:Success", src, newChar);
         } else {
             emitNet("Rebirth:server:Character:Create:Error", src, "EXIST");
         }
     });
+});
+
+onNet("Rebirth:server:Character:Delete", async (data: any) => {
+    let src = global.source;
+    const player = await playerService.getPlayer(src);
+    new characterService(player).deleteCharacter(data.ssn);
+    emitNet("Rebirth:server:Character:Delete:Success", src);
 });

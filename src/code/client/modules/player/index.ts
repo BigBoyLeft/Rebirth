@@ -48,10 +48,8 @@ class playerService {
 
         API.registerAPI('character');
         API.registerUICallback('character', 'delete', async (data: any, cb: any) => {
-            console.log(data)
-            cb({
-                ssn: data.ssn,
-            })
+            TriggerServerEvent('Rebirth:server:Character:Delete', data);
+            cb(true)
         })
         API.registerUICallback('character', 'create', async (data: any, cb: any) => {
             console.log(data)
@@ -59,9 +57,10 @@ class playerService {
             cb(true)
         })
 
-        RegisterCommand("character", (source: any, args: any, row: any) => {
+        onNet('Rebirth:server:Character:Init', (characters: any[]) => {
             exports['Rebirth'].application('character', {}, true);
-        }, false);
+            exports['Rebirth'].appEvent('character', "setCharacters", characters)
+        })
 
         onNet('Rebirth:server:Character:Create:Error', (status: string) => {
             console.log(status)

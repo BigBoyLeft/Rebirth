@@ -1,7 +1,8 @@
 **/node_modules/*
 
 # production
-/build
+build/*
+/.logs
 
 # misc
 Config.json
@@ -10,7 +11,6 @@ Config.json
 .DS_Store
 .yarn.installed
 *.pem
-/.natuna/logs
 
 # debug
 npm-debug.log*

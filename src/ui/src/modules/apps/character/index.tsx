@@ -129,6 +129,7 @@ const Character = ({ visible, characters, setVisible, setCharacters }) => {
     });
     useAppEvent("character", "SUCCESS", (character: any) => {
         setCharacters([...characters, character]);
+        setOpen2(false);
     });
 
     return (
@@ -192,6 +193,7 @@ const Character = ({ visible, characters, setVisible, setCharacters }) => {
                 </Slide>
                 <Slide in={state === "character"} direction="left">
                     <div className="UI_CHARACTER_BUTTONS">
+                        <Button onClick={() => setState('start')}>Back</Button>
                         <Button onClick={() => setOpen2(true)}>New Character</Button>
                     </div>
                 </Slide>
