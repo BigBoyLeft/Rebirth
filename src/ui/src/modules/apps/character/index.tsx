@@ -30,7 +30,7 @@ const Character = ({ visible, characters, setVisible, setCharacters }) => {
     const [open, setOpen] = useState(false);
     const [open2, setOpen2] = useState(false);
 
-    function getCharacterNet(character) {
+    function getCharacterNet(character: { accounts: any[]; }) {
         let net = 0;
         character.accounts.forEach((account: any) => {
             net += account.Balance;
@@ -38,7 +38,7 @@ const Character = ({ visible, characters, setVisible, setCharacters }) => {
         return net;
     }
 
-    const handleClose = async (status) => {
+    const handleClose = async (status: boolean) => {
         setOpen(false);
         if (status) {
             const arr = [];
@@ -72,7 +72,11 @@ const Character = ({ visible, characters, setVisible, setCharacters }) => {
         setOpen(true);
     };
 
-    function selectCharacter(character: any) {}
+    function selectCharacter(character: any) {
+        axios.post("https://Rebirth/character/select", {
+            ssn: character.ssn,
+        })
+    }
 
     const [newCharData, setNewCharData] = useState({
         fn: "",
@@ -117,7 +121,9 @@ const Character = ({ visible, characters, setVisible, setCharacters }) => {
         return isValid;
     };
 
-    useApplication("character", (status: boolean) => setVisible(status));
+    useApplication("character", (status: boolean, data: any) => {
+        setVisible(status)
+    });
     useAppEvent("character", "setCharacters", (characters: any) => {
         setCharacters(characters);
     });

@@ -27,13 +27,13 @@ This framework was built in hopes of becoming `superior` to other frameworks lik
 
 - [x] hud
 <<<<<<< HEAD
-- [] Character Selector
-- [] Phone
-- [] MDT
-- [] Banking
-- [] Interaction Menu
-- [] Dialogs
-- [] Notifications
+- [X] Character Selector
+- [ ] Phone
+- [ ] MDT
+- [ ] Banking
+- [ ] Interaction Menu
+- [ ] Dialogs
+- [ ] Notifications
 =======
 - [ ] Character Selector
 - [ ] Phone

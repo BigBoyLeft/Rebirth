@@ -21,6 +21,7 @@ RegisterCommand(
 
 function hudStatus(status: boolean) {
     hud.status = status;
+    Wait(5000)
     globalThis.exports["Rebirth"].appEvent("hud", "setHud", status);
 }
 exps("hudStatus", hudStatus);

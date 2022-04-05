@@ -17,6 +17,7 @@ class playerService {
         // SetEntityCoords(PlayerPedId(), -479.39, 5323.26, 80.0, true, true, true, true);
         // SetEntityHeading(PlayerPedId(), -85.0);
         require("@client/modules/player/hud");
+        require("@client/modules/player/characterSelect");
 
         RegisterCommand("car", async (source: any, args: any[]) => {
             let vehicleName = args[0] ? args[0] : "adder";
@@ -45,34 +46,6 @@ class playerService {
                 }
             }, 500);
         }, false);
-
-        API.registerAPI('character');
-        API.registerUICallback('character', 'delete', async (data: any, cb: any) => {
-            TriggerServerEvent('Rebirth:server:Character:Delete', data);
-            cb(true)
-        })
-        API.registerUICallback('character', 'create', async (data: any, cb: any) => {
-            console.log(data)
-            TriggerServerEvent('Rebirth:server:Character:Create', data);
-            cb(true)
-        })
-
-        onNet('Rebirth:server:Character:Init', (characters: any[]) => {
-            exports['Rebirth'].application('character', {}, true);
-            exports['Rebirth'].appEvent('character', "setCharacters", characters)
-        })
-
-        onNet('Rebirth:server:Character:Create:Error', (status: string) => {
-            console.log(status)
-            if (status === 'EXIST') {
-                exports['Rebirth'].appEvent('character', "ERROR", {})
-            }
-        })
-
-        onNet('Rebirth:server:Character:Create:Success', (character: any) => {
-            console.log("idk ")
-            exports['Rebirth'].appEvent('character', "SUCCESS", character)
-        })
 
         setInterval(() => {
             console.log("update");

@@ -60,7 +60,6 @@ export class characterService {
                 "data.characters": 1,
             },
         ).then((Characters: any) => {
-            console.log(JSON.stringify(Characters.data.characters))
             return Characters.data.characters;
         });
     }

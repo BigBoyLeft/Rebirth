@@ -2,8 +2,8 @@ import { MutableRefObject, useEffect, useRef } from "react";
 
 type NuiHandler<T> = (data: T) => void;
 
-export const useApplication = <T = any>(app: string, handler: (data: T) => void) => {
-    const savedHandler: MutableRefObject<NuiHandler<T>> = useRef(() => {});
+export const useApplication = <T = any>(app: string, handler: (status: boolean, data: T) => void) => {
+    const savedHandler: any = useRef(() => {});
     
     useEffect(() => {
         savedHandler.current = handler;
@@ -14,7 +14,7 @@ export const useApplication = <T = any>(app: string, handler: (data: T) => void)
             const data = JSON.parse(event.data);
             if (savedHandler.current) {
                 if (data.type === "application" && app === data.app) {
-                    savedHandler.current(data.data);
+                    savedHandler.current(data.visible, data.data);
                 }
             }
         }
