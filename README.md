@@ -26,6 +26,7 @@ This framework was built in hopes of becoming `superior` to other frameworks lik
 ## Framework NUI Features Checklist
 
 - [x] hud
+<<<<<<< HEAD
 - [] Character Selector
 - [] Phone
 - [] MDT
@@ -33,6 +34,14 @@ This framework was built in hopes of becoming `superior` to other frameworks lik
 - [] Interaction Menu
 - [] Dialogs
 - [] Notifications
+=======
+- [ ] Character Selector
+- [ ] Phone
+- [ ] Character Selector
+- [ ] Character Selector
+- [ ] Character Selector
+- [ ] Character Selector
+>>>>>>> main
 
 ## Framework Setup
 
