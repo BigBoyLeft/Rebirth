@@ -1,8 +1,6 @@
 "use strict";
 const esbuild = require("esbuild");
-const glob = require("tiny-glob");
 const path = require("path");
-const fs = require("fs");
 const Logger =  require("@ptkdev/logger");
 
 const logger = new Logger({

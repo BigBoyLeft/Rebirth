@@ -1,4 +1,4 @@
-import { Player } from "./player"
+import Player from "./player"
 import PlayerSchema from "@schemas/player"
 import logger from "@shared/logger.service";
 import { getIdentifier, getIdentifiers, generateuuid } from "@server/utils";
@@ -11,7 +11,7 @@ class playerService {
         const tick = setInterval(() => {
             if (frameworkInitialized) {
                 this.players = new Map<number, Player>();
-                logger.info("[Rebirth] Player Service Initialized.");
+                logger.info("[Rebirth] Loaded Player Module.");
                 clearInterval(tick)
             }
         }, 100)
@@ -79,6 +79,12 @@ class playerService {
         const player: any = await this.getPlayer(source)
         if (!player) return;
         return await player.cCharacter
+    }
+
+    async getRoutingNumber(): Promise<string> {
+        const player: any = await this.getPlayer(source)
+        if (!player) return;
+        return player.cCharacter.routingNumber;
     }
 }
 

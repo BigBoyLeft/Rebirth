@@ -1,8 +1,12 @@
 var exps = global.exports;
 
 on("Rebirth:Hud:Client:vehicle", function (status: boolean) {
-    globalThis.exports["Rebirth"].appEvent("hud", "setVehicle", status);
+    globalThis.exports["Rebirth"].appEvent("hud", "setVehicle", {status});
 });
+
+on("Rebirth:Hud:Client:setHudVisible", (status: boolean) => {
+    hudStatus(status);
+})
 
 function updateHudValue(key: string, value: number) {
     globalThis.exports["Rebirth"].appEvent("hud", "setValue", {
@@ -19,17 +23,20 @@ RegisterCommand(
     false
 );
 
+RegisterCommand("hud", (source: number, args: any[]) => {
+    hudStatus(!hud.status);
+}, false)
+
 function hudStatus(status: boolean) {
     hud.status = status;
-    Wait(5000)
-    globalThis.exports["Rebirth"].appEvent("hud", "setHud", status);
+    globalThis.exports["Rebirth"].appEvent("hud", "show", {status});
 }
 exps("hudStatus", hudStatus);
 
-// on('gameEventTriggered', (eventName: string, args: any) => {
-//     if (eventName === 'CEventNetworkEntityDamage') {
+// on("gameEventTriggered", (eventName: string, args: any) => {
+//     if (eventName === "CEventNetworkEntityDamage") {
 //         if (args[0] === args[1]) {
-//             updateHudValue('health', GetEntityHealth(PlayerPedId()) / 2)
+//             updateHudValue("health", GetEntityHealth(PlayerPedId()) / 2)
 //         }
 //     }
 // })

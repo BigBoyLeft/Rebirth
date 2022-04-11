@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\..\\[Fivem]\\[managers]\\spawnmanager"
+		}
+	],
+	"settings": {
+		"rpc.enabled": true
+	}
+}

@@ -81,6 +81,7 @@
         place-content: center;
         width: 100%;
         top: 90%;
+        column-gap: 25px;
         transform: translateY(-50%);
         z-index: 1000;
         filter: drop-shadow(15px 15px 10px rgba(0, 0, 0, 0.8));
@@ -151,6 +152,16 @@
                 padding: 15px;
             }
         }
+    }
+
+    .UI_CHARACTER_SPAWN {
+        position: absolute;
+        width: 600px;
+        top: 0%;
+        left: 53%;
+        transform: rotate(-90deg) translate(-50%, -50%) !important;
+        display: flex;
+        place-content: center;
     }
 }
 

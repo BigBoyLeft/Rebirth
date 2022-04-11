@@ -1,5 +1,5 @@
 import { Player } from "@client/modules/player/player";
-import API from '@client/modules/ui/api'
+import API from "@client/modules/ui/api"
 
 // import { tick } from "@client";
 
@@ -9,6 +9,7 @@ class playerService {
         onNet("Rebirth:client:Player:Connected", (player: { _doc: Player }) => {
             this.Player = player._doc;
             this.initPlayer();
+            emit("Rebirth:Client:Init")
         });
     }
 
@@ -19,16 +20,12 @@ class playerService {
         require("@client/modules/player/hud");
         require("@client/modules/player/characterSelect");
 
-        RegisterCommand("car", async (source: any, args: any[]) => {
+        exports['Rebirth'].newCommand("car", 'Spawns your desired car', async (source: any, args: any[]) => {
             let vehicleName = args[0] ? args[0] : "adder";
-            if (!IsModelInCdimage(vehicleName) || !IsModelAVehicle(vehicleName)) {
-                emitNet("js:chat", "spawn a " + vehicleName + ". Who even wants their spawning to actually ^*succeed?", [0, 0, 0]);
-                return;
-            }
+            if (!IsModelInCdimage(vehicleName) || !IsModelAVehicle(vehicleName)) return;
 
             RequestModel(vehicleName);
             let i = setInterval(() => {
-                emitNet("js:chat", "model loading", [0, 0, 0]);
                 if (IsPedInAnyVehicle(PlayerPedId(), true)) {
                     DeleteEntity(GetVehiclePedIsIn(PlayerPedId(), false));
                 }
@@ -37,19 +34,26 @@ class playerService {
                     let pos = GetEntityCoords(playerPed);
                     let vehicle = CreateVehicle(vehicleName, pos[0], pos[1], pos[2], GetEntityHeading(playerPed), true, false);
                     SetPedIntoVehicle(playerPed, vehicle, -1);
-
+                    exports['Rebirth'].chat_message("Info", `Spawned ${vehicleName}`, "campaign", "blue");
                     SetEntityAsNoLongerNeeded(vehicle);
                     SetModelAsNoLongerNeeded(vehicleName);
-
-                    emitNet("js:chat", "model loaded", [0, 255, 0]);
                     clearInterval(i);
                 }
             }, 500);
-        }, false);
+        });
 
-        setInterval(() => {
-            console.log("update");
-        }, 300000);
+        exports["Rebirth"].newCommand("tp", "Teleports player to desired coords", async (source: any, args: any[]) => {
+            exports['Rebirth'].chat_message("Teleportation", "You successfuly teleported to coordinates", "flight_takeoff", "green");
+        });
+        exports["Rebirth"].newCommand("kill", "Kills Yourself", async (source: any, args: any[]) => {
+            exports['Rebirth'].chat_message("Killed Yourself", "You popped some perkies and killed yourself", "medication", "blue");
+        });
+        exports["Rebirth"].newCommand("911", "Sends a 911 call to Emergency Services", async (source: any, args: any[]) => {
+            exports['Rebirth'].chat_message("911", args[0], "local_police", "red");
+        });
+        exports["Rebirth"].newCommand("311", "Sends a 311 call to Emergency Services", async (source: any, args: any[]) => {
+            exports['Rebirth'].chat_message("311", args[0], "local_pharmacy", "orange");
+        });
     }
 }
 

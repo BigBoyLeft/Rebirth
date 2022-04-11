@@ -11,14 +11,14 @@ const Config = require("@/Config");
  * import Players from "@schemas/player"
  *
  * ```typescript
- * const player = await Players.findOne().where('name').equals("Left");
+ * const player = await Players.findOne().where("name").equals("Left");
  * console.log(player)
  * ```
  * @Description Finds One Player with the name "Left"
  * @returns Array
  *
  * ```typescript
- * const player = await Players.find().where('name').equals("Left");
+ * const player = await Players.find().where("name").equals("Left");
  * console.log(player)
  * ```
  */

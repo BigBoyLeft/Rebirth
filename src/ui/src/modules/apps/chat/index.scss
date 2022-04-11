@@ -1,0 +1,156 @@
+.UI_CHAT {
+    position: absolute;
+    width: 25%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+
+    .UI_CHAT_INPUT {
+        position: absolute;
+        display: flex;
+        width: calc(100% - 30px);
+        height: 50px;
+        bottom: 19px;
+        background: rgba(#141414, 0.8);
+        column-gap: 10px;
+        input {
+            padding: 10px 10px;
+            font-size: 18px;
+            width: 100%;
+            background: none;
+            color: #fff;
+            outline: none;
+            border: none;
+            &:focus {
+                outline: none;
+                border: 2px solid rgba(#eb4034, 0.75);
+            }
+        }
+    }
+
+    .UI_CHAT_SUGGESTIONS {
+        position: absolute;
+        top: 95%;
+        list-style-type: none;
+        box-sizing: border-box;
+        width: calc(100% - 30px);
+        border: none;
+        padding: 0 5px 0 0 !important;
+        display: flex;
+        flex-direction: column;
+        row-gap: 5px;
+        max-height: 50%;
+        overflow: scroll;
+        
+        .UI_CHAT_SUGGESTIONS_SUGGESTION {
+            padding: 5px 10px !important;
+            display: grid;
+            grid-template-columns: 5% 95%;
+            grid-template-areas:
+            "image name"
+            "image description";
+            background: rgba(#141414, 0.8);
+            column-gap: 10px;
+            cursor: pointer;
+            transition: all 0.15s ease-in-out;
+
+            &:hover {
+                background: rgba(#242424, 0.8);
+                transform: scale(1.01) translateZ(0);
+            }
+
+            .UI_CHAT_SUGGESTIONS_ICON {
+                grid-area: image;
+                display: grid;
+                place-content: center;
+                place-items: center;
+            }
+
+            .UI_CHAT_SUGGESTIONS_NAME {
+                grid-area: name;
+                text-transform: capitalize
+            }
+
+            .UI_CHAT_SUGGESTIONS_DESCIRPTION {
+                grid-area: description;
+            }
+        }
+    }
+
+    .UI_CHAT_WRAPPER {
+        display: flex;
+        flex-direction: column-reverse;
+        overflow-y: scroll;
+        overscroll-behavior-y: contain;
+        scroll-snap-type: y proximity;
+        height: calc(100% - 60px);
+        padding: 0 !important;
+        margin: 0 !important;
+        
+        .UI_CHAT_MESSAGE {
+            position: relative;
+            margin-bottom: 7.5px;
+            word-break: break-word;
+            box-sizing: border-box;
+            display: grid;
+            grid-template-columns: 10% 90%;
+            grid-template-areas:
+                "image title"
+                "image message";
+            width: calc(100% - 10px);
+            height: auto;
+            background: rgba(#302c2c, 0.8);
+
+
+            .UI_CHAT_MESSAGE_TITLE {
+                grid-area: title;
+                width: 100%;
+                height: 100%;
+                margin-top: 5px;
+            }
+            .UI_CHAT_MESSAGE_MESSAGE {
+                grid-area: message;
+                width: 100%;
+                margin-bottom: 5px;
+            }
+
+            .UI_CHAT_MESSAGE_ICON {
+                position: relative;
+                grid-area: image;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100;
+                height: 100%;
+            }
+
+            &.green {
+                background: rgba(#4ec772, 0.8);
+                color: black;
+            }
+
+            &.red {
+                background: rgba(#c74e4e, 0.8);
+            }
+
+            &.blue {
+                background: rgba(#4e7ac7, 0.8);
+            }
+
+            &.yellow {
+                background: rgba(#c7c14e, 0.8);
+                color: black;
+            }
+
+            &.purple {
+                background: rgba(#8d4ec7, 0.8);
+            }
+
+            &.orange {
+                background: rgba(#c7824e, 0.8);
+                color: black
+            }
+        }
+    }
+}

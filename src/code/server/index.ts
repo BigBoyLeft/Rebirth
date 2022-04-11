@@ -6,8 +6,9 @@ import Database from "@database";
 import logger from "@shared/logger.service";
 import playerService from "@server/player/player.service";
 import { characterService } from "@server/player/character/character.service";
+import {Banking} from "@server/Services";
 
-export var frameworkInitialized = false;
+export let frameworkInitialized = false;
 
 onNet("Rebirth:Client:Init", () => {
     let src = source;
@@ -33,6 +34,9 @@ export class ServerClass {
 
     initFramework = async (resourceName: string) => {
         require("@server/player");
+        Banking.getAccounts('611112708').then((accounts) => {
+            logger.debug(JSON.stringify(accounts));
+        })
         if (GetCurrentResourceName() === resourceName) {
             console.log(
                 [
@@ -57,7 +61,7 @@ export class ServerClass {
     loadDatabase = async () => {
         this.database = new Database();
         await this.database.connect().then(() => {
-            logger.info("[Rebirth] Database connected.");
+            logger.info("[Rebirth] Loaded Database Module.");
         });
     };
 }

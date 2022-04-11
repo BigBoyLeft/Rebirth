@@ -1,19 +1,17 @@
-import '@citizenfx/client'
+import "@citizenfx/client";
 import TickService from "@shared/tick.service";
 
 // export const tick = new TickService();
 
 export class ClientClass {
-    constructor() {
-        on("onClientResourceStart", this.onClientResourceStart);
-    }
+  constructor() {
+    on("onClientResourceStart", this.onClientResourceStart);
+  }
 
-    onClientResourceStart = async (resourceName: string) => {
-        require("@client/modules/player");
-        require("@client/modules/ui");
-        if (resourceName === GetCurrentResourceName()) {
-            console.log(
-                [`
+  onClientResourceStart = async (resourceName: string) => {
+    if (resourceName === GetCurrentResourceName()) {
+        console.log(
+            [`
 \x1b[36m######                                      
 \x1b[36m#     # ###### #####  # #####  ##### #    # 
 \x1b[36m#     # #      #    # # #    #   #   #    # 
@@ -21,17 +19,16 @@ export class ClientClass {
 \x1b[36m#   #   #      #    # # #####    #   #    # 
 \x1b[36m#    #  #      #    # # #   #    #   #    # 
 \x1b[36m#     # ###### #####  # #    #   #   #    # 
-                `
-                ].join("\n")
-            )
-            console.log("[Rebirth]: Framework initializing.");
-            
-            emitNet("Rebirth:Client:Init");
-        }
+        `].join("\n"));
+      console.log("[Rebirth]: Framework initializing.");
+
+      await require("@client/modules");
+      emitNet("Rebirth:Client:Init");
     }
+  };
 }
 
 const client = new ClientClass();
 global.exports("client", () => {
-    return client
-})
+  return client;
+});

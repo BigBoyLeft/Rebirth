@@ -1,5 +1,5 @@
 import Logger from "@ptkdev/logger";
-const path = require('path');
+const path = require("path");
 
 export const logger: any = new Logger({
     language: "en",

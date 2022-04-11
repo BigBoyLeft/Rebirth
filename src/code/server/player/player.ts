@@ -1,4 +1,4 @@
-export class Player {
+class Player {
     cid: string;
     name: string;
     identifiers: any;
@@ -15,3 +15,5 @@ export class Player {
         this.joined = joined
     }
 }
+
+export default Player;

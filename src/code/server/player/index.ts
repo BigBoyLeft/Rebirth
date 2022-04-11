@@ -28,7 +28,7 @@ AddEventHandler("playerConnecting", async (name: string, setKickReason: (msg: st
         } else {
             deferrals.update("🛠️ Waiting for framework to initialize...");
         }
-    }, 5000);
+    }, 1000);
 
     async function connect() {
         deferrals.update("Running Flight Checks");

@@ -31,46 +31,48 @@ class DiscordClient {
     }
 
     init = async () => {
-        this.client.once("ready", () => {
-            logger.info("[Rebirth] Discord API Connection Established.");
-        });
+        // this.client.once("ready", () => {
+            logger.info("[Rebirth] Loaded Discord Module.");
+        // });
 
-        this.client.login(Config.DISCORD_TOKEN).then(() => {
-            this.client.guilds.cache.forEach((guild: any) => {
-                if (guild.id === "881218189537718342") {
-                    this.guild = guild;
-                }
-            });
-        });
+        // this.client.login(Config.DISCORD_TOKEN).then(() => {
+        //     this.client.guilds.cache.forEach((guild: any) => {
+        //         if (guild.id === "881218189537718342") {
+        //             this.guild = guild;
+        //         }
+        //     });
+        // });
     };
 
     inDiscord = async (uid: any): Promise<boolean> => {
         let found = false;
-        await this.guild.members.cache.find((memberO: any) => {
-            const member = JSON.parse(JSON.stringify(memberO));
-            if (member.userId === uid) return (found = true);
-        });
-        if (found) {
-            return true;
-        } else return false;
+        return true
+        // await this.guild.members.cache.find((memberO: any) => {
+        //     const member = JSON.parse(JSON.stringify(memberO));
+        //     if (member.userId === uid) return (found = true);
+        // });
+        // if (found) {
+        //     return true;
+        // } else return false;
     };
 
     hasRole = async (uid: any, role: any): Promise<string> => {
         return new Promise(async (resolve, reject) => {
-            if ((await this.inDiscord(uid)) === false) {
-                return resolve("NOTFOUND");
-            } else {
-                this.guild.members.cache.find((memberO: any) => {
-                    const member = JSON.parse(JSON.stringify(memberO));
-                    if (member.userId === uid) {
-                        if (member.roles.find((role2: any) => role2 === role)) {
-                            return resolve("YES");
-                        } else {
-                            return resolve("NO");
-                        }
-                    }
-                });
-            }
+            return resolve("YES");
+            // if ((await this.inDiscord(uid)) === false) {
+            //     return resolve("NOTFOUND");
+            // } else {
+            //     this.guild.members.cache.find((memberO: any) => {
+            //         const member = JSON.parse(JSON.stringify(memberO));
+            //         if (member.userId === uid) {
+            //             if (member.roles.find((role2: any) => role2 === role)) {
+            //                 // return resolve("YES");
+            //             } else {
+            //                 return resolve("NO");
+            //             }
+            //         }
+            //     });
+            // }
         });
     };
 

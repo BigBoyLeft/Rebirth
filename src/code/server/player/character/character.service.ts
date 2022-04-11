@@ -1,5 +1,5 @@
 import { Character } from "@server/player/character/character";
-import { Player } from "@server/player/player";
+import Player from "@server/player/player";
 import PlayerSchema from "@schemas/player";
 import logger from "@shared/logger.service";
 import { getIdentifier, getIdentifiers, generateuuid } from "@server/utils";

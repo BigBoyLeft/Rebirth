@@ -17,24 +17,14 @@ This framework was built in hopes of becoming `superior` to other frameworks lik
 ## Framework Features
 | Feature     | Description |
 | :----       | :-----      |
+| Custom Chat System | Custom Chat System built from scratch and build completly into the framework |
 | Single Handler System | All Ticks, and Events are handled within the framework |
 | Database Wrapper   | Easy to use Database Wrapper based around MongoDB |
 | Command Wrapper | Ease to use Command Wrapper which replaces the old & boring native `RegisterCommand` |
 | NUI | Fast and Responsive `UI` build using `ReactJS` |
 | NUI Wrapper | Easy to use NUI Wrapper which makes it easy to talk between the `UI` and the `Client` |
 
-## Framework NUI Features Checklist
-
-- [x] hud
-- [X] Character Selector
-- [ ] Phone
-- [ ] MDT
-- [ ] Banking
-- [ ] Interaction Menu
-- [ ] Dialogs
-- [ ] Notifications
-
-## Framework Setup
+# Framework Setup
 
 1. Clone Repository.
 2. cd into the Repository via `cd Rebirth` and run `npm install` to install all packages.
@@ -61,5 +51,10 @@ This framework was built in hopes of becoming `superior` to other frameworks lik
 | `npm run UI:Build` | Compiles the UI into a Production Build |
 | `npm run UI:Watch` | Starts the Development server which you can access in your browser via `http://localhost:3000` |
 | `npm run UI:Preview` | Serves the Production build which you can access in your browser via `http://localhost:4173` |
+
+## Framework Exports
+
+| Export | Arguments | Description |
+
 
 ###### Copyright &copy; 2022 Rebirth Networks owned by [Left](https://github.com/BigBoyLeft). Rebirth Networks and its associates are not affiliated with or endorsed by Rockstar North, Take-Two Interactive or other rightsholders. Any trademarks used belong to their respective owners.
