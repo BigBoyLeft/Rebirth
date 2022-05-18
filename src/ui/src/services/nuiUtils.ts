@@ -92,7 +92,7 @@ export const makeRequest = <T = any>(url, data): Promise<T> => {
         try {
           const response = await debugRequests.get(url).cb(data);
           if (!response) resolve({error: "no response"});
-          resolve(response)
+          resolve({data: response})
         } catch (e) {
           reject(e)
         }

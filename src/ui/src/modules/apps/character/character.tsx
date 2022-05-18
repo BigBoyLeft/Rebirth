@@ -26,6 +26,7 @@ import Logo from "@assets/rebirth.png";
 
 // [ [ Mui ] Components ]
 
+import CircularProgress from "@mui/material/CircularProgress";
 import TextField from "@mui/material/TextField";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
@@ -39,6 +40,8 @@ import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import Slide from "@mui/material/Slide";
 import Grow from "@mui/material/Grow";
+import Box from "@mui/material/Box";
+import LoadingButton from "@mui/lab/LoadingButton";
 
 // [ [ Mui ] Icons ]
 
@@ -92,16 +95,13 @@ debugRequest("https://Rebirth/api/character/delete", (data: any) => {
 debugRequest("https://Rebirth/api/character/create", (data: any) => {
   var ssn = (Math.floor(Math.random() * 900000000) + 100000000).toString();
   return {
-    success: true,
-    character: {
-      ssn: ssn,
-      fn: data.fn,
-      ln: data.ln,
-      dob: data.dob,
-      gender: data.gender,
-      phoneNumber: ssn + Math.floor(Math.random() * 9) + 1,
-      email: data.fn + data.ln + "@rebirth.city",
-    },
+    ssn: ssn,
+    fn: data.fn,
+    ln: data.ln,
+    dob: data.dob,
+    gender: data.gender,
+    phoneNumber: ssn + Math.floor(Math.random() * 9) + 1,
+    email: data.fn + data.ln + "@rebirth.city",
   };
 });
 
@@ -141,22 +141,26 @@ function CharacterSelector() {
     });
   }
 
+  const [waiting, setWaiting] = useState(false);
   function attemptCreateCharacter() {
     if (errors && errors.length > 0) return;
     if (newCharacter.fn.length < 1) return;
     if (newCharacter.ln.length < 1) return;
 
+    setWaiting(true);
     makeRequest("https://Rebirth/api/character/create", {
       fn: newCharacter.fn,
       ln: newCharacter.ln,
       dob: newCharacter.dob,
       gender: newCharacter.gender,
     }).then((data: any) => {
-      if (data.data.error) {
+      console.log(JSON.stringify(data));
+      if (data.data?.error) {
         // notify with [ data.data.message ]
       }
       setCharacters([...characters, data.data]);
       setNewCharacterDialog(false);
+      setWaiting(false);
     });
   }
 
@@ -272,54 +276,48 @@ function CharacterSelector() {
                       }
                       alt="mugshot"
                     />
-                    <div className={Styles.Name}>
-                      <TextField
-                        sx={{ marginTop: "15px" }}
-                        label="Name"
-                        InputProps={{ readOnly: true }}
-                        value={character.fn + " " + character.ln}
-                      />
-                    </div>
-                    <div className={Styles.SSN}>
-                      <TextField
-                        sx={{ marginTop: "15px" }}
-                        label="Social Security Number (SSN)"
-                        InputProps={{ readOnly: true }}
-                        value={character.ssn}
-                      />
-                    </div>
-                    <div className={Styles.DOB}>
-                      <TextField
-                        sx={{ marginTop: "15px" }}
-                        label="Name"
-                        InputProps={{ readOnly: true }}
-                        value={new Date(character.dob).toLocaleDateString()}
-                      />
-                    </div>
-                    <div className={Styles.gender}>
-                      <TextField
-                        sx={{ marginTop: "15px" }}
-                        label="Name"
-                        InputProps={{ readOnly: true }}
-                        value={character.gender}
-                      />
-                    </div>
-                    <div className={Styles.phoneNumber}>
-                      <TextField
-                        sx={{ marginTop: "15px" }}
-                        label="Name"
-                        InputProps={{ readOnly: true }}
-                        value={character.phoneNumber}
-                      />
-                    </div>
-                    <div className={Styles.email}>
-                      <TextField
-                        sx={{ marginTop: "15px" }}
-                        label="Name"
-                        InputProps={{ readOnly: true }}
-                        value={character.email}
-                      />
-                    </div>
+                    <TextField
+                      sx={{ marginTop: "15px" }}
+                      label="Name"
+                      InputProps={{ readOnly: true }}
+                      value={character.fn + " " + character.ln}
+                      fullWidth
+                    />
+                    <TextField
+                      sx={{ marginTop: "15px" }}
+                      label="Social Security Number (SSN)"
+                      InputProps={{ readOnly: true }}
+                      value={character.ssn}
+                      fullWidth
+                    />
+                    <TextField
+                      sx={{ marginTop: "15px" }}
+                      label="Name"
+                      InputProps={{ readOnly: true }}
+                      value={new Date(character.dob).toLocaleDateString()}
+                      fullWidth
+                    />
+                    <TextField
+                      sx={{ marginTop: "15px" }}
+                      label="Name"
+                      InputProps={{ readOnly: true }}
+                      value={character.gender}
+                      fullWidth
+                    />
+                    <TextField
+                      sx={{ marginTop: "15px" }}
+                      label="Name"
+                      InputProps={{ readOnly: true }}
+                      value={character.phoneNumber}
+                      fullWidth
+                    />
+                    <TextField
+                      sx={{ marginTop: "15px", width: "100%" }}
+                      label="Name"
+                      InputProps={{ readOnly: true }}
+                      value={character.email}
+                      fullWidth
+                    />
                   </div>
                 ))}
               </div>
@@ -461,18 +459,19 @@ function CharacterSelector() {
                   }}
                   renderInput={(params) => <TextField {...params} />}
                 />
-                <Button
+                <LoadingButton
                   sx={{
                     width: "50%",
                     fontSize: "20px",
-                    transform: "skew(0deg)",
                   }}
                   disabled={!formIsValid()}
                   onClick={attemptCreateCharacter}
+                  loading={waiting}
+                  loadingIndicator={<CircularProgress size={30} />}
+                  variant="contained"
                 >
-                  <PersonAddAlt1Icon />
                   Create
-                </Button>
+                </LoadingButton>
               </div>
             </form>
           </DialogContent>

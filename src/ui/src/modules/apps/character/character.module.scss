@@ -90,17 +90,16 @@
             .Item {
                 background: #0d0c0c;
                 border-radius: 5px;
-                max-width: 300px;
+                max-width: 400px;
                 width: 17.5%;
                 height: fit-content;
                 padding: 100px 30px 30px 30px;
-                transition: all 0.15s ease;
+                transition: all 0.20s ease;
                 transform: translateZ(0);
                 backface-visibility: hidden;
                 box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.5);
                 cursor: pointer;
                 filter: blur(0px);
-                display: grid;
                 justify-content: center;
                 align-items: center;
                 column-gap: 20px;
@@ -112,11 +111,12 @@
 
                 &.active {
                     background: #141313;
-                    transform: scale(1.048);
+                    width: 20%;
                 }
 
                 &:hover {
-                    transform: scale(1.048);
+                    width: 20%;
+                    background-color: #141313;
                 }
 
                 .mugshot {
