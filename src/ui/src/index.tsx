@@ -24,6 +24,11 @@ const theme = createTheme({
         lightRed: { main: "#ef5350", darker: "", contrastText: "" },
         orange2: { main: "#ffb300", darker: "", contrastText: "" },
     },
+    components: {
+        MuiDialogContent: {
+            styleOverrides: { root: { paddingTop: `5px !important` } }
+        }
+    }
 });
 
 declare module "@mui/material/styles" {

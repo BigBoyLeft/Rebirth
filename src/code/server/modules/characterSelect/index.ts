@@ -2,126 +2,79 @@ import { characterService } from "@server/player/character/character.service";
 import { Character } from "@server/player/character/character";
 import PlayerSchema from "@schemas/player";
 import { RandomSSN } from "ssn";
-import logger from "@shared/logger.service";
 import playerService from "@server/player/player.service";
+import { debug } from "@shared/logger.service";
+import { randomFromRange, randomNumbers, randomString } from "@server/utils";
 
-RegisterCommand(
-    "createCharacter",
-    async function (source: any, args: any, raw: any) {
-        const player = await playerService.getPlayer(source);
-        new characterService(player)
-            .newCharacter(
-                new Character({
-                    ssn: new RandomSSN("CA").value().toString(),
-                    fn: args[0],
-                    ln: args[1],
-                    dob: args[2],
-                    gender: args[3],
-                    phoneNumber: args[4],
-                    routingNumber: args[5],
-                    email: args[6],
-                    address: "NONE",
-                    accounts: [],
-                    inventory: [],
-                    clothing: {},
-                    cHistory: [],
-                })
-            )
-            .then((character) => {
-                logger.debug(character);
-            });
-    },
-    false
-);
+import CB from "@server/modules/cb";
 
-RegisterCommand(
-    "deleteCharacter",
-    async function (source: any, args: any, raw: any) {
-        const player = await playerService.getPlayer(source);
-        new characterService(player).deleteCharacter(args[0]);
-    },
-    false
-);
+function generateSSN(): string {
+  const first = `${randomString(1, "1234578")}${randomNumbers(2).join("")}`;
+  const middle = `${randomString(1, "123456789")}${randomNumbers(1).join("")}`;
+  const end = `${randomString(1, "123456789")}${randomNumbers(3).join("")}`;
 
-RegisterCommand(
-    "loadCharacter",
-    async function (source: any, args: any, raw: any) {
-        const player = await playerService.getPlayer(source);
-        new characterService(player).loadCharacter(args[0]).then(async (character: Character) => {
-            await playerService.loadCharacter(source, character);
-        });
-    },
-    false
-);
+  return `${first}${middle}${end}`;
+}
 
-RegisterCommand(
-    "getCharacter",
-    async function (source: any, args: any, row: any) {
-        console.log(await playerService.getCCharacter(source));
-    },
-    false
-);
+class CharacterSelect {
+  constructor() {
+    this.callbacks();
+  }
 
-RegisterCommand(
-    "character",
-    async (source: any, args: any, row: any) => {
-        let src = source;
+  callbacks() {
+    CB.register("Character:Delete", async (data: any) => {
+      return new Promise(async (resolve, reject) => {
+        let src = global.source;
         const player = await playerService.getPlayer(src);
-        let characters = await new characterService(player).getCharacters();
-        TriggerClientEvent("Rebirth:server:Character:Init", src, characters);
-    },
-    false
-);
-
-onNet("Rebirth:server:Character:Select", async (data: any) => {
-    let src = global.source;
-    const player = await playerService.getPlayer(src);
-    new characterService(player).loadCharacter(data.ssn).then(async (character: Character) => {
-        await playerService.loadCharacter(src, character);
-        TriggerClientEvent("Rebirth:server:Character:Select", src);
+        let response = await new characterService(player).deleteCharacter(
+          data.ssn
+        );
+        resolve(response);
+      });
     });
-})
-
-onNet("Rebirth:server:Character:Create", async (data: any) => {
-    let src = global.source;
-    const player = await playerService.getPlayer(src);
-    PlayerSchema.find(
-        {
-            "data.characters.ln": data.ln,
-        },
-        {
-            "data.characters.$": 1,
-        }
-    ).then(async (Fcharacter: any) => {
-        if (Fcharacter.length <= 0) {
-            const newChar = await new characterService(player).newCharacter(
-                new Character({
-                    ssn: new RandomSSN("CA").value().toString(),
-                    fn: data.fn,
-                    ln: data.ln,
-                    dob: data.dob,
-                    gender: data.gender,
-                    phoneNumber: Math.floor(1000000000 + Math.random() * 9000000000).toString(),
-                    routingNumber: String(Math.random()).substring(2,11),
-                    email: `${data.fn.toLowerCase()}${data.ln.toLowerCase()}@rebirth.net`,
-                    address: "NONE",
-                    accounts: [],
-                    inventory: [],
-                    clothing: {},
-                    cHistory: [],
-                })
-            );
-
-            emitNet("Rebirth:server:Character:Create:Success", src, newChar);
-        } else {
-            emitNet("Rebirth:server:Character:Create:Error", src, "EXIST");
-        }
+    CB.register("Character:Create", async (data: any) => {
+      return new Promise(async (resolve, reject) => {
+        let src = global.source;
+        const player = await playerService.getPlayer(src);
+        PlayerSchema.find(
+          { "data.characters.ln": data.ln },
+          { "data.characters.$": 1 }
+        ).then(async (FCharacter: any) => {
+          const newCharacter = await new characterService(player).newCharacter(
+            new Character({
+              ssn: generateSSN(),
+              fn: data.fn,
+              ln: data.ln,
+              dob: data.dob,
+              gender: data.gender,
+              phoneNumber: Math.floor(
+                1000000000 + Math.random() * 9000000000
+              ).toString(),
+              email: `${data.fn.toLowerCase()}${data.ln.toLowerCase()}@rebirth.net`,
+              pAddress: "NONE",
+              inventory: [],
+              clothing: {},
+              cHistory: [],
+            })
+          );
+          resolve(newCharacter);
+        });
+      });
     });
-});
+    CB.register("Character:Login", async (data: any) => {
+      return new Promise(async (resolve, reject) => {
+        let src = global.source;
+        debug("SRC:" + src);
+        const player = await playerService.getPlayer(src);
+        new characterService(player)
+          .loadCharacter(data.ssn)
+          .then(async (character: Character) => {
+            let status = await playerService.loadCharacter(src, character);
+            resolve(status);
+          });
+      });
+    });
+  }
+}
 
-onNet("Rebirth:server:Character:Delete", async (data: any) => {
-    let src = global.source;
-    const player = await playerService.getPlayer(src);
-    new characterService(player).deleteCharacter(data.ssn);
-    emitNet("Rebirth:server:Character:Delete:Success", src);
-});
+export default new CharacterSelect();

@@ -1,7 +1,5 @@
 import API from "@client/modules/ui/api";
 
-let exps = global.exports;
-
 interface ICommand {
   command: string;
   description: string;
@@ -25,23 +23,23 @@ class Chat {
       () => {
         this.isFocused = true;
         SetNuiFocus(true, true);
-        exports["Rebirth"].appEvent("chat", "focus", {});
+        exports["Rebirth"].appAction("chat", {}, "focus");
       },
       false
     );
     RegisterCommand("-Rebirthchatidk", () => {}, false);
     RegisterKeyMapping("+Rebirthchatidk", "Open Chat", "keyboard", "t");
-    exps("chat_message", this.newMessage);
+    global.exports("chat_message", this.newMessage);
   }
 
   newMessage(type: string, message: string, icon: string, color: string) {
     if (!message || !type) return;
-    exports["Rebirth"].appEvent("chat", "message", {
+    exports["Rebirth"].appAction("chat", {
       message,
       type,
       icon,
       color,
-    });
+    }, "message");
     return true
   }
 
@@ -61,18 +59,30 @@ class Chat {
   }
 
   setCommand(command: string, description: string) {
-    exports["Rebirth"].appEvent("chat", "command", { command, description });
+    exports["Rebirth"].appAction("chat", { command, description }, "command");
+  }
+
+  refreshCommands() {
+    exports["Rebirth"].appAction("chat", { commands: Array.from(commands) }, "commands");
   }
 }
 let chat = new Chat()
 
-function newCommand(command: string, description: string, callback: any) {
+function newCommand(command: string, description: string, callback?: any) {
   chat.setCommand(command, description);
-  RegisterCommand(command, (source: any, args: any) => {
-    callback(source, args)
-  }, false);
+  if (callback) {
+    RegisterCommand(command, callback, false);
+  };
   commands.set(command, { command, description });
 }
-exps("newCommand", newCommand);
+global.exports("newCommand", newCommand);
+const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+onNet("Rebirth:Chat:Commands", async (commands: any) => {
+  for (var i = 0; i < commands.length; i++) {
+    let command = commands[i][1];
+    newCommand(command.command, command.description);
+    await sleep(50);
+  }
+})
 
 export default chat;

@@ -1,5 +1,6 @@
 import Logger from "@ptkdev/logger";
 const path = require("path");
+const Config = require("@Config");
 
 export const logger: any = new Logger({
     language: "en",
@@ -20,4 +21,10 @@ export const logger: any = new Logger({
         error_log: path.posix.join(GetResourcePath(GetCurrentResourceName()), ".logs", "errors.log"),
     },
 });
+
+export const debug = (message: any, tag?: string): void => {
+    if (!Config.DeveloperMode) return
+    logger.debug(message, tag);
+}
+
 export default logger;

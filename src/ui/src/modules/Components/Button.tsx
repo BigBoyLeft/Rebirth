@@ -2,21 +2,30 @@ import ButtonUnstyled, { buttonUnstyledClasses, ButtonUnstyledProps } from "@mui
 import { styled } from "@mui/system";
 
 const ButtonRoot = styled("button")`
+    color: #ffd9da;
+    background: #ab3339;
     height: auto !important;
     font-family: "Oswald", sans-serif;
     font-weight: bold;
     font-size: 0.875rem;
-    padding: 12px 24px;
-    color: white;
+    padding: 12px 20px;
     transition: all 150ms ease;
     cursor: pointer;
     border: none;
-    background: #E53935;
-    transform: skew(-10deg);
+    // transform: skew(-10deg);
     letter-spacing: 1px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    column-gap: 15px;
+
+    svg {
+        margin-top: 2%;
+    }
 
     &:hover {
-        background-color: #C62828;
+        background-color: #ffb3a9;
+        color: #690005;
     } 
 
     &.${buttonUnstyledClasses.active} {

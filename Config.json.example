@@ -1,4 +1,12 @@
 {
-    "DISCORD_TOKEN": "",
-    "DATABASE_CONNECTION": "mongodb://localhost:27017/YOURDATABASENAME"
+  "DeveloperMode": true,
+  "Discord": {
+    "DiscordInvite": "https://discord.gg/SomeCoolAssDiscord",
+    "Discordtoken": "",
+    "GuildID": "",
+    "WhitelistRole": ""
+  },
+  "Database": {
+    "connect": "mongodb://localhost:27017/Rebirth"
+  }
 }

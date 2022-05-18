@@ -6,15 +6,17 @@ export interface IPlayer {
     identifiers: string[],
     tokens: string[],
     data: JSON,
+    PermissionLevel: number,
     joined: Date, 
 }
 
 export const PlayerSchema = new Schema({
     cid: String,
     name: String,
-    identifiers: [String],
-    tokens: [String],
+    identifiers: Array,
+    tokens: Array,
     data: JSON,
+    PermissionLevel: Number,
     joined: Date,
 });
 

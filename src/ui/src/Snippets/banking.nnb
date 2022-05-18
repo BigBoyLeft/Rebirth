@@ -1,0 +1,38 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "#### Routing Transit Number Generator\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "const generateRoutingNumber = (): any => {\r\n  const numDigits = 8;\r\n  const partial = Array(numDigits)\r\n    .fill(0)\r\n    .map((_, __) => 0 + Math.round(Math.random() * (9 - 0)));\r\n  let sum = 0;\r\n  for (let i = 0; i < numDigits; i += 3) {\r\n    sum +=\r\n      partial[i] * 3 +\r\n      partial[i + 1] * 7 +\r\n      (i + 2 < numDigits ? partial[i + 2] : 0);\r\n  }\r\n  const checkDigit = (10 - (sum % 10)) % 10;\r\n\r\n  return `${partial.join(\"\")}${checkDigit}`;\r\n};\r\nconst routingNumber = generateRoutingNumber();\r\n\r\nconst validateRoutingNumber = (routingNumber: any): boolean => {\r\n  const digits = routingNumber.split(\"\").map((d) => parseInt(d, 10));\r\n  const checksum =\r\n    3 * (digits[0] + digits[3] + digits[6]) +\r\n    7 * (digits[1] + digits[4] + digits[7]) +\r\n    (digits[2] + digits[5] + digits[8]);\r\n\r\n  return checksum % 10 === 0;\r\n};\r\nconsole.log(routingNumber + \" | \" + validateRoutingNumber(routingNumber));\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "754761310 | true",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        }
+    ]
+}

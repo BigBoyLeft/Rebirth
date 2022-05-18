@@ -1,7 +1,7 @@
 {
   "name": "rebirth",
   "author": "left#2118",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "Rebirth Framework",
   "license": "MIT",
   "private": true,
@@ -22,6 +22,7 @@
     "axios": "^0.26.1",
     "discord.js": "^13.6.0",
     "esbuild": "^0.14.27",
+    "glob": "^8.0.1",
     "gulp": "^4.0.2",
     "mongoose": "^6.2.7",
     "node-fetch": "^3.2.3",

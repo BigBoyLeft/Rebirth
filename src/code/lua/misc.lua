@@ -1,5 +1,35 @@
-RegisterNetEvent('Rebirth:Client:Init', function()
+DisplayRadar(false);
+RegisterNetEvent('Rebirth:client:Player:Connected', function()
+    print('idk just here')
     local vehicle = false;
+    local player = PlayerId()
+
+    local hud = {
+        health = 0,
+        armour = 0,
+        hunger = 0,
+        thirst = 0,
+        stress = 0,
+        speed = 0,
+        fuel = 0
+    }
+    local lastValues = {};
+
+    RegisterNetEvent("baseevents:enteredVehicle", function()
+        if IsPedInAnyVehicle(PlayerPedId(), false) then
+            TriggerEvent("Rebirth:Hud:Client:vehicle", true);
+            DisplayRadar(true);
+            SetRadarZoom(1100);
+        end
+    end)
+
+    RegisterNetEvent("baseevents:leftVehicle", function()
+        if not IsPedInAnyVehicle(PlayerPedId(), false) then
+            TriggerEvent("Rebirth:Hud:Client:vehicle", false);
+            DisplayRadar(false);
+        end
+    end)
+
     Citizen.CreateThread(function()
         DisableIdleCamera(true);
         local minimap = RequestScaleformMovie("minimap")
@@ -9,36 +39,72 @@ RegisterNetEvent('Rebirth:Client:Init', function()
         if IsPedInAnyVehicle(PlayerPedId(), false) then
             TriggerEvent("Rebirth:Hud:Client:vehicle", true)
             vehicle = true
-            Wait(500)
             DisplayRadar(true)
             SetRadarZoom(1100)
         end
-        while true do
-            for i = 1, 12 do
-                EnableDispatchService(i, false)
+
+        hud["health"] = GetEntityHealth(PlayerPedId()) / 2;
+        hud["armour"] = GetPedArmour(PlayerPedId()) / 2;
+        hud["hunger"] = 11;
+        hud["thirst"] = 61;
+        hud["stress"] = 39;
+        hud["speed"] = 0;
+        hud["fuel"] = 0;
+
+        for i = 1, 25 do
+            EnableDispatchService(i, false)
+        end
+        SetMaxWantedLevel(0)
+        SetPoliceIgnorePlayer(player, true)
+        SetDispatchCopsForPlayer(player, false)
+        SetAudioFlag("PoliceScannerDisabled", true)
+        for i = 0, 255 do
+            Citizen.Wait(10)
+            if NetworkIsPlayerConnected(i) then
+                if NetworkIsPlayerConnected(i) and GetPlayerPed(i) ~= nil then
+                    SetCanAttackFriendly(GetPlayerPed(i), true, true)
+                end
             end
-            SetPlayerWantedLevel(PlayerId(), 0, false)
-            SetPlayerWantedLevelNow(PlayerId(), false)
-            SetPlayerWantedLevelNoDrop(PlayerId(), 0, false)
+        end
+        NetworkSetFriendlyFireOption(true)
+        DisablePlayerVehicleRewards(PlayerId())
+
+        if IsPedInAnyVehicle(PlayerPedId(), false) then
+            TriggerEvent("Rebirth:Hud:Client:vehicle", true);
+            DisplayRadar(true);
+            SetRadarZoom(1100);
+        else
+            TriggerEvent("Rebirth:Hud:Client:vehicle", false);
+            DisplayRadar(false);
+        end
+
+        local counter = 0;
+        while true do
+            Citizen.Wait(100)
+            local playerPed = PlayerPedId();
+
+            if IsPedInAnyVehicle(playerPed, false) then
+                local vehicle = GetVehiclePedIsIn(playerPed, false);
+                hud["speed"] = math.ceil(GetEntitySpeed(vehicle) * 2);
+                hud["fuel"] = GetVehicleFuelLevel(vehicle);
+            end
+
+            if counter == 0 then
+                hud["health"] = GetEntityHealth(playerPed) / 2;
+                hud["armour"] = GetPedArmour(playerPed) / 2;
+
+                for k, v in pairs(hud) do
+                    if lastValues[k] ~= hud[k] then
+                        exports["Rebirth"]:updateHudValue(k, hud[k]);
+                        lastValues[k] = hud[k]
+                    end
+                end
+                count = 100
+            end
+            count = count - 1
             BeginScaleformMovieMethod(minimap, "SETUP_HEALTH_ARMOUR")
             ScaleformMovieMethodAddParamInt(3)
             EndScaleformMovieMethod()
-            if not IsPedInAnyVehicle(PlayerPedId(), false) then
-                if vehicle then
-                    TriggerEvent("Rebirth:Hud:Client:vehicle", false)
-                    vehicle = false
-                end
-                DisplayRadar(false)
-            elseif IsPedInAnyVehicle(PlayerPedId(), false) then
-                if not vehicle then
-                    TriggerEvent("Rebirth:Hud:Client:vehicle", true)
-                    vehicle = true
-                end
-                Wait(500)
-                DisplayRadar(true)
-                SetRadarZoom(1100)
-            end
-            Wait(500)
         end
     end)
 

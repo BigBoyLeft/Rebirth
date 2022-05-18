@@ -1,5 +1,4 @@
 const INITIAL_STATE = {
-    visible: true,
     vehicle: false,
     data: {
         health: {
@@ -32,16 +31,17 @@ const INITIAL_STATE = {
             color: 'lightRed',
             value: 0,
         },
+        speed: {
+            value: 0,
+        },
+        fuel: {
+            value: 0,
+        },
     }
 }
 
 function reducer(state = INITIAL_STATE, action: any) {
     switch (action.type) {
-        case "SET_HUD_STORE_VISIBILITY":
-            return {
-                ...state,
-                visible: action.visible,
-            }
         case "SET_HUD_STORE_VEHICLE":
             return {
                 ...state,

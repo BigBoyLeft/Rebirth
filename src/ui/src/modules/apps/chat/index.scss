@@ -22,9 +22,10 @@
             color: #fff;
             outline: none;
             border: none;
+            border: 2px solid rgba(110, 28, 24, 0.75);
             &:focus {
                 outline: none;
-                border: 2px solid rgba(#eb4034, 0.75);
+                border: 2px solid rgba(235, 64, 52, 0.75);
             }
         }
     }
@@ -91,7 +92,6 @@
         .UI_CHAT_MESSAGE {
             position: relative;
             margin-bottom: 7.5px;
-            word-break: break-word;
             box-sizing: border-box;
             display: grid;
             grid-template-columns: 10% 90%;
@@ -99,19 +99,19 @@
                 "image title"
                 "image message";
             width: calc(100% - 10px);
-            height: auto;
+            height: fit-content;
             background: rgba(#302c2c, 0.8);
-
+            padding: 5px 0;
 
             .UI_CHAT_MESSAGE_TITLE {
                 grid-area: title;
                 width: 100%;
-                height: 100%;
-                margin-top: 5px;
+                height: 100%;margin-top: 5px;
             }
             .UI_CHAT_MESSAGE_MESSAGE {
                 grid-area: message;
                 width: 100%;
+
                 margin-bottom: 5px;
             }
 
@@ -127,30 +127,37 @@
 
             &.green {
                 background: rgba(#4ec772, 0.8);
-                color: black;
+                color: #000000;
             }
 
             &.red {
                 background: rgba(#c74e4e, 0.8);
+                color: #ffffff;
             }
 
             &.blue {
                 background: rgba(#4e7ac7, 0.8);
+                color: #ffffff;
             }
 
             &.yellow {
                 background: rgba(#c7c14e, 0.8);
-                color: black;
+                color: #000000;
             }
 
             &.purple {
                 background: rgba(#8d4ec7, 0.8);
+                color: #ffffff;
             }
 
             &.orange {
                 background: rgba(#c7824e, 0.8);
-                color: black
+                color: #000000
             }
         }
     }
+}
+
+::-webkit-scrollbar {
+    display: none;
 }

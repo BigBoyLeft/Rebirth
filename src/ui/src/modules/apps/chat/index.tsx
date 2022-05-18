@@ -1,6 +1,7 @@
 import "./index.scss";
 import { useRef, useState } from "react";
-import { useAppEvent } from "@services/useEvent";
+import { useAction } from "@/services/nuiUtils";
+import { makeRequest } from "@/services/nuiUtils";
 
 import Box from "@mui/material/Box";
 import Icon from "@mui/material/Icon";
@@ -10,7 +11,7 @@ import axios from "axios";
 import { useExitListener } from "@/hooks/useExitListener";
 import { Slide } from "@mui/material";
 
-var index = -1
+var index = -1;
 const Chat = () => {
   const [canShowHistory, setCanShowHistory] = useState(false);
   const [canShowInput, setCanShowInput] = useState(false);
@@ -35,9 +36,9 @@ const Chat = () => {
           }
         } else if (event.key === "ArrowDown") {
           if (index - 1 > -1) {
-            index--
+            index--;
           } else {
-            index = -1
+            index = -1;
           }
         }
         if (index > -1) {
@@ -55,9 +56,13 @@ const Chat = () => {
     if (event.target.value.startsWith("/")) {
       commands.map((command: any, index: any) => {
         if (
-          command.command.includes(
-            event.target.value.toLowerCase().split("/")[1].split(" ")[0]
-          )
+          command.command
+            .toLowerCase()
+            .includes(
+              event.target.value.toLowerCase().split("/")[1].split(" ")[0]
+            ) ||
+          command.command.toLowerCase() ===
+            event.target.value.toLowerCase().split("/")[1]
         ) {
           fcommands.push({
             command: command.command,
@@ -75,26 +80,32 @@ const Chat = () => {
       setFcommands(fcommands);
     }
   }
-  useAppEvent("chat", "command", (data: any) => {
+  useAction("chat", "command", (data: any) => {
     setCommands([...commands, data]);
   });
   function sendMessage() {
     let msg = chatInput.toLowerCase();
+    if (msg === "/clear") {
+      setHistory([]);
+      return;
+    }
     if (msg.startsWith("/")) {
-      axios.post("https://Rebirth/chat/command", {
+      makeRequest("https://Rebirth/api/chat/command", {
         command: msg.split("/")[1],
       });
-      let cmds = [...commandHistory]
+      let cmds = [...commandHistory];
       cmds.unshift(msg);
       setCommandHistory(cmds);
-      index = -1
+      index = -1;
       hideInput(false);
     } else {
       hideInput(true);
     }
   }
 
-  useAppEvent("chat", "message", (data: any) => {
+  const [resetState, setResetState] = useState(false);
+  let [timeout, setTTimeout] = useState(null);
+  useAction("chat", "message", (data: any) => {
     setHistory([
       ...history,
       {
@@ -106,23 +117,42 @@ const Chat = () => {
       },
     ]);
     setCanShowHistory(true);
-    setTimeout(() => {
-      setCanShowHistory(false);
-    }, 2500)
+    startTimeout();
   });
+
+  function startTimeout() {
+    if (timeout) stopTimeout();
+    setTTimeout(
+      setTimeout(() => {
+        if (resetState) {
+          setResetState(false);
+          return;
+        }
+        setCanShowHistory(false);
+        setCanShowInput(false);
+      }, 2500)
+    );
+  }
+
+  function stopTimeout() {
+    setResetState(false);
+    clearTimeout(timeout);
+  }
 
   function setInputCommand(command: string) {
     setChatInput(`/${command}`);
   }
-  let idk = false;
+
   useExitListener(() => {
+    stopTimeout();
     setChatInput("");
     setCanShowInput(false);
     setCanShowHistory(false);
-    axios.post("https://Rebirth/chat/hide");
+    makeRequest("https://Rebirth/api/chat/hide", {});
   });
 
-  useAppEvent("chat", "focus", (data: any) => {
+  useAction("chat", "focus", (data: any) => {
+    stopTimeout();
     setChatInput("");
     setCanShowInput(true);
     setCanShowHistory(true);
@@ -131,10 +161,11 @@ const Chat = () => {
 
   function hideInput(status: boolean = false) {
     if (status) {
-      axios.post("https://Rebirth/chat/hide");
+      makeRequest("https://Rebirth/api/chat/hide", {});
     }
     setChatInput("");
     setCanShowInput(false);
+    stopTimeout();
   }
 
   return (
@@ -144,14 +175,25 @@ const Chat = () => {
           {Array.from(history)
             .reverse()
             .map((item: any, index: any) => (
-              <li key={item.type+"_"+index} className={`UI_CHAT_MESSAGE ${item.color}`}>
+              <li
+                key={item.type + "_" + index}
+                className={`UI_CHAT_MESSAGE ${item.color}`}
+              >
                 <div className="UI_CHAT_MESSAGE_ICON green">
                   <Icon>{item?.icon}</Icon>
                 </div>
                 <div className="UI_CHAT_MESSAGE_TITLE">
                   {item?.type.toUpperCase()}
                 </div>
-                <div className="UI_CHAT_MESSAGE_MESSAGE">{item?.message}</div>
+                <div className="UI_CHAT_MESSAGE_MESSAGE">
+                  {typeof item?.message === "object" ? (
+                    <pre>
+                      <code>{JSON.stringify(item?.message, undefined, 2)}</code>
+                    </pre>
+                  ) : (
+                    item?.message
+                  )}
+                </div>
               </li>
             ))}
         </ul>
@@ -176,7 +218,7 @@ const Chat = () => {
           {Fcommands.map((item: any, index: any) => (
             <Slide mountOnEnter unmountOnExit in={item.show} direction="right">
               <li
-                key={item.name+"_"+index}
+                key={item.name + "_" + index}
                 onClick={() => setInputCommand(item.command)}
                 className="UI_CHAT_SUGGESTIONS_SUGGESTION"
               >

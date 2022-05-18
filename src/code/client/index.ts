@@ -1,7 +1,5 @@
 import "@citizenfx/client";
-import TickService from "@shared/tick.service";
-
-// export const tick = new TickService();
+const Config = require("@Config");
 
 export class ClientClass {
   constructor() {
@@ -10,8 +8,9 @@ export class ClientClass {
 
   onClientResourceStart = async (resourceName: string) => {
     if (resourceName === GetCurrentResourceName()) {
-        console.log(
-            [`
+      debug(
+        [
+          `
 \x1b[36m######                                      
 \x1b[36m#     # ###### #####  # #####  ##### #    # 
 \x1b[36m#     # #      #    # # #    #   #   #    # 
@@ -19,16 +18,24 @@ export class ClientClass {
 \x1b[36m#   #   #      #    # # #####    #   #    # 
 \x1b[36m#    #  #      #    # # #   #    #   #    # 
 \x1b[36m#     # ###### #####  # #    #   #   #    # 
-        `].join("\n"));
+        `,
+        ].join("\n")
+      );
+      debug("[Rebirth]: Client initialized with DeveloperMode enabled.");
       console.log("[Rebirth]: Framework initializing.");
-
       await require("@client/modules");
-      emitNet("Rebirth:Client:Init");
+
+      setTimeout(() => {
+        emitNet("Rebirth:Client:Init");
+      }, 500)
     }
   };
 }
 
 const client = new ClientClass();
-global.exports("client", () => {
-  return client;
-});
+
+export const debug = (...args: any[]) => {
+  if (Config.DeveloperMode) {
+    console.log(...args);
+  }
+};

@@ -1,4 +1,4 @@
-import { Player } from "@server/player/player";
+import Player from "@server/player/player";
 
 class spawnService {
     teleportCoords(coords: Vector3) {

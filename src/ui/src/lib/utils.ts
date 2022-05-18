@@ -5,3 +5,9 @@ export const currencyFormatter = (value) => {
     const [currency, decimal] = value.split(".");
     return `$${currency.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}${"."}${decimal}`;
 };
+
+export const isDate = (data) => {
+    const date = new Date(data);
+
+    return date.getTime() === date.getTime();
+}

@@ -1,45 +1,37 @@
 import logger from "@shared/logger.service";
 
-onNet('Rebirth:Chat:Message', (author: string, color: string, message: string) => {
-    console.log("NEW MESSAGE");
-})
-
 class Chat {
+  public SVCommands: Map<number, any> | any;
   constructor() {
-    // onNet("Rebirth:Chat:Message", this.messageEntered);
-    // onNet("onServerResourceStart", this.refreshCommands);
-    // onNet("__cfx_internal:commandFallback", this.fallBack);
     logger.info("[Rebirth] Loaded Chat Module.");
+    this.SVCommands = new Map<number, any>();
+    global.exports("chatMessage", (source: any, type: string, message: string, icon: string, color: string) => this.newMessage(source, type, message, icon, color));
+    global.exports("command", (command: string, description: string, callback?: any) => this.newCommand(command, description, callback));
+    global.exports("refeshCommands", (src: any) => this.refreshCommands(src));
+    global.exports("refreshCommandsGlobal", () => this.refreshCommandsGlobal());
+  }
+  
+  newMessage(source: any, type: string, message: string, icon: string, color: string) {
+    if (!source || !message || !type) return;
+    emitNet("Rebirth:Chat:Message", source, type, message, icon, color);
+    return true
   }
 
-  fallBack() {
-    CancelEvent();
+  newCommand(command: string, description: string, callback?: any) {
+    this.SVCommands.set(command, {
+      command,
+      description,
+      callback
+    });
+    if (callback) RegisterCommand(command, callback, false);
   }
 
-  messageEntered(author: string, type: string, message: string) {
-    if (!message || !author) return;
-    if (!WasEventCanceled()) {
-        emitNet('Rebirth:Chat:Message', -1, author, type, message)
-    }
+  refreshCommands(src: any) {
+    emitNet("Rebirth:Chat:Commands", src, Array.from(this.SVCommands));
   }
 
-  refreshCommands(player: any) {
-    for (player in getPlayers()) {
-      let Fcommands = GetRegisteredCommands();
-      if (Fcommands.length > 0) {
-        let commands = [];
-        for (let i = 0; i < Fcommands.length; i++) {
-          let command: any = commands[i];
-          if (IsPlayerAceAllowed(player, `command.${command.name}`)) {
-            commands.push({
-              name: `/${command.name}`,
-            });
-          }
-        }
-
-        emitNet("Rebirth:Chat:Commands", player, commands);
-      }
-    }
+  refreshCommandsGlobal() {
+    emitNet("Rebirth:Chat:Commands", -1, Array.from(this.SVCommands));
   }
 }
 
