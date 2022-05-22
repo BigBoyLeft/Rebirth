@@ -1,0 +1,25 @@
+.Title {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 400;
+    font-family: "Roboto", "Helvetica", "Arial", "sans-serif";
+    margin: 5px 0 10px 0;
+}
+
+.boxContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.23);
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 400;
+    font-family: "Roboto", "Helvetica", "Arial", "sans-serif";
+    padding: 20px;
+
+    .boxItem {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}

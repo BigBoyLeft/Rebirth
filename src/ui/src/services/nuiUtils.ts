@@ -67,7 +67,6 @@ export const debugEvent = <T = any>(
   data: any = {},
   action: string = "none"
 ) => {
-  console.log(isBrowser());
   if (isBrowser()) {
     setTimeout(() => {
       window.dispatchEvent(

@@ -13,7 +13,7 @@ const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 async function regCommands() {
   global.exports["Rebirth"].command(
     "genRN",
-    "Generates a new Routing Number.",
+    "[DEV] Generates a new Routing Number.",
     (source: any, args: any) => {
       const routingNumber = Banking.generateRoutingNumber();
       if (routingNumber) global.exports["Rebirth"].chatMessage(source, "Success", routingNumber, "stopsign", "green")
@@ -22,7 +22,7 @@ async function regCommands() {
   );
   global.exports["Rebirth"].command(
     "valRN",
-    "Validates if given Routing Transit Number is valid.",
+    "[DEV] Validates if given Routing Transit Number is valid.",
     async (source: any, args: any) => {
       const valid = await Banking.validateRoutingNumber(args[0]);
       if (valid) global.exports["Rebirth"].chatMessage(source, "Success", `${args[0]} is a valid Routing Transit Number`, "stopsign", "green")
@@ -31,10 +31,11 @@ async function regCommands() {
   );
   global.exports["Rebirth"].command(
     "newAccount",
-    "Creates a new Character Account",
+    "[DEV] Creates a new Character Account",
     async (source: any, args: any) => {
       const account = await Banking.createAccount({
         type: args[0],
+        label: args[2],
         authorizedUsers: [args[1]],
         balance: 50000,
       });
@@ -43,7 +44,7 @@ async function regCommands() {
   );
   global.exports["Rebirth"].command(
     "getAccounts",
-    "Gets all accounts that the given character has authorized access to.",
+    "[DEV] Gets all accounts that the given character has authorized access to.",
     async (source: any, args: any) => {
       const accounts = await Banking.getAccounts(args[0]);
       if (accounts.length > 0) {
@@ -55,7 +56,7 @@ async function regCommands() {
   );
   global.exports["Rebirth"].command(
     "accountFunction",
-    "calls an accounting function.",
+    "[DEV] Calls an accounting function.",
     async (source: any, args: any) => {
       global.exports["Rebirth"].chatMessage(source, "Loading...", "Acquiring all essential accounting information for given ssn", "medication", "blue")
       const account = await Banking.getAccount(args[0]);
@@ -70,7 +71,7 @@ async function regCommands() {
   );
   global.exports["Rebirth"].command(
     "createCreditCard",
-    "creates a fresh Credit Card.",
+    "[DEV] Creates a fresh Credit Card.",
     async (source: any, args: any) => {
       const account = await Banking.getAccount(args[0]);
       if (account === "NF") {
@@ -84,7 +85,7 @@ async function regCommands() {
   );
   global.exports["Rebirth"].command(
     "validateCreditCard",
-    "validate's given credit card number.",
+    "[DEV] Validate's given credit card number.",
     async (source: any, args: any) => {
       if (args[0].length !== 16) {
         global.exports["Rebirth"].chatMessage(source, "Failed", "Invalid Credit Card Number (Valid CCN must be 16 numbers)", "stopsign", "red")
@@ -100,19 +101,7 @@ async function regCommands() {
   );
   global.exports["Rebirth"].command(
     "validateSSN",
-    "validate's given Social Security Number (SSN).",
-    async (source: any, args: any) => {
-      let valid = verifySSN(args[0])
-      if (valid) {
-        global.exports["Rebirth"].chatMessage(source, "Success", "Valid SSN", "check", "green")
-      } else {
-        global.exports["Rebirth"].chatMessage(source, "Failed", "Invalid SSN", "stopsign", "red")
-      }
-    }
-  );
-  global.exports["Rebirth"].command(
-    "coords",
-    "Gets Current Player Coords.",
+    "[DEV] Validate's given Social Security Number (SSN).",
     async (source: any, args: any) => {
       let valid = verifySSN(args[0])
       if (valid) {
@@ -124,7 +113,7 @@ async function regCommands() {
   );
   global.exports["Rebirth"].command(
     "getPermission",
-    "Gets your player Permission level.",
+    "[DEV] Gets your player Permission level.",
     async (source: any, args: any) => {
       const permission = playerService.getPermissionLevel(source);
       global.exports["Rebirth"].chatMessage(source, "Success", `You have permission level [${permission}]`, "check", "green")
@@ -132,7 +121,7 @@ async function regCommands() {
   );
   global.exports["Rebirth"].command(
     "setPermissionLevel",
-    "Sets your player Permission level.",
+    "[DEV] Sets your player Permission level.",
     async (source: any, args: any) => {
       await playerService.updatePermission(source, Math.ceil(args[0]));
       const permission = playerService.getPermissionLevel(source);

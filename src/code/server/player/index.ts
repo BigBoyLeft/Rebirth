@@ -38,7 +38,7 @@ AddEventHandler("playerConnecting", async (name: string, setKickReason: (msg: st
         debug(`[${GetPlayerName(src.toString())}] is connecting the server.`);
         
         const identifier = await getIdentifier(src, "steam");
-        if (!identifier) return deferrals.done("Coundn't Detect your STEAM Identifier | Please make sure STEAM is running then try again.");
+        if (!identifier) return deferrals.done("Couldn't Detect your STEAM Identifier | Please make sure STEAM is running then try again.");
         
         if (Config.DeveloperMode) {
             debug(`[${GetPlayerName(src.toString())}] has bypassed Flight Checks because Developer Mode is enabled.`);
@@ -47,7 +47,7 @@ AddEventHandler("playerConnecting", async (name: string, setKickReason: (msg: st
 
 
         const discord = (await getIdentifier(src, "discord"));
-        if (!discord) return deferrals.done("Coundn't Detect your Discord Identifier | Please make sure Discord is running then try again.");
+        if (!discord) return deferrals.done("Couldn't Detect your Discord Identifier | Please make sure Discord is running then try again.");
         DiscordClient.hasRole(discord, Config.Discord.WhitelistRole).then((status: string) => {
             if (status === "NOTFOUND") {
                 return deferrals.done(`You are not in our Discord Server | Please make sure Discord is running then try again. | ${Config.Discord.DiscordInvite}`);

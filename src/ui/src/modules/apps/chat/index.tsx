@@ -87,6 +87,9 @@ const Chat = () => {
     let msg = chatInput.toLowerCase();
     if (msg === "/clear") {
       setHistory([]);
+      setChatInput("");
+      hideInput();
+      makeRequest("https://Rebirth/api/chat/hide", {});
       return;
     }
     if (msg.startsWith("/")) {

@@ -131,7 +131,6 @@ const isWatch = process.argv.findIndex((Item) => Item === "--watch") >= 0;
     const packageConfig = packages[index];
 
     if (packageConfig.client.length > 0) {
-      console.log("test");
       contexts.push({
         label: packageConfig.name,
         platform: "browser",

@@ -75,7 +75,21 @@ export class characterService {
         "data.characters": 1,
       }
     ).then((Characters: any) => {
-      return Characters.data.characters;
+      const characters: any[] = [];
+      for (let i = 0; i < Characters.data.characters.length; i++) {
+        let character = Characters.data.characters[i]
+        characters.push({
+          ssn: character.ssn,
+          fn: character.fn,
+          ln: character.ln,
+          dob: character.dob,
+          gender: character.gender,
+          phoneNumber: character.phoneNumber,
+          email: character.email,
+          pAddress: character.pAddress
+        });
+      }
+      return characters;
     });
   }
 

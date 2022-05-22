@@ -34,6 +34,6 @@
     "sourceRoot": "/",
     "noFallthroughCasesInSwitch": true,
   },
-  "include": ["src"],
+  "include": ["src", "src/modules/apps/Banking/Components/.home.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

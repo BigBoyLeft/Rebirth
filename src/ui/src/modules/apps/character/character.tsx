@@ -1,13 +1,19 @@
+// [ [ Styles ] ]
+
 import Styles from "./character.module.scss";
+import Components from "@modules/Components/Components.module.scss";
 
 // [ [ Other[s] ] Imports ]
 
-import axios from "axios";
 import { useState } from "react";
+
+// [ [ UI ] Stores ]
+
+import { setPlayerData } from "@/modules/root.store";
+import { useAppSelector, useAppDispatch } from "@hooks/store";
 
 // [ [ Rebirth ] Tools ]
 
-import Components from "@modules/Components/Components.module.scss";
 import {
   useAction,
   useApplication,
@@ -15,9 +21,9 @@ import {
   makeRequest,
   debugRequest,
 } from "@/services/nuiUtils";
-import { useAppSelector, useAppDispatch } from "@hooks/store";
 import Button from "@modules/Components/Button";
 import { isDate } from "@/lib/utils";
+
 
 // [ [ Rebirth ] Assets ]
 
@@ -51,40 +57,40 @@ import PersonAddAlt1Icon from "@mui/icons-material/PersonAddAlt1";
 import PersonRemoveIcon from "@mui/icons-material/PersonRemove";
 import { Fade } from "@mui/material";
 
-debugEvent(100, "application", "character", {
-  visible: true,
-  characters: [
-    {
-      ssn: "103988718",
-      fn: "John",
-      ln: "Doe",
-      dob: new Date(),
-      gender: "male",
-      phoneNumber: "7072075995",
-      email: "johndoe@rebirth.city",
-      mugshot:
-        "https://forum.cfx.re/uploads/default/original/3X/8/3/8305f70437ebd0981c943a872b657dce21fa318a.jpeg",
-    },
-    {
-      ssn: "039871823",
-      fn: "Carter",
-      ln: "Zamgato",
-      dob: new Date(),
-      gender: "male",
-      phoneNumber: "7072075995",
-      email: "johndoe@rebirth.city",
-    },
-    {
-      ssn: "019394851",
-      fn: "John",
-      ln: "Doe",
-      dob: new Date(),
-      gender: "male",
-      phoneNumber: "7072075995",
-      email: "johndoe@rebirth.city",
-    },
-  ],
-});
+// debugEvent(100, "application", "character", {
+//   visible: true,
+//   characters: [
+//     {
+//       ssn: "103988718",
+//       fn: "John",
+//       ln: "Doe",
+//       dob: new Date(),
+//       gender: "male",
+//       phoneNumber: "7072075995",
+//       email: "johndoe@rebirth.city",
+//       mugshot:
+//         "https://forum.cfx.re/uploads/default/original/3X/8/3/8305f70437ebd0981c943a872b657dce21fa318a.jpeg",
+//     },
+//     {
+//       ssn: "039871823",
+//       fn: "Carter",
+//       ln: "Zamgato",
+//       dob: new Date(),
+//       gender: "male",
+//       phoneNumber: "7072075995",
+//       email: "johndoe@rebirth.city",
+//     },
+//     {
+//       ssn: "019394851",
+//       fn: "John",
+//       ln: "Doe",
+//       dob: new Date(),
+//       gender: "male",
+//       phoneNumber: "7072075995",
+//       email: "johndoe@rebirth.city",
+//     },
+//   ],
+// });
 
 debugRequest("https://Rebirth/api/character/login", (data: any) => {
   return { success: true };
@@ -106,6 +112,7 @@ debugRequest("https://Rebirth/api/character/create", (data: any) => {
 });
 
 function CharacterSelector() {
+  const dispatch = useAppDispatch();
   const [visible, setVisible] = useState(false);
   const [characters, setCharacters] = useState([]);
   const [state, setState] = useState("entry");
@@ -135,6 +142,7 @@ function CharacterSelector() {
       if (data.data.error) {
         // notify with [ data.data.message ]
       }
+      dispatch(setPlayerData(character))
       makeRequest("https://Rebirth/api/ui/focus", { focus: false });
       setState("entry");
       setSelectedCharacter(null);
@@ -154,7 +162,6 @@ function CharacterSelector() {
       dob: newCharacter.dob,
       gender: newCharacter.gender,
     }).then((data: any) => {
-      console.log(JSON.stringify(data));
       if (data.data?.error) {
         // notify with [ data.data.message ]
       }

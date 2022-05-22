@@ -1,5 +1,5 @@
 import { DoublePosition, luhn } from "@server/utils";
-import { AccountData, TransactionData } from "./banking.class";
+import { AccountData, TransactionData } from "@schemas/Accounts";
 import AccountSchema from "@schemas/Accounts";
 import {
   CreditCardFormat,
@@ -20,17 +20,20 @@ class Banking {
   async createAccount(
     account: {
       type: "checking" | "savings" | "mma" | "retirement";
+      label: string;
       authorizedUsers: string[];
       balance: number;
     } = {
       type: "checking",
+      label: "Checking Account",
       authorizedUsers: [],
       balance: 500,
     }
   ): Promise<AccountData | string> {
-    if (!account.authorizedUsers || !account.balance) return "CM";
     return new Promise((resolve, reject) => {
       const newAccount = new AccountSchema({
+        type: account.type,
+        label: account.label,
         accountNumber:
           Math.floor(Math.random() * (999999999999 - 100000000000 + 1)) +
           100000000000,

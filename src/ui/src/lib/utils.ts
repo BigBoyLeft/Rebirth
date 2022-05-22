@@ -11,3 +11,8 @@ export const isDate = (data) => {
 
     return date.getTime() === date.getTime();
 }
+
+export const isImage = (url: string) => {
+    return /\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(url);
+
+}

@@ -1,14 +1,33 @@
 import { AppState } from "@/store";
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-const initialState = {
+export interface IInitialState {
   playerData: {
-    ssn: "",
-    fn: "",
-    ln: "",
-    dob: "",
-    gender: "",
-    mugshot: "",
+    ssn: string,
+    fn: string,
+    ln: string,
+    dob: string,
+    gender: number,
+    phoneNumber: string,
+    email: string,
+    pAddress: string,
+    mugshot: string,
+    profilePic: string,
+  }
+}
+
+const initialState: IInitialState = {
+  playerData: {
+    ssn: "765372666",
+    fn: "Carter",
+    ln: "Zamgato",
+    dob: "1977-03-07T02:47:04.000Z",
+    gender: 2,
+    phoneNumber: "7796529630",
+    email: "carterzamgato@rebirth.net",
+    pAddress: "NONE",
+    mugshot: "test",
+    profilePic: "test2",
   },
 };
 

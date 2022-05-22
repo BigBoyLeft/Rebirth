@@ -1,0 +1,131 @@
+.Banking_Home {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 55% auto;
+    grid-template-rows: 7.5% auto;
+    grid-template-areas:
+        "header header"
+        "content content2";
+
+    .Item {
+        width: 100%;
+        height: fit-content;
+        background-color: #172b36;
+        padding: 0 20px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        column-gap: 15px;
+        font-size: 1rem;
+        padding: 10px;
+        transition: all 0.1s ease-in-out;
+
+        &:hover {
+            background-color: #1c313d;
+            cursor: pointer;
+        }
+
+        div {
+            font-size: 1rem;
+            color: rgb(185, 185, 185);
+            display: flex;
+        }
+    }
+
+    .Panel {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        scrollbar-width: thin;
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #141414;
+            border-radius: 10px;
+        }
+
+        .User {
+            padding: 15px;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #172b36;
+            border-radius: 10px;
+            row-gap: 15px;
+            color: rgb(211, 211, 211);
+            transition: all 0.1s ease-in-out;
+            transform: translateZ(0);
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.05) translateZ(0);
+                background-color: #1c313d;
+            }
+
+            .Mugshot {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                border: 10px solid #374e5d;
+                display: flex;
+                place-content: center;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .Name {
+                font-size: 1.250vw;
+                letter-spacing: 2.5px;
+                color: rgb(241, 241, 241);
+            }
+
+            .CustomerDate {
+                font-size: 0.729vw;
+                letter-spacing: 1.5px;
+                background-color: #374e5d;
+                border-radius: 25px;
+                padding: 10px 15px;
+            }
+
+            .netWorth {
+                border-top: 2px solid #374e5d;
+                padding: 10px 0;
+                font-size: 0.833vw;
+                letter-spacing: 2.5px;
+                display: flex;
+                column-gap: 5px;
+                div {
+                    color: #a5f99c;
+                }
+            }
+        }
+    }
+
+    .Header {
+        grid-area: header;
+        border-radius: 10px 10px 0 0;
+        padding-bottom: 15px;
+        display: flex;
+
+        .Title {
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
+        .Name {
+            color: rgb(154, 154, 154);
+            font-size: 1rem;
+        }
+    }
+}
