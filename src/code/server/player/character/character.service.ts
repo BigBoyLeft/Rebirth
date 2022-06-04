@@ -105,7 +105,7 @@ export class characterService {
       let character = Fcharacter[0].data.characters[0];
       if (character.ssn !== ssn)
         return logger.error(
-          `[Character Service] Attempted to load character with SSN: ${ssn} | but recieved ${character.snn}`
+          `[Character Service] Attempted to load character with SSN: ${ssn} | but received ${character.snn}`
         );
       return character;
     });
