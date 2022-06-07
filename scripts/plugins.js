@@ -73,7 +73,8 @@ version "${pluginData.version || "1.0.0"}"
 lua54 "yes"
 
 client_script "./client/index.js"
-server_script "./serrver/index.js"`);
+server_script "./server/index.js"`
+      );
 
       if (pluginData.client) {
         if (!fs.existsSync(`${pluginDirectory}/${pluginData.name}/client`)) {
@@ -112,12 +113,58 @@ server_script "./serrver/index.js"`);
 
         console.log(`Build Plugin Server: ${pluginData.name}`);
         esbuild.build({
+          bundle: true,
           entryPoints: [pluginData.server],
           outdir: `${pluginDirectory}/${pluginData.name}/server`,
-          target: ["chrome93"],
+          target: ["node16"],
           format: "iife",
+          plugins: [
+            {
+              name: "ts-paths",
+              setup: (build) => {
+                build.onResolve({ filter: /@citizenfx/ }, (args) => {
+                  return { namespace: "ignore", path: "." };
+                });
+
+                build.onResolve({ filter: /.*/ }, (args) => {
+                  if (
+                    !args.path.match(/^@(server|client|shared)/) &&
+                    args.kind === "import-statement"
+                  ) {
+                    let modulePath;
+
+                    if (args.path.startsWith("@/")) {
+                      modulePath = path.join(
+                        ...process.cwd().split(path.sep),
+                        args.path.replace(/^@\//, "")
+                      );
+                    } else {
+                      modulePath = require.resolve(args.path);
+                      if (path.isAbsolute(modulePath)) {
+                        modulePath = path.join(
+                          ...process.cwd().split(path.sep),
+                          "node_modules",
+                          args.path
+                        );
+                      }
+                    }
+
+                    return {
+                      path: modulePath,
+                      external: true,
+                    };
+                  }
+                });
+
+                build.onLoad({ filter: /.*/, namespace: "ignore" }, (args) => {
+                  return {
+                    contents: "",
+                  };
+                });
+              },
+            },
+          ],
           minify: isProduction,
-          bundle: true,
           sourcemap: false,
           watch: isWatch
             ? {
