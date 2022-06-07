@@ -10,14 +10,14 @@ This framework was built in hopes of becoming `superior` to other frameworks lik
 
 1. Command Line Usage
 2. Javascript/Typescript
-3. Understanding module bunders such as `Webpack` `ESBuild`
+3. Understanding module bundlers such as `Webpack` `ESBuild`
 4. Node.JS Package Managers such as [NPM](https://www.npmjs.com/) | [YARN](https://yarnpkg.com/)
 5. Experience in Database Programs such as [MongoDB](https://www.mongodb.com)
 
 ## Framework Features
 | Feature     | Description |
 | :----       | :-----      |
-| Custom Chat System | Custom Chat System built from scratch and build completly into the framework |
+| Custom Chat System | Custom Chat System built from scratch and build completely into the framework |
 | Single Handler System | All Ticks, and Events are handled within the framework |
 | Database Wrapper   | Easy to use Database Wrapper based around MongoDB |
 | Command Wrapper | Ease to use Command Wrapper which replaces the old & boring native `RegisterCommand` |
@@ -26,9 +26,9 @@ This framework was built in hopes of becoming `superior` to other frameworks lik
 
 # Plugin System
 
-This Framework includes a built in drag and drop plugin system, allowing developers to harness the power of typescript without having to build and setup a new typescript resource, instead they can develop a plugin within the framework ``./src/code/plugins`` folder and the framework will build the plugin into its own seperate resource allowing for you to restart the plugin without having to restart the framework. This also means that users whom whish to use your plugin can drag and drop the plugin you provided them into the plugin folder located inside the framwork ``./src/code/plugins`` and run the ``npm run build:plugins`` command. while in development you can also use the ``npm run build:plugins:watch`` command to auto rebuild the plugin on code change allowing for a more effecient workflow.
+This Framework includes a built-in drag and drop plugin system, allowing developers to harness the power of typescript without having to build and set up a new typescript resource, instead, they can develop a plugin within the framework ``./src/code/plugins`` folder and the framework will build the plugin into a separate resource allowing for you to restart the plugin without having to restart the framework. This also means that users who wish to use your plugin can drag and drop the plugin you provided them into the plugin folder located inside the framework ``./src/code/plugins`` and run the ``npm run build:plugins`` command. while in development you can also use the ``npm run build:plugins:watch`` command to auto rebuild the plugin on code change allowing for a more efficient workflow.
 
-## Plugin Example's can be foind inside the Frameworks Plugin Directory ``./src/code/plugins``
+## Plugin examples can be found inside the Frameworks Plugin Directory ``./src/code/plugins``
 
 # Framework Setup
 
@@ -39,7 +39,7 @@ This Framework includes a built in drag and drop plugin system, allowing develop
 5. Add `start Rebirth` to your `server.cfg`.
 6. And last start your server.
 
-## Framework Contrubution
+## Framework Contribution
 
 | Command | Description |
 | :------ | :- |
@@ -59,4 +59,4 @@ This Framework includes a built in drag and drop plugin system, allowing develop
 | `npm run UI:Watch` | Starts the Development server which you can access in your browser via `http://localhost:3000` |
 | `npm run UI:Preview` | Serves the Production build which you can access in your browser via `http://localhost:4173` |
 
-###### Copyright &copy; 2022 Rebirth Networks owned by [Left](https://github.com/BigBoyLeft). Rebirth Networks and its associates are not affiliated with or endorsed by Rockstar North, Take-Two Interactive or other rightsholders. Any trademarks used belong to their respective owners.
+###### Copyright &copy; 2022 Rebirth Networks owned by [Left](https://github.com/BigBoyLeft). Rebirth Networks and its associates are not affiliated with or endorsed by Rockstar North, Take-Two Interactive, or other rightsholders. Any trademarks used belong to their respective owners.
