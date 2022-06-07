@@ -28,7 +28,7 @@ This framework was built in hopes of becoming `superior` to other frameworks lik
 
 This Framework includes a built-in drag and drop plugin system, allowing developers to harness the power of typescript without having to build and set up a new typescript resource, instead, they can develop a plugin within the framework ``./src/code/plugins`` folder and the framework will build the plugin into a separate resource allowing for you to restart the plugin without having to restart the framework. This also means that users who wish to use your plugin can drag and drop the plugin you provided them into the plugin folder located inside the framework ``./src/code/plugins`` and run the ``npm run build:plugins`` command. while in development you can also use the ``npm run build:plugins:watch`` command to auto rebuild the plugin on code change allowing for a more efficient workflow.
 
-## Plugin examples can be found inside the Frameworks Plugin Directory ``./src/code/plugins``
+##### Plugin examples can be found inside the Frameworks Plugin Directory ``./src/code/plugins``
 
 # Framework Setup
 
