@@ -24,6 +24,12 @@ This framework was built in hopes of becoming `superior` to other frameworks lik
 | NUI | Fast and Responsive `UI` build using `ReactJS` |
 | NUI Wrapper | Easy to use NUI Wrapper which makes it easy to talk between the `UI` and the `Client` |
 
+# Plugin System
+
+This Framework includes a built in drag and drop plugin system, allowing developers to harness the power of typescript without having to build and setup a new typescript resource, instead they can develop a plugin within the framework ``./src/code/plugins`` folder and the framework will build the plugin into its own seperate resource allowing for you to restart the plugin without having to restart the framework. This also means that users whom whish to use your plugin can drag and drop the plugin you provided them into the plugin folder located inside the framwork ``./src/code/plugins`` and run the ``npm run build:plugins`` command. while in development you can also use the ``npm run build:plugins:watch`` command to auto rebuild the plugin on code change allowing for a more effecient workflow.
+
+## Plugin Example's can be foind inside the Frameworks Plugin Directory ``./src/code/plugins``
+
 # Framework Setup
 
 1. Clone Repository.
@@ -37,11 +43,12 @@ This framework was built in hopes of becoming `superior` to other frameworks lik
 
 | Command | Description |
 | :------ | :- |
-| `npm run R:BuildP` | Compiles the Framework into a Production build |
-| `npm run R:BuildUI` | Compiles the Frameworks UI into a Production Build |
-| `npm run R:BuildPW` | Compiles the Framework into a Production build and Rebuilds on code Change |
-| `npm run R:BuildD` | Compiles the Framework into a Development build |
-| `npm run R:BuildDW` | Compiles the Framework into a Development build and Rebuilds on code Change |
+| `npm run build:core` | Compiles the Framework into a Production build |
+| `npm run build:core:watch` | Compiles framework and then rebuilds on code change |
+| `npm run build:plugins` | Compiles all Plugins located inside the framework's Plugin Directory ``./src/code/plugins`` |
+| `npm run build:core:watch` | Compiles framework's Plugins and then rebuilds on code change |
+| `npm run build:ui` | Compiles UI into a production build |
+| `npm run ui:dev` | Starts the UI Development Server in your browser ``https://localhost:3000`` |
 
 ## Framework NUI Contrubution
 #### `cd src/ui`
