@@ -1,12 +1,10 @@
 {
   "DeveloperMode": true,
   "Discord": {
-    "DiscordInvite": "https://discord.gg/SomeCoolAssDiscord",
-    "Discordtoken": "",
+    "Invite": "https://discord.gg/SomeCoolAssDiscord",
+    "Token": "",
     "GuildID": "",
-    "WhitelistRole": ""
+    "WhiteListRoleID": ""
   },
-  "Database": {
-    "connect": "mongodb://localhost:27017/Rebirth"
-  }
+  "mongoDB": "mongodb://localhost:27017/Rebirth"
 }

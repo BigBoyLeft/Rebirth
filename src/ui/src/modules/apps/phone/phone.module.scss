@@ -1,0 +1,141 @@
+.Phone_Container {
+    position: absolute;
+    width: 350px;
+    height: 700px;
+    padding: 25px;
+    box-shadow: inset 0 0 20px 0 gray;
+    border-radius: 50px;
+    display: inline-block;
+    box-sizing: content-box !important;
+    right: 25px;
+    bottom: 25px;
+    background: black;
+    border: 5px solid gray;
+    padding: 20px;
+
+    .screen {
+        width: 100%;
+		position: relative;
+		height: 100%;
+		z-index: 3;
+		background: white;
+		overflow: hidden;
+		display: block;
+		border-radius: 25px;
+		box-shadow: 0 0 0 3px #111;
+        background: rgb(255, 38, 142);
+        background: linear-gradient(to bottom, rgba(255, 38, 142, 1) 0%, rgba(255, 105, 79, 1) 100%);
+
+        &:before {
+            content: "";
+            width: 140%;
+            height: 100%;
+            position: absolute;
+            top: -30%;
+            right: -70%;
+            background: radial-gradient(ellipse at center, rgba(62, 79, 249, 1) 0%, rgba(62, 79, 249, 0) 64%);
+            z-index: -1;
+        }
+        
+        &:after {
+            content: "";
+            width: 140%;
+            height: 140%;
+            position: absolute;
+            bottom: -50%;
+            left: -30%;
+            background: radial-gradient(ellipse at center, rgba(247, 237, 225, 1) 0%, rgba(247, 237, 225, 0) 70%);
+            transform: rotate(30deg);
+            z-index: -1;
+        }
+    }
+
+    .volume,
+    .volume:before,
+    .volume:after,
+    .sleep {
+        width: 3px;
+        background: gray;
+        position: absolute;
+    }
+
+    .volume {
+        left: -2.25%;
+        top: 12.5%;
+        height: 32px;
+
+        &:before {
+            height: 62px;
+            top: 62px;
+            content: "";
+            left: 0;
+        }
+
+        &:after {
+            height: 62px;
+            top: 140px;
+            content: "";
+            left: 0;
+        }
+    }
+
+    .sleep {
+        height: 10%;
+        top: 20%;
+        right: -2.25%;
+    }
+
+    .notch {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50%;
+        height: 25px;
+        z-index: 10;
+        background: black;
+        border-bottom-left-radius: 24px;
+        border-bottom-right-radius: 24px;
+
+        &:before,
+        &:after {
+            content: "";
+            height: 5px;
+            position: absolute;
+            top: 0;
+            width: 5px;
+        }
+
+        &:after {
+            background: radial-gradient(circle at bottom left, transparent 0, transparent 70%, black 70%, black 100%);
+            left: -5px;
+        }
+
+        &:before {
+            background: radial-gradient(circle at bottom right, transparent 0, transparent 70%, black 70%, black 100%);
+            right: -5px;
+        }
+
+        .camera {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            top: 40%;
+            left: 80%;
+            transform: translate(-50%, -50%);
+            border-radius: 100%;
+            background: #0f537a;
+        }
+
+        .speaker {
+            height: 6px;
+            width: 60px;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            background: #252727;
+            border-radius: 6px;
+        }
+    }
+}

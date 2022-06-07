@@ -6,7 +6,7 @@ interface NumberFormatCustomProps {
   name: string;
 }
 
-export const NumberFormatCustom = forwardRef<NumberFormatCustomProps, any>(
+const NumberFormatCustom = forwardRef<NumberFormatCustomProps, any>(
   function NumberFormatCustom(props, ref) {
     const { onChange, ...other } = props;
 
@@ -29,3 +29,5 @@ export const NumberFormatCustom = forwardRef<NumberFormatCustomProps, any>(
     );
   }
 );
+
+export default NumberFormatCustom;

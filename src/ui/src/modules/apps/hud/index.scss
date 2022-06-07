@@ -1,26 +1,29 @@
 .UI_HUD {
     transition: all 0.5s ease-in-out;
+    display: flex;
+    bottom: 0;
+    margin: 25px 30px;
+    position: absolute;
+    height: fit-content;
+    gap: 5px;
 
     &.UI_Hud__vehicle {
-        transform: translateX(170%) !important;
+        margin-left: auto;
+        right: 0;
     }
 }
 
 .UI_Hud_ProgressBar {
-    height: 20%;
     display: flex;
-    place-items: center;
     column-gap: 5%;
+    width: 60px;
+    background-color: #102027;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
 
-    .progressbar {
-        width: 100%;
-        height: 10px !important;
-        &:first-child {
-            margin-top: 0;
-        }
-        &:last-child {
-            margin-bottom: 0;
-        }
+    .material-icons {
+        position: absolute;
     }
 }
 
@@ -28,7 +31,7 @@
     position: absolute;
     bottom: 21%;
     left: 4%;
-    
+
     .segment-value {
         // fill: white !important;
         font-size: 12px !important;

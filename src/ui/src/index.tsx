@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import Root from "./modules/root";
 import { Provider } from "react-redux";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { red } from "@mui/material/colors";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 

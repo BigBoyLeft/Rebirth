@@ -16,11 +16,10 @@ files {
 
 ui_page "build/ui/index.html"
 client_scripts {
-    "build/client/**/*.js", 
+    "build/code/client/**/*.js", 
     "src/code/lua/*.lua",
     'build/packages/**/client/**/*.js'
 }
 server_scripts {
-    "build/server/**/*.js",
-    'build/packages/**/server/**/*.js'
+    "build/code/server/**/*.js",
 }

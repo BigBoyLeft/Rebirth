@@ -5,7 +5,7 @@ const INITIAL_STATE = {
             icon: 'favorite',
             iconColor: '#d32f2f',
             color: 'red',
-            value: 100,
+            value: 0,
         },
         armour: {
             icon: 'shield',
@@ -31,13 +31,13 @@ const INITIAL_STATE = {
             color: 'lightRed',
             value: 0,
         },
-        speed: {
-            value: 0,
-        },
-        fuel: {
-            value: 0,
-        },
-    }
+    },
+    speed: {
+        value: 0,
+    },
+    fuel: {
+        value: 0,
+    },
 }
 
 function reducer(state = INITIAL_STATE, action: any) {

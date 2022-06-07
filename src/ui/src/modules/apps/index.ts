@@ -6,8 +6,8 @@ export { default as HudStore } from "./hud/store";
 export { default as Inventory } from "./inventory";
 export { default as InventoryStore } from "./inventory/store";
 
-export { default as Phone } from "./phone";
-export { default as PhoneStore } from "./phone/store";
+export { default as Phone } from "./phone/phone";
+export { default as PhoneStore } from "./phone/phone.store";
 
 export { default as Character } from "./character/character";
 

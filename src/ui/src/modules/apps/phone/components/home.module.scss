@@ -1,0 +1,23 @@
+.Home {
+    width: 100%;
+    height: 100%;
+    padding: 30px 0;
+    z-index: 2;
+
+    .Wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 20px;
+        gap: 15px;
+
+        .app {
+            position: relative;
+            width: 66.25px;
+            height: 66.25px;
+            background: black;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.1s ease-in-out;
+        }
+    }
+}

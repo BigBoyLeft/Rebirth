@@ -1,41 +1,13 @@
-import "@citizenfx/client";
-const Config = require("@Config");
+import "@citizenfx/client"
 
-export class ClientClass {
-  constructor() {
-    on("onClientResourceStart", this.onClientResourceStart);
-  }
+import "./events/connection"
+import "./systems/ui.system"
+import "./systems/hud.system"
 
-  onClientResourceStart = async (resourceName: string) => {
-    if (resourceName === GetCurrentResourceName()) {
-      debug(
-        [
-          `
-\x1b[36m######                                      
-\x1b[36m#     # ###### #####  # #####  ##### #    # 
-\x1b[36m#     # #      #    # # #    #   #   #    # 
-\x1b[36m######  #####  #####  # #    #   #   ###### 
-\x1b[36m#   #   #      #    # # #####    #   #    # 
-\x1b[36m#    #  #      #    # # #   #    #   #    # 
-\x1b[36m#     # ###### #####  # #    #   #   #    # 
-        `,
-        ].join("\n")
-      );
-      debug("[Rebirth]: Client initialized with DeveloperMode enabled.");
-      console.log("[Rebirth]: Framework initializing.");
-      await require("@client/modules");
+function test() {
+    let player = LocalPlayer.state.account
 
-      setTimeout(() => {
-        emitNet("Rebirth:Client:Init");
-      }, 500)
-    }
-  };
+    console.log("player object: ", player)
 }
 
-const client = new ClientClass();
-
-export const debug = (...args: any[]) => {
-  if (Config.DeveloperMode) {
-    console.log(...args);
-  }
-};
+onNet("Rebirth:player:client:characterSelect", test)

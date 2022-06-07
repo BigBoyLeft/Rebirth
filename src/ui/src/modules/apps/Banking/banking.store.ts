@@ -1,7 +1,7 @@
 import { AppState } from "@/store";
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-export class UserData {
+export interface IUserData {
   ssn: string;
   name: string;
   email: string;
@@ -9,81 +9,38 @@ export class UserData {
   permissions: string[];
 }
 
-export class AccountData {
-  type: "checking" | "savings" | "mma" | "retirement";
-  label: string;
-  accountNumber: string;
-  routingNumber: string;
-  authorizedUsers: UserData[];
-  transactions: TransactionData[];
-  cards: object[];
-  dBalance: number;
-  balance: number;
-
-  constructor({
-    type,
-    label,
-    accountNumber,
-    routingNumber,
-    authorizedUsers,
-    transactions,
-    cards,
-    dBalance,
-    balance,
-  }: {
-    type: "checking" | "savings" | "mma" | "retirement";
-    label: string;
-    accountNumber: string;
-    routingNumber: string;
-    authorizedUsers: UserData[];
-    transactions: [];
-    cards: object[];
-    dBalance: number;
-    balance: number;
-  }) {
-    this.type = type;
-    this.label = label;
-    this.accountNumber = accountNumber;
-    this.routingNumber = routingNumber;
-    this.authorizedUsers = authorizedUsers;
-    this.transactions = transactions;
-    this.cards = cards;
-    this.dBalance = dBalance;
-    this.balance = balance;
-  }
+export interface ICardData {
+  name: string;
+  type: string;
+  ccn: string;
+  cvc: string;
+  exp: string;
+  balance: number,
 }
 
-export class TransactionData {
+export interface ITransactionData {
   id: string;
   label: string;
   type: "deposit" | "paycheck" | "withdrawal" | "payment";
   amount: number;
   date: string;
+}
 
-  constructor({
-    id,
-    label,
-    type,
-    amount,
-    date,
-  }: {
-    id: string;
-    label: string;
-    type: "deposit" | "paycheck" | "withdrawal" | "payment";
-    amount: number;
-    date: string;
-  }) {
-    this.id = id;
-    this.label = label;
-    this.type = type;
-    this.amount = amount;
-    this.date = date;
-  }
+export interface IAccountData {
+  type: "checking" | "savings" | "mma" | "retirement";
+  label: string;
+  accountNumber: string;
+  routingNumber: string;
+  authorizedUsers: IUserData[];
+  transactions: ITransactionData[];
+  cards: ICardData[];
+  dBalance: number;
+  balance: number;
 }
 
 export interface IBanking {
-  accounts: AccountData[];
-  cAccount: AccountData;
+  accounts: IAccountData[];
+  cAccount: IAccountData;
   dialogData: any;
   moneyData: any;
   transferData: any;
@@ -104,13 +61,28 @@ const initialState: IBanking = {
         email: "carterzamgato@rebirth.net",
         phone: "7072075995",
         permissions: [
-          "banking:withdraw",
           "banking:deposit",
+          "banking:withdraw",
           "banking:transfer",
-          "banking:createCard",
-          "banking:deleteCard",
-          "banking:editCard",
-          "banking:createAccount",
+          "banking:view:balance",
+          "banking:view:transactions",
+          "banking:view:users",
+          "banking:view:cards",
+          "banking:users:add",
+          "banking:users:edit",
+          "banking:users:remove",
+          "banking:cards:create",
+          "banking:cards:deactivate",
+          "banking:cards:funds"
+        ],
+      },
+      {
+        ssn: "819331285",
+        name: "Don Morello",
+        email: "donmorello@rebirth.net",
+        phone: "8175472385",
+        permissions: [
+          "banking:deposit",
         ],
       },
     ],
@@ -158,6 +130,7 @@ const initialState: IBanking = {
         ccn: "4863632536226887",
         cvc: "172",
         exp: "2022-05-19T03:25:33.086Z",
+        balance: 27010.21
       },
       {
         name: "Carter Zamgato",
@@ -165,6 +138,7 @@ const initialState: IBanking = {
         ccn: "4863619322526293",
         cvc: "623",
         exp: "2022-05-19T03:25:33.086Z",
+        balance: 1923.73
       },
       {
         name: "Carter Zamgato",
@@ -172,6 +146,7 @@ const initialState: IBanking = {
         ccn: "4863918328319425",
         cvc: "592",
         exp: "2022-05-19T03:25:33.086Z",
+        balance: 823.23
       },
     ],
     dBalance: 250,
@@ -184,7 +159,7 @@ const initialState: IBanking = {
     cardModel: false,
     accountModel: false,
     newUserModel: false,
-    userModel: true,
+    userModel: false,
   },
   moneyData: {
     amount: 0,
@@ -197,19 +172,11 @@ const initialState: IBanking = {
   },
   userData: {
     editable: false,
-    ssn: "765372666",
-    name: "Carter Zamgato",
-    email: "carterzamgato@rebirth.net",
-    phone: "7072075995",
-    permissions: [
-      "banking:deposit",
-      "banking:withdraw",
-      "banking:transfer",
-      "banking:addUsers",
-      "banking:removeUsers",
-      "banking:editUsers",
-      "banking:createCard",
-    ],
+    ssn: "",
+    name: "",
+    email: "",
+    phone: "",
+    permissions: [],
   },
 };
 
@@ -217,10 +184,10 @@ export const BankingStore = createSlice({
   name: "banking",
   initialState,
   reducers: {
-    setAccounts: (state, action: PayloadAction<AccountData[]>) => {
+    setAccounts: (state, action: PayloadAction<IAccountData[]>) => {
       state.accounts = action.payload;
     },
-    setCAccount: (state, action: PayloadAction<AccountData>) => {
+    setCAccount: (state, action: PayloadAction<IAccountData>) => {
       state.cAccount = action.payload;
     },
     setDialogData: (state, action: PayloadAction<any>) => {
@@ -235,6 +202,24 @@ export const BankingStore = createSlice({
     setUserData: (state, action: PayloadAction<any>) => {
       state.userData = action.payload;
     },
+    setUserDataEditable: (state, action: PayloadAction<boolean>) => {
+      state.userData.editable = action.payload;
+    },
+    clearUserData: (state) => {
+      state.dialogData.newUserModel = false;
+      state.dialogData.userModel = false;
+      state.userData = {
+        editable: false,
+        ssn: "",
+        name: "",
+        email: "",
+        phone: "",
+        permissions: [],
+      };
+    },
+    updateCAccountUsers: (state, action: PayloadAction<IUserData[]>) => {
+      state.cAccount.authorizedUsers = action.payload;
+    }
   },
   extraReducers: {},
 });
@@ -262,6 +247,9 @@ export const {
   setMoneyData,
   setTransferData,
   setUserData,
+  setUserDataEditable,
+  clearUserData,
+  updateCAccountUsers,
 } = BankingStore.actions;
 
 export default BankingStore.reducer;

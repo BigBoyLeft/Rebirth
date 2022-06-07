@@ -11,6 +11,7 @@ import {
   setMoneyData,
   setTransferData,
   setUserData,
+  clearUserData,
 } from "../banking.store";
 import { useAppSelector, useAppDispatch } from "@hooks/store";
 import { makeRequest, debugRequest } from "@/services/nuiUtils";
@@ -21,13 +22,22 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
-import { Checkbox, FormControlLabel } from "@mui/material";
+import {
+  Checkbox,
+  FormControl,
+  FormControlLabel,
+  OutlinedInput,
+  InputLabel,
+} from "@mui/material";
 import FormLabel from "@mui/material/FormLabel";
 import FormGroup from "@mui/material/FormGroup";
 
-import { NumberFormatCustom } from "@/lib/numberFormats";
+import NumberFormatCustom from "@/lib/numberFormats";
+import MaskInput from "@/lib/maskInput";
 
 import permissionList from "../Hooks/permissionList";
+import AccountManager from "../Hooks/accountManager";
+import { playerData, IInitialState } from "@/modules/root.store";
 
 const BankingModels = () => {
   const dispatch = useAppDispatch();
@@ -36,6 +46,9 @@ const BankingModels = () => {
   const MoneyData: any = useAppSelector(moneyData);
   const TransferData: any = useAppSelector(transferData);
   const UserData: any = useAppSelector(userData);
+  const PlayerData: IInitialState["playerData"] = useAppSelector(playerData);
+
+  const accountManager = new AccountManager();
 
   function updateModelState(model: string, status: boolean) {
     dispatch(setDialogData({ var: model, data: status }));
@@ -77,25 +90,10 @@ const BankingModels = () => {
     }
   }
 
-  function clearUserData() {
-    updateModelState("userModel", false);
-    updateModelState("newUserData", false);
-    dispatch(
-      setUserData({
-        editable: false,
-        ssn: "",
-        name: "",
-        email: "",
-        phone: "",
-        permissions: [],
-      })
-    );
-  }
-
   return (
     <div>
       <Dialog
-        container={() => document.getElementById("UI_Banking_Container")}
+        container={() => document.getElementById("Banking_Container_Container")}
         style={{ position: "absolute" }}
         BackdropProps={{ style: { position: "absolute" } }}
         PaperProps={{ style: { background: "#0f181c" } }}
@@ -167,7 +165,7 @@ const BankingModels = () => {
         </DialogActions>
       </Dialog>
       <Dialog
-        container={() => document.getElementById("UI_Banking_Container")}
+        container={() => document.getElementById("Banking_Container_Container")}
         style={{ position: "absolute" }}
         BackdropProps={{ style: { position: "absolute" } }}
         PaperProps={{ style: { background: "#0f181c" } }}
@@ -259,7 +257,7 @@ const BankingModels = () => {
         </DialogActions>
       </Dialog>
       <Dialog
-        container={() => document.getElementById("UI_Banking_Container")}
+        container={() => document.getElementById("Banking_Container_Container")}
         style={{ position: "absolute" }}
         BackdropProps={{ style: { position: "absolute" } }}
         PaperProps={{ style: { background: "#0f181c" } }}
@@ -331,13 +329,16 @@ const BankingModels = () => {
         </DialogActions>
       </Dialog>
       <Dialog
-        container={() => document.getElementById("UI_Banking_Container")}
+        container={() => document.getElementById("Banking_Container_Container")}
         style={{ position: "absolute" }}
         BackdropProps={{ style: { position: "absolute" } }}
         PaperProps={{ style: { background: "#0f181c" } }}
         open={DialogData.userModel}
         keepMounted
-        onClose={() => updateModelState("userModel", false)}
+        onClose={() => {
+          updateModelState("userModel", false);
+          dispatch(clearUserData());
+        }}
       >
         {/* <DialogTitle>{UserData.name || "User"}</DialogTitle>
         <DialogTitle>{UserData.name || "User"}</DialogTitle> */}
@@ -361,7 +362,7 @@ const BankingModels = () => {
             fullWidth
             variant="outlined"
             value={UserData.ssn}
-            disabled={!userData.editable}
+            disabled={!UserData.editable}
             onChange={(e) =>
               dispatch(setUserData({ ...UserData, ssn: e.target.value }))
             }
@@ -375,7 +376,7 @@ const BankingModels = () => {
             fullWidth
             variant="outlined"
             value={UserData.name}
-            disabled={!userData.editable}
+            disabled={!UserData.editable}
             onChange={(e) =>
               dispatch(setUserData({ ...UserData, name: e.target.value }))
             }
@@ -388,25 +389,26 @@ const BankingModels = () => {
             fullWidth
             variant="outlined"
             value={UserData.email}
-            disabled={!userData.editable}
+            disabled={!UserData.editable}
             onChange={(e) =>
               dispatch(setUserData({ ...UserData, email: e.target.value }))
             }
-            helperText="Optional"
+            sx={{ width: "100%", margin: "15px 0 10px" }}
           />
-          <TextField
-            id="phonenumber"
-            label="Phone Number"
-            type="text"
-            fullWidth
-            variant="outlined"
-            value={UserData.phone}
-            disabled={!userData.editable}
-            onChange={(e) =>
-              dispatch(setUserData({ ...UserData, phone: e.target.value }))
-            }
-            helperText="Optional"
-          />
+          <FormControl style={{ width: "100%", margin: "15px 0 10px" }}>
+            <InputLabel htmlFor="banking-user-phone">Phone Number</InputLabel>
+            <OutlinedInput
+              margin="none"
+              id="banking-user-phone"
+              name="phoneNumber"
+              value={UserData.phone}
+              label="Phone Number"
+              onChange={(e) =>
+                dispatch(setUserData({ ...UserData, phone: e.target.value }))
+              }
+              inputComponent={MaskInput as any}
+            />
+          </FormControl>
           <div className={Styles.Title}>Permissions</div>
           <div className={Styles.boxContainer}>
             <FormGroup>
@@ -421,7 +423,7 @@ const BankingModels = () => {
                             checked={UserData.permissions.includes(
                               Permission.permission
                             )}
-                            disabled={!userData.editable}
+                            disabled={!UserData.editable}
                             onChange={() =>
                               permissionCheckBox(
                                 true,
@@ -458,21 +460,41 @@ const BankingModels = () => {
         <DialogActions>
           <Button
             variant="contained"
-            onClick={() => updateModelState("userModel", false)}
+            onClick={() => {
+              updateModelState("userModel", false);
+              dispatch(clearUserData());
+            }}
           >
             Cancel
           </Button>
+          {!DialogData.newUserModel && (
+            <Button
+              variant="contained"
+              onClick={() => accountManager.editUser("remove", UserData)}
+              disabled={!accountManager.hasPermission("banking:users:remove") || UserData.ssn === PlayerData.ssn}
+            >
+              Delete
+            </Button>
+          )}
           <Button
             variant="contained"
-            onClick={() => updateModelState("userModel", false)}
-            disabled={false}
-          >
-            Delete
-          </Button>
-          <Button
-            variant="contained"
-            onClick={() => updateModelState("userModel", false)}
-            disabled={UserData.name.length <= 0 || UserData.ssn.length !== 9}
+            onClick={() =>
+              DialogData.newUserModel ? accountManager.editUser("add", {
+                ssn: UserData.ssn,
+                name: UserData.name,
+                email: UserData.email,
+                phone: UserData.phone,
+                permissions: UserData.permissions,
+              }) : accountManager.editUser("edit", {
+                index: UserData.index,
+                ssn: UserData.ssn,
+                name: UserData.name,
+                email: UserData.email,
+                phone: UserData.phone,
+                permissions: UserData.permissions,
+              })
+            }
+            disabled={UserData.name.length <= 0 || UserData.ssn.length !== 9 || UserData.ssn === PlayerData.ssn}
           >
             Save
           </Button>

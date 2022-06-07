@@ -4,14 +4,24 @@ export default [
     permissions: [
       {
         name: "Balance",
-        description: "View Account Available Balance",
+        description: "Ability to View Accounts Available Balance",
         permission: "banking:view:balance"
       },
       {
         name: "Bank Cards",
-        description: "View Accounts Bank Cards",
+        description: "Ability to View Accounts Bank Cards",
         permission: "banking:view:cards"
       },
+      {
+        name: "Transactions",
+        description: "Ability to View Accounts Transactions",
+        permission: "banking:view:transactions"
+      },
+      {
+        name: "Users",
+        description: "Ability to View Accounts Authorized Users",
+        permission: "banking:view:users"
+      }
     ]
   },
   {
@@ -19,17 +29,17 @@ export default [
     permissions: [
       {
         name: "Deposit",
-        description: "Deposit money into this account",
+        description: "Ability to Deposit money into this account",
         permission: "banking:deposit",
       },
       {
         name: "Withdraw",
-        description: "Withdraw money from this account",
+        description: "Ability to Withdraw money from this account",
         permission: "banking:withdraw",
       },
       {
         name: "Transfer",
-        description: "Transfer money between this accounts",
+        description: "Ability to Transfer money between this accounts",
         permission: "banking:transfer",
       },
     ],
@@ -39,18 +49,18 @@ export default [
     permissions: [
       {
         name: "Add Users",
-        description: "Add users to this account",
-        permission: "banking:addUsers",
+        description: "Ability to Add users to this account",
+        permission: "banking:users:add",
       },
       {
         name: "Remove Users",
-        description: "Remove users from this account",
-        permission: "banking:removeUsers",
+        description: "Ability to Remove users from this account",
+        permission: "banking:users:remove",
       },
       {
         name: "Edit Users",
-        description: "Edit users in this account",
-        permission: "banking:editUsers",
+        description: "Ability Edit authorized users in this account",
+        permission: "banking:users:edit",
       },
     ],
   },
@@ -60,16 +70,17 @@ export default [
       {
         name: "Create Card",
         description: "Ability to create new bank cards",
-        permission: "banking:createCard",
+        permission: "banking:cards:create",
       },
       {
         name: "Deactive Card",
         description: "Ability to deactive bank cards",
-        permission: "banking:deactiveCard",
+        permission: "banking:cards:deactivate",
       },
       {
         name: "Alter Card Funds",
-        description: "Move funds FROM / TO any active bank card ",
+        description: "Ability to Move funds between bank cards and account balance",
+        permission: "banking:cards:funds",
       },
     ],
   },

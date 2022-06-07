@@ -44,7 +44,7 @@
             width: 100%;
             display: grid;
             overflow-y: scroll;
-
+            row-gap: 5px;
         }
 
         .Wrapper {
@@ -118,6 +118,8 @@
             background: rgba(#0f181c, 0.5);
             border-radius: 20px;
             padding: 15px;
+            row-gap: 10px;
+            overflow: hidden;
         }
 
         .Cards {

@@ -6,11 +6,12 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "R:BuildP": "npm run R:BuildUI && node ./build.js --mode=production",
-    "R:BuildUI": "cd src/ui && npm run UI:Build",
-    "R:BuildPW": "node ./build.js --mode=production --watch",
-    "R:BuildD": "node ./build.js --mode=development",
-    "R:BuildDW": "node ./build.js --mode=development --watch"
+    "build:core": "node ./scripts/build.js --mode=production",
+    "build:plugins": "node ./scripts/plugins.js --mode=production",
+    "build:core:watch": "node ./scripts/build.js --mode=production --watch",
+    "build:plugins:watch": "node ./scripts/plugins.js --mode=production --watch",
+    "build:ui": "cd src/ui && npm run build",
+    "build:ui:dev": "cd src/ui && npm run watch"
   },
   "keywords": [],
   "dependencies": {
@@ -21,16 +22,14 @@
     "aws-sdk": "^2.1106.0",
     "axios": "^0.26.1",
     "discord.js": "^13.6.0",
-    "esbuild": "^0.14.27",
-    "glob": "^8.0.1",
-    "gulp": "^4.0.2",
-    "mongoose": "^6.2.7",
-    "node-fetch": "^3.2.3",
-    "ssn": "^1.0.3"
+    "mongoose": "^6.2.7"
   },
   "devDependencies": {
+    "@types/mongoose": "^5.11.97",
     "@types/node": "^17.0.21",
     "@types/node-fetch": "^2.6.1",
-    "typedoc": "^0.22.15"
+    "node-fetch": "^3.2.3",
+    "esbuild": "^0.14.27",
+    "glob": "^8.0.3"
   }
 }

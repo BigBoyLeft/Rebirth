@@ -10,11 +10,7 @@
       "@client/*": ["./src/code/client/*"],
       "@shared": ["./src/code/shared/"],
       "@shared/*": ["./src/code/shared/*"],
-      "@database": ["./src/code/database/"],
-      "@database/*": ["./src/code/database/*"],
       "@Types/*": ["./src/code/types/*"],
-      "@Config": ["./Config.json"],
-      "@schemas/*": ["./src/code/schemas/*"],
       "@/*": ["./*"]
     },
     "outDir": "build",
@@ -30,5 +26,5 @@
     "skipLibCheck": true,
     "removeComments": true,
     "pretty": true
-  }
+  },
 }

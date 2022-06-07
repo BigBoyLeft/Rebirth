@@ -3,9 +3,9 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "UI:Watch": "vite",
-    "UI:Build": "tsc && vite build --emptyOutDir",
-    "UI:Preview": "vite preview"
+    "watch": "vite",
+    "build": "tsc && vite build --emptyOutDir",
+    "UI:Preview": "preview"
   },
   "dependencies": {
     "@emotion/react": "^11.8.2",
@@ -21,7 +21,9 @@
     "react-chartjs-2": "^4.1.0",
     "react-d3-speedometer": "^1.0.2",
     "react-dom": "^17.0.2",
+    "react-imask": "^6.4.2",
     "react-number-format": "^4.9.3",
+    "react-progressbar.js": "^0.2.0",
     "react-redux": "^7.2.7",
     "sass": "^1.49.10"
   },
@@ -31,6 +33,7 @@
     "@vitejs/plugin-react": "^1.0.7",
     "date-fns": "^2.28.0",
     "gheb-iban-generator": "^1.0.1",
+    "progressbar.js": "^1.1.0",
     "typescript": "^4.5.4",
     "vite": "^2.8.0",
     "vite-tsconfig-paths": "^3.4.1"

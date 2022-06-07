@@ -1,4 +1,4 @@
-import { TransactionData, cAccount } from "../banking.store";
+import { ITransactionData, cAccount } from "../banking.store";
 import { playerData } from "@/modules/root.store";
 import { useSelector } from "react-redux";
 
@@ -12,7 +12,7 @@ const useTransactions = () => {
   // if the transaction is a withdrawal or a payment, subtract the amount from the balance
   // if the transaction array is greater than 30, remove the last transaction
   // push the new transaction to the front of the array
-  self.addTransaction = (transaction: TransactionData) => {
+  self.addTransaction = (transaction: ITransactionData) => {
     account.transaction.unshift(transaction);
     if (account.transactions.length >= 30) account.transactions.pop();
     if (transaction.type === ("deposit" || "paycheck")) {
