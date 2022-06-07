@@ -15,8 +15,8 @@ This framework was built in hopes of becoming `superior` to other frameworks lik
 5. Experience in Database Programs such as [MongoDB](https://www.mongodb.com)
 
 ## Framework Features
-| Feature     | Description |
-| :----       | :-----      |
+| Feature      | Description |
+| :-----       | :-----      |
 | Custom Chat System | Custom Chat System built from scratch and build completely into the framework |
 | Single Handler System | All Ticks, and Events are handled within the framework |
 | Database Wrapper   | Easy to use Database Wrapper based around MongoDB |
