@@ -10,19 +10,25 @@ This framework was built in hopes of becoming `superior` to other frameworks lik
 
 1. Command Line Usage
 2. Javascript/Typescript
-3. Understanding module bunders such as `Webpack` `ESBuild`
+3. Understanding module bundlers such as `Webpack` `ESBuild`
 4. Node.JS Package Managers such as [NPM](https://www.npmjs.com/) | [YARN](https://yarnpkg.com/)
 5. Experience in Database Programs such as [MongoDB](https://www.mongodb.com)
 
 ## Framework Features
-| Feature     | Description |
-| :----       | :-----      |
-| Custom Chat System | Custom Chat System built from scratch and build completly into the framework |
+| Feature      | Description |
+| :-----       | :-----      |
+| Custom Chat System | Custom Chat System built from scratch and build completely into the framework |
 | Single Handler System | All Ticks, and Events are handled within the framework |
 | Database Wrapper   | Easy to use Database Wrapper based around MongoDB |
 | Command Wrapper | Ease to use Command Wrapper which replaces the old & boring native `RegisterCommand` |
 | NUI | Fast and Responsive `UI` build using `ReactJS` |
 | NUI Wrapper | Easy to use NUI Wrapper which makes it easy to talk between the `UI` and the `Client` |
+
+# Plugin System
+
+This Framework includes a built-in drag and drop plugin system, allowing developers to harness the power of typescript without having to build and set up a new typescript resource, instead, they can develop a plugin within the framework ``./src/code/plugins`` folder and the framework will build the plugin into a separate resource allowing for you to restart the plugin without having to restart the framework. This also means that users who wish to use your plugin can drag and drop the plugin you provided them into the plugin folder located inside the framework ``./src/code/plugins`` and run the ``npm run build:plugins`` command. while in development you can also use the ``npm run build:plugins:watch`` command to auto rebuild the plugin on code change allowing for a more efficient workflow.
+
+##### Plugin examples can be found inside the Frameworks Plugin Directory ``./src/code/plugins``
 
 # Framework Setup
 
@@ -33,15 +39,16 @@ This framework was built in hopes of becoming `superior` to other frameworks lik
 5. Add `start Rebirth` to your `server.cfg`.
 6. And last start your server.
 
-## Framework Contrubution
+## Framework Contribution
 
 | Command | Description |
 | :------ | :- |
-| `npm run R:BuildP` | Compiles the Framework into a Production build |
-| `npm run R:BuildUI` | Compiles the Frameworks UI into a Production Build |
-| `npm run R:BuildPW` | Compiles the Framework into a Production build and Rebuilds on code Change |
-| `npm run R:BuildD` | Compiles the Framework into a Development build |
-| `npm run R:BuildDW` | Compiles the Framework into a Development build and Rebuilds on code Change |
+| `npm run build:core` | Compiles the Framework into a Production build |
+| `npm run build:core:watch` | Compiles framework and then rebuilds on code change |
+| `npm run build:plugins` | Compiles all Plugins located inside the framework's Plugin Directory ``./src/code/plugins`` |
+| `npm run build:core:watch` | Compiles framework's Plugins and then rebuilds on code change |
+| `npm run build:ui` | Compiles UI into a production build |
+| `npm run ui:dev` | Starts the UI Development Server in your browser ``https://localhost:3000`` |
 
 ## Framework NUI Contrubution
 #### `cd src/ui`
@@ -52,10 +59,4 @@ This framework was built in hopes of becoming `superior` to other frameworks lik
 | `npm run UI:Watch` | Starts the Development server which you can access in your browser via `http://localhost:3000` |
 | `npm run UI:Preview` | Serves the Production build which you can access in your browser via `http://localhost:4173` |
 
-## Ideator's
-
-| Discord |
-| `MatrixTalents#6285` |
-| `Edvard#3614` |
-
-###### Copyright &copy; 2022 Rebirth Networks owned by [Left](https://github.com/BigBoyLeft). Rebirth Networks and its associates are not affiliated with or endorsed by Rockstar North, Take-Two Interactive or other rightsholders. Any trademarks used belong to their respective owners.
+###### Copyright &copy; 2022 Rebirth Networks owned by [Left](https://github.com/BigBoyLeft). Rebirth Networks and its associates are not affiliated with or endorsed by Rockstar North, Take-Two Interactive, or other rightsholders. Any trademarks used belong to their respective owners.
