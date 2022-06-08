@@ -59,4 +59,10 @@ This Framework includes a built-in drag and drop plugin system, allowing develop
 | `npm run UI:Watch` | Starts the Development server which you can access in your browser via `http://localhost:3000` |
 | `npm run UI:Preview` | Serves the Production build which you can access in your browser via `http://localhost:4173` |
 
+## Ideator's
+
+| Discord |
+| `MatrixTalents#6285` |
+| `Edvard#3614` |
+
 ###### Copyright &copy; 2022 Rebirth Networks owned by [Left](https://github.com/BigBoyLeft). Rebirth Networks and its associates are not affiliated with or endorsed by Rockstar North, Take-Two Interactive, or other rightsholders. Any trademarks used belong to their respective owners.
