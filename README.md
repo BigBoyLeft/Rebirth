@@ -62,6 +62,7 @@ This Framework includes a built-in drag and drop plugin system, allowing develop
 ## Ideator's
 
 | Discord |
+| :------ |
 | `MatrixTalents#6285` |
 | `Edvard#3614` |
 
