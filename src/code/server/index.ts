@@ -33,12 +33,12 @@ class Server {
 
     Logger.info(`Attempting to establish connection with MongoDB: ${mongoDB}`);
     await connect(mongoDB)
+      .then((db) => {
+        Logger.success(`Successfully connected to MongoDB: ${mongoDB}`);
+      })
       .catch((error) => {
         Logger.error(`Unable to connect to mongodb: ${error}`);
         return;
-      })
-      .then((db) => {
-        Logger.success(`Successfully connected to MongoDB: ${mongoDB}`);
       });
     Server.boot();
   }

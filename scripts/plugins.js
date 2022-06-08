@@ -128,7 +128,7 @@ server_script "./server/index.js"`
 
                 build.onResolve({ filter: /.*/ }, (args) => {
                   if (
-                    !args.path.match(/^@(server|client|shared)/) &&
+                    !args.path.match(/^@(server|client|shared|plugins)/) &&
                     args.kind === "import-statement"
                   ) {
                     let modulePath;

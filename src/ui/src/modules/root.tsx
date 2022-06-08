@@ -1,6 +1,6 @@
 import React from "react";
 import "./root.scss";
-import { Chat, Hud, Inventory, Phone, Character, Banking } from "./apps";
+import { Chat, Hud, HudMenu, Inventory, Phone, Character, Banking } from "./apps";
 import { useApplication } from "@/services/nuiUtils";
 
 const Root = () => {
@@ -8,6 +8,7 @@ const Root = () => {
     <div className="UI_Root">
       <Chat />
       <Hud />
+      <HudMenu />
       <Character />
       <Inventory />
       <Phone />

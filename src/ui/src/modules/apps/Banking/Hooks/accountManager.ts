@@ -41,7 +41,6 @@ class AccountManager {
   };
 
   editUser = (action: "add" | "remove" | "edit", user: IUserData | any) => {
-    console.log(JSON.stringify(user))
     let users = Object.assign([], this.account.authorizedUsers);
     if (action === "add") users.push(user);
     if (action === "remove") users.splice(users.indexOf(user), 1);

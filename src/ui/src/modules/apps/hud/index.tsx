@@ -11,11 +11,15 @@ import Fade from "@mui/material/Fade";
 import ProgressBar from "progressbar.js";
 let progressBars = {};
 
+import Square from "./Components/square";
+import Circle from "./Components/circle";
+let ready = false;
 const Hud = ({ vehicle, data, setVehicle, setData }) => {
   const [visible, setVisible] = useState(true);
   const [idk, setIdk] = useState(false);
   const [speed, setSpeed] = useState(0);
   const [fuel, setFuel] = useState(25);
+  const [uProgressBars, setUProgressBars] = useState(false);
 
   useApplication("hud", (data: any) => {
     setVisible(data.visible);
@@ -34,26 +38,46 @@ const Hud = ({ vehicle, data, setVehicle, setData }) => {
     setIdk(!idk);
   });
 
-  useEffect(() => {
-    for (let i in data) {
-      progressBars[i] = new ProgressBar.Path(`#hud-${i}`, {
-        easing: "easeInOut",
-        duration: 1400,
-      });
-      progressBars[i].animate(data[i].value / 100);
-    }
-  }, []);
+  useAction("hud", "refreshTheme", () => {
+    setIdk(!idk);
+  });
 
   function updateProgressBars(key, value) {
     progressBars[key].animate(value / 100);
   }
 
   useEffect(() => {
-    console.log(progressBars);
-    for (let i in data) {
-      updateProgressBars(i, data[i].value);
-    }
+    setTimeout(() => {
+      for (let i in data) {
+        updateProgressBars(i, data[i].value);
+      }
+    }, 50);
   }, [data]);
+
+  function hudStyle(key) {
+    setTimeout(() => {
+      progressBars[key] = new ProgressBar.Path(`#hud-${key}`, {
+        easing: "easeInOut",
+        duration: 1400,
+      });
+      progressBars[key].animate(data[key].value / 100);
+    }, 150);
+    if (!localStorage.getItem("hud-style")) {
+      localStorage.setItem("hud-style", "circle");
+    }
+
+    if (localStorage.getItem("hud-style") === "circle") {
+      return <Circle color={data[key].color} index={key} />;
+    } else if (localStorage.getItem("hud-style") === "square") {
+      return <Square color={data[key].color} index={key} />;
+    }
+    // compare the length of the progressbars and data
+  }
+
+  function hudStyleClass() {
+    if (localStorage.getItem("hud-style") === "circle") return "circle";
+    else if (localStorage.getItem("hud-style") === "square") return "square";
+  }
 
   return (
     <Fade in={visible} unmountOnExit mountOnEnter>
@@ -62,25 +86,14 @@ const Hud = ({ vehicle, data, setVehicle, setData }) => {
           {Object.keys(data)
             .slice(0, 5)
             .map((key: string) => (
-              <div key={key} className="UI_Hud_ProgressBar">
+              <div
+                key={key}
+                className={`UI_Hud_ProgressBar ${hudStyleClass()}`}
+              >
                 <Icon sx={{ color: data[key].iconColor }}>
                   {data[key].icon}
                 </Icon>
-                <svg viewBox="0 0 100 100">
-                  <path
-                    d="M 0,2 L 98,2 L 98,98 L 2,98 L 2,4"
-                    stroke={`${data[key].iconColor}60`}
-                    strokeWidth="14"
-                    fillOpacity="0"
-                  ></path>
-                  <path
-                    id={`hud-${key}`}
-                    d="M 0,2 L 98,2 L 98,98 L 2,98 L 2,4"
-                    stroke={data[key].iconColor}
-                    strokeWidth="14"
-                    fillOpacity="0"
-                  ></path>
-                </svg>
+                {hudStyle(key)}
               </div>
             ))}
         </Box>

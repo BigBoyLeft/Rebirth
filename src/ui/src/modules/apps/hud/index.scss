@@ -17,13 +17,33 @@
     display: flex;
     column-gap: 5%;
     width: 60px;
-    background-color: #102027;
+    background-color: rgba($color: #102027, $alpha: 0.85);
     padding: 5px;
     align-items: center;
     justify-content: center;
-
+    transition: all 0.25s ease-in-out;
+    
     .material-icons {
         position: absolute;
+    }
+
+    svg {
+        opacity: 0;
+        animation: test 0.25s ease-in-out;
+        animation-fill-mode: forwards;
+    }
+
+    &.circle {
+        border-radius: 50%;
+    }
+}
+
+@keyframes test {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
 

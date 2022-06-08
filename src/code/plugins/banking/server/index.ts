@@ -1,9 +1,10 @@
 import Events from "@shared/enums/server";
+import Banking from "@plugins/banking/server/banking";
 
 class Plugin {
   static init() {
     global.exports["Rebirth"].registerPlugin("banking", () => {
-      console.log("test");
+      Banking.init();
     });
   }
 }

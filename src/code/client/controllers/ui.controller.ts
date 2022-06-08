@@ -1,10 +1,6 @@
 var focused: boolean = false;
 
 export default class UI {
-  private static apps: Map<string, any> = new Map();
-
-  static init() {}
-
   static setFocus(focus: boolean) {
     focused = focus;
     SetNuiFocus(focus, focus);
@@ -37,16 +33,6 @@ export default class UI {
     );
   }
 
-  static registerAPI(resource: string) {
-    if (this.apps.has(resource)) return;
-
-    this.apps.set(resource, {});
-  }
-
-  static getAPI(resource: string) {
-    return this.apps.get(resource);
-  }
-
   static registerUICallback(
     resource: string,
     callback: string,
@@ -62,8 +48,4 @@ export default class UI {
 global.exports("setFocus", UI.setFocus);
 global.exports("application", UI.application);
 global.exports("appAction", UI.appAction);
-global.exports("registerAPI", UI.registerAPI);
-global.exports("getAPI", UI.getAPI);
 global.exports("registerUICallback", UI.registerUICallback);
-
-UI.init();

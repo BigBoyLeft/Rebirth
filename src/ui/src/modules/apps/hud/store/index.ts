@@ -3,33 +3,28 @@ const INITIAL_STATE = {
     data: {
         health: {
             icon: 'favorite',
-            iconColor: '#d32f2f',
-            color: 'red',
+            color: '#d32f2f',
             value: 0,
         },
         armour: {
             icon: 'shield',
-            iconColor: '#1e88e5',
-            color: 'blue',
-            value: 0,
+            color: '#1e88e5',
+            value: 40,
         },
         hunger: {
             icon: 'lunch_dining',
-            iconColor: '#e64a19',
-            color: 'orange',
-            value: 0,
+            color: '#e64a19',
+            value: 60,
         },
         thirst: {
             icon: 'water_drop',
-            iconColor: '#35baf6',
-            color: 'lightBlue',
-            value: 0,
+            color: '#35baf6',
+            value: 80,
         },
         stress: {
             icon: 'psychology',
-            iconColor: '#ef5350',
-            color: 'lightRed',
-            value: 0,
+            color: '#ef5350',
+            value: 100,
         },
     },
     speed: {

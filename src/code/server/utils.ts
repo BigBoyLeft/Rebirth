@@ -59,5 +59,3 @@ export function timeUntil(date: Date): string {
 
   return `${days > 0 ? days + "d" : ""} ${hours > 0 ? hours + "h" : ""} ${minutes > 0 ? minutes + "m" : ""}  ${seconds > 0 ? seconds + "s" : ""}`;
 }
-
-console.log(timeUntil(new Date("2022-06-05T20:17:39.435Z"))) 

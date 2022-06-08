@@ -124,3 +124,7 @@ export default class StepSystem {
   }
 }
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+
+global.exports("injectLoginStep", StepSystem.injectLoginStep);
+global.exports("nextStep", StepSystem.nextStep);

@@ -120,15 +120,12 @@ export default class AdminController {
       });
 
       for (const player of getPlayers()) {
-        console.log('here')
         const identifiers2 = await getIdentifiers(Number(player));
         const tokens2 = getPlayerTokens(player);
         if (
           identifiers2.some((identifier) => identifiers.includes(identifier)) ||
           tokens2.some((token) => tokens.includes(token))
         ) {
-          console.log('here2')
-          console.log(ban);
           await AdminController.kickPlayer(
             Number(player),
             `${data.reason}

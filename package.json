@@ -8,10 +8,10 @@
   "scripts": {
     "build:core": "node ./scripts/build.js --mode=production",
     "build:plugins": "node ./scripts/plugins.js --mode=production",
-    "build:core:watch": "node ./scripts/build.js --mode=production --watch",
-    "build:plugins:watch": "node ./scripts/plugins.js --mode=production --watch",
+    "build:core:watch": "node ./scripts/build.js --watch",
+    "build:plugins:watch": "node ./scripts/plugins.js --watch",
     "build:ui": "cd src/ui && npm run build",
-    "build:ui:dev": "cd src/ui && npm run watch"
+    "ui:dev": "cd src/ui && npm run watch"
   },
   "keywords": [],
   "dependencies": {

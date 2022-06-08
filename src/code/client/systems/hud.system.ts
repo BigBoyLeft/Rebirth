@@ -2,6 +2,8 @@ import Utils from "@client/utils/utils";
 import IHud from "@client/interfaces/IHud";
 import HudEvents from "@shared/enums/hud";
 import PlayerEvents from "@shared/enums/player";
+import Chat from "@client/systems/chat.system";
+import UI from "@client/controllers/ui.controller";
 
 let Player = PlayerPedId();
 
@@ -25,12 +27,22 @@ export default class Hud {
   }
 
   static setHudVisible(visible: boolean) {
-    global.exports["Rebirth"].application("hud", { visible });
+    UI.application("hud", { visible });
   }
 
   static startTick() {
     setImmediate(async () => {
       let minimap = RequestScaleformMovie("minimap");
+
+      UI.registerUICallback("hud_menu", "hide", (data: any, cb: any) => {
+        UI.setFocus(false);
+        cb(true);
+      })
+
+      Chat.registerCommand("hudmenu", "Opens the hud Style Menu", () => {
+        UI.setFocus(true);
+        UI.application("hud_menu", { visible: true });
+      })
 
       DisableIdleCamera(true);
       SetRadarBigmapEnabled(true, false);
@@ -66,8 +78,6 @@ export default class Hud {
       NetworkSetFriendlyFireOption(true);
       DisablePlayerVehicleRewards(Player);
 
-      let counter = 0;
-
       tick = setTick(async () => {
         let Player = PlayerPedId();
 
@@ -84,9 +94,7 @@ export default class Hud {
 
         Object.keys(HudValues).forEach((key) => {
           if (HudValues[key] !== lastValues[key]) {
-            console.log(HudValues[key]);
-            console.log(lastValues[key]);
-            exports["Rebirth"].appAction(
+            global.exports["Rebirth"].appAction(
               "hud",
               {
                 key,
@@ -105,7 +113,7 @@ export default class Hud {
   }
 
   static vehicle(status: boolean) {
-    globalThis.exports["Rebirth"].appAction("hud", { status }, "setVehicle");
+    global.exports["Rebirth"].appAction("hud", { status }, "setVehicle");
     if (status) {
       //   emitNet(HudEvents.HUD_VEHICLE, true);
       this.Vehicle = true;

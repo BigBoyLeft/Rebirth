@@ -10,6 +10,7 @@
       "@client/*": ["./src/code/client/*"],
       "@shared": ["./src/code/shared/"],
       "@shared/*": ["./src/code/shared/*"],
+      "@plugins/*": ["./src/code/plugins/*"],
       "@Types/*": ["./src/code/types/*"],
       "@/*": ["./*"]
     },

@@ -13,7 +13,6 @@ export default class PluginSystem {
     plugins.push(name);
     if (!PluginSystem.initilized) {
       let interval = setInterval(() => {
-          console.log('test')
         if (PluginSystem.initilized) {
           clearInterval(interval);
           callback();
@@ -33,3 +32,5 @@ PluginSystem.init();
 
 global.exports("registerPlugin", PluginSystem.register);
 emit(Events.REGISTER_PLUGINS);
+
+"I hope you all fall down the stairs"
