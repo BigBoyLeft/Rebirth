@@ -4,7 +4,7 @@
 
 ## A Typescript Framework that runs on the Javascript & NodeJS runtime
 
-This framework was built in hopes of becoming `superior` to other frameworks like ESX or QBCore. While most frameworks use Lua as the main language we have decided to build the entire framework using Typescript
+This framework was built in hopes of becoming `superior` to other frameworks like ESX or QBCore. While most frameworks use Lua as the main language I have decided to build the entire framework using Typescript
 
 #### This framework should only be `Used` and `Edited` by those who understand programming in typescript and are Skilled in a few of the following: 
 
