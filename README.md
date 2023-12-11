@@ -1,4 +1,4 @@
-# Rebirth Framework (Recontinued under new Repository and Name `https://github.com/BigBoyLeft/Codus`)
+# Rebirth Framework (Recontinued under new Repository and Name `https://github.com/BigBoyLeft/hades`)
 
 <img src="./src/code/assets/rebirth.png" style="right:0" align="right" width="250px">
 
